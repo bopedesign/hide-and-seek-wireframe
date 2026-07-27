@@ -64,8 +64,8 @@ a{color:#111}a:hover{color:#555}
   <div class="nvl">
     <span class="nvi" onMouseEnter="{{ openExplore }}" onClick="{{ nav.explore }}">Explore Camp ▾</span>
     <span class="nvi" onMouseEnter="{{ openParent }}" onClick="{{ nav.parent }}">Parent Info ▾</span>
-    <span class="nvi" onMouseEnter="{{ closeMenu }}" onClick="{{ nav.about }}">About</span>
-    <span class="nvi" onMouseEnter="{{ closeMenu }}" onClick="{{ nav.involved }}">Get Involved</span>
+    <span class="nvi" onMouseEnter="{{ openAbout }}" onClick="{{ nav.about }}">About ▾</span>
+    <span class="nvi" onMouseEnter="{{ openInvolved }}" onClick="{{ nav.involved }}">Get Involved ▾</span>
     <span class="nvi" onMouseEnter="{{ closeMenu }}" onClick="{{ nav.contact }}">Contact</span>
   </div>
   <div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div>
@@ -85,6 +85,24 @@ a{color:#111}a:hover{color:#555}
       <div><p class="k">Prepare</p><div class="mml"><span onClick="{{ nav.safety }}">Safety</span><span onClick="{{ nav.faqs }}">Parent Guide &amp; FAQs</span></div></div>
       <div><p class="k">Help paying</p><div class="mml"><span onClick="{{ nav.scholarships }}">Scholarships</span></div></div>
       <div><div class="im" style="height:110px"><span>Photo: carpool line at drop off</span></div><p class="s" style="margin-top:8px">Camp runs 9 a.m. to 3 p.m.</p></div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ aboutOpen }}">
+    <div class="mm">
+      <div><p class="k">Our ministry</p><div class="mml"><span onClick="{{ nav.ministries }}">Seek Ministries</span></div></div>
+      <div><p class="k">Our story</p><div class="mml"><span onClick="{{ nav.mission }}">Mission &amp; Story</span><span onClick="{{ nav.leadership }}">Leadership</span></div></div>
+      <div><p class="k">Connect</p><div class="mml"><span onClick="{{ nav.contact }}">Contact</span></div></div>
+      <div><div class="im" style="height:110px"><span>Photo: staff group photo from this summer</span></div><p class="s" style="margin-top:8px">Run by Seek Ministries, now in our 18th summer</p></div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ involvedOpen }}">
+    <div class="mm">
+      <div><p class="k">Join the team</p><div class="mml"><span onClick="{{ nav.work }}">Work at Camp</span><span onClick="{{ nav.apply }}">Apply</span></div></div>
+      <div><p class="k">Events</p><div class="mml"><span onClick="{{ nav.race }}">Hickory FlatOut 5K</span><span onClick="{{ nav.banquet }}">Annual Banquet</span></div></div>
+      <div><p class="k">Give</p><div class="mml"><span>Donate</span></div></div>
+      <div><div class="im" style="height:110px"><span>Photo: summer staff team</span></div><p class="s" style="margin-top:8px">Applications open in the winter</p></div>
     </div>
   </sc-if>
 </div>
@@ -444,8 +462,12 @@ class Component extends DCLogic {
       nav,
       exploreOpen: this.state.menu === 'explore',
       parentOpen: this.state.menu === 'parent',
+      aboutOpen: this.state.menu === 'about',
+      involvedOpen: this.state.menu === 'involved',
       openExplore: () => this.setState({ menu: 'explore' }),
       openParent: () => this.setState({ menu: 'parent' }),
+      openAbout: () => this.setState({ menu: 'about' }),
+      openInvolved: () => this.setState({ menu: 'involved' }),
       closeMenu: () => this.setState({ menu: null })
     };
     PAGES.forEach(p => { vals[FLAG[p]] = this.state.page === p; });
