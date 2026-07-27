@@ -109,8 +109,8 @@ Full width, white, one pixel bottom rule, horizontally padded. Three zones on on
 
 1. **Left**: logo, links to Home.
 2. **Center**: primary nav, five items in this order: Explore Camp, Parent Info,
-   About, Get Involved, Contact. Explore Camp and Parent Info carry a downward
-   caret. The other three do not.
+   About, Get Involved, Contact. Explore Camp, Parent Info, About, and Get
+   Involved each carry a downward caret and open a mega menu. Contact does not.
 3. **Right**: two buttons, Donate (outline, secondary) and Register (solid, primary).
    Register is the most emphasized element in the header on every page.
 
@@ -135,8 +135,10 @@ Dark, full width, five columns:
 
 ## Mega menu
 
-Two of the five nav items open a mega menu: **Explore Camp** and **Parent Info**.
-About, Get Involved, and Contact navigate directly with no menu.
+Four of the five nav items open a mega menu: **Explore Camp**, **Parent Info**,
+**About**, and **Get Involved**. Contact navigates directly with no menu. All four
+mega menu triggers are also real pages, so clicking the trigger navigates to that
+section's landing page.
 
 ### Geometry
 
@@ -171,6 +173,24 @@ About, Get Involved, and Contact navigate directly with no menu.
 | 3 | Help paying | Scholarships |
 | 4 | promo | Photo of the carpool line, caption "Camp runs 9 a.m. to 3 p.m." |
 
+**About**
+
+| Column | Label | Links |
+| --- | --- | --- |
+| 1 | The ministry | Seek Ministries |
+| 2 | Who we are | Mission & Story · Leadership |
+| 3 | Reach us | Contact |
+| 4 | promo | Staff group photo, caption "Our 18th summer of camp" |
+
+**Get Involved**
+
+| Column | Label | Links |
+| --- | --- | --- |
+| 1 | Join the staff | Work at Camp · Apply |
+| 2 | Events | Hickory FlatOut 5K · Annual Banquet |
+| 3 | Give | Donate |
+| 4 | promo | Photo of runners at the start line, caption "The 5K runs Labor Day morning" |
+
 The promo column is the reason to use a mega menu instead of a plain dropdown. Keep
 it. Make the image and caption content managed so the camp can swap the seasonal
 message.
@@ -184,8 +204,8 @@ message.
 - **Close** when the pointer leaves the combined region of the header and the open
   panel, when the user presses Escape, when a link inside is activated, or when the
   route changes.
-- **Clicking the trigger itself navigates** to that section's landing page
-  (Explore Camp and Parent Info are real pages). It does not toggle the menu open.
+- **Clicking the trigger itself navigates** to that section's landing page. All four
+  trigger sections are real pages. Clicking does not toggle the menu open.
   On touch devices, where hover does not exist, the first tap opens the panel and a
   second tap on the same trigger navigates.
 - Open and close with a short fade plus a few pixels of downward travel, around
@@ -206,8 +226,8 @@ message.
 
 Below the tablet breakpoint, the header collapses to logo, Register, and a menu
 button. The mega menu becomes a full screen panel with the same groups presented as
-an accordion: five top level rows, and tapping Explore Camp or Parent Info expands
-its grouped links in place. Donate and Register pin to the bottom of that panel.
+an accordion: five top level rows, and tapping any of the four mega menu sections
+expands its grouped links in place. Donate and Register pin to the bottom of that panel.
 Drop the promo image on mobile.
 
 ---
@@ -225,8 +245,8 @@ them to Register.
 Sections in order:
 
 1. **Hero.** Two columns, text left and a large image right. Eyebrow
-   "Canton, Georgia, 18th summer", headline "A safe, loving place to spend the
-   summer outdoors", one paragraph of positioning copy, then two buttons: Register
+   "Canton, Georgia, 18th summer", headline "A safe place for a summer of real
+   outdoor fun", one paragraph of positioning copy, then two buttons: Register
    for a session (primary) and See dates and pricing (secondary). The image slot is
    the largest on the site and can hold a short muted video loop instead of a still.
 2. **Quick camp details.** Four equal cards on a tinted band: who it is for, when,
@@ -322,9 +342,29 @@ camp and should not be edited without them.
 
 ### Parent Guide & FAQs
 
-Intro plus a download button for the printable guide, a tinted four card packing
-list, then a two column section with a photo on the left and the FAQ accordion on
-the right. First item open by default. Ends with a dark Contact band.
+Intro plus a download button for the printable guide, a tinted six card packing and
+clothing list, then a two column section: a sticky left rail holding a photo and a
+jump-to list, and the FAQ on the right.
+
+The FAQ is fifteen questions grouped under five headings, in this order:
+
+1. **The basics** — where camp is · camp hours · price of camp · holiday weeks ·
+   help paying for camp
+2. **Getting ready for the day** — what to wear · what to bring
+3. **At camp** — water on hot days · group placement · what if it rains · birthdays ·
+   off campus field trips · church family question
+4. **Drop off and pick up** — one long answer covering the Hickory Flat carpool
+   procedure, with a pointer to the campus pages for Ball Ground and Sixes
+5. **Our staff** — staff selection process · background checks
+
+Every question and answer is taken from the camp's current FAQ page. Group headings
+are new. First item in each group is open by default; the rest are collapsed.
+
+**Pricing conflict to resolve.** The camp's current FAQ page still quotes $140 per
+session with $10 pre camp and $20 post camp, while its registration page quotes $275
+per session with $15 pre camp and $30 post camp. The wireframe uses the $275 figures.
+Confirm with the camp, and store the prices in one place so the FAQ and the pricing
+page can never drift apart again.
 
 ### Scholarships
 
@@ -364,15 +404,47 @@ a dark Donate band.
 
 ### Work at Camp
 
-Recruiting page. Two column hero ending in Apply now, a tinted three card roles row,
-a two column training and screening section, a four across photo row, and a dark band
-noting applications open in the winter.
+Recruiting page, and the longest page on the site. Two column hero with the camp's own
+line "Love God? Love kids? Love being outdoors?" and an Apply today button. Then a
+tinted band holding the full role listing in five groups, in this order:
+
+1. **Camp leadership**, two wide cards: Director; Program Director
+2. **Adventure leads**, a shared intro paragraph then three cards: Curriculum
+   Emphasis; Camp Emphasis; Games Emphasis. Hickory Flat only. The shared
+   requirements (hours, age, ropes course duty, small group leadership) live in the
+   intro paragraph so the three cards only carry what differs between them.
+3. **Specialty leads**, two wide cards: Photography Lead; Arts and Crafts Lead
+4. **Counselors**, two wide cards: Counselor; Junior Counselor
+5. **Post camp**, two wide cards: Post Camp Lead; Post Camp Counselor
+
+Each card is title, then a small uppercase meta line carrying days, hours, minimum
+age, and experience requirements, then the responsibility description. The meta line
+should be visually distinct from the body copy so an applicant can scan hours and age
+across all eleven roles without reading the descriptions.
+
+After the roles: a two column training and screening section, a four across photo
+row, and a dark band reading "Summer 2026 applications are open".
+
+All role copy is verbatim from the camp's current staff page. Do not paraphrase it.
+The season year appears twice on this page and must be editable.
 
 ### Apply
 
-Short handoff page. Two column intro with Open the application and Read about the
-roles, then a tinted four card list of what to have ready. The application is hosted
-outside the site.
+Two column intro, then a tinted section titled "Choose your application" holding six
+rows in a two column grid, each with a title, a one line qualifier, and its own
+button:
+
+- New Counselor and Junior Counselor
+- Return Counselor and Junior Counselor
+- Middle School Week Staff
+- Director
+- Program Director
+- Time Off Request (secondary button, for staff already hired)
+
+The first five are separate UltraCamp session links; the time off request is a Google
+Form. All open in a new tab. Below that, a four card list of what to have ready, with
+a note that counselors must pass ropes course facilitation training before being
+hired.
 
 ### Hickory FlatOut 5K
 
@@ -405,6 +477,8 @@ items are still outstanding:
 - The parent testimonial quote and attribution
 - Timeline dates on the Mission & Story page
 - Winter camp exact dates each year
+- Ball Ground and Sixes carpool procedure, to match the detail Hickory Flat has
+- The reduced four-day holiday session price (the current FAQ's figure is outdated)
 
 Two copy rules the camp asked for: no em dashes anywhere in the site copy, and date
 and time ranges are written with the word "to" rather than a dash.

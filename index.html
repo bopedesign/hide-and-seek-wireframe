@@ -68,7 +68,7 @@ a{color:#111}a:hover{color:#555}
     <span class="nvi" onMouseEnter="{{ openInvolved }}" onClick="{{ nav.involved }}">Get Involved ▾</span>
     <span class="nvi" onMouseEnter="{{ closeMenu }}" onClick="{{ nav.contact }}">Contact</span>
   </div>
-  <div class="nva"><span class="nvi" onClick="{{ ext.login }}">Log in</span><span class="btno" onClick="{{ ext.donate }}">Donate</span><span class="btn" onClick="{{ ext.register }}">Register</span></div>
+  <div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div>
 
   <sc-if value="{{ exploreOpen }}">
     <div class="mm">
@@ -90,26 +90,26 @@ a{color:#111}a:hover{color:#555}
 
   <sc-if value="{{ aboutOpen }}">
     <div class="mm">
-      <div><p class="k">Our ministry</p><div class="mml"><span onClick="{{ nav.ministries }}">Seek Ministries</span></div></div>
-      <div><p class="k">Our story</p><div class="mml"><span onClick="{{ nav.mission }}">Mission &amp; Story</span><span onClick="{{ nav.leadership }}">Leadership</span></div></div>
-      <div><p class="k">Connect</p><div class="mml"><span onClick="{{ nav.contact }}">Contact</span></div></div>
-      <div><div class="im" style="height:110px"><span>Photo: staff group photo from this summer</span></div><p class="s" style="margin-top:8px">Run by Seek Ministries, now in our 18th summer</p></div>
+      <div><p class="k">The ministry</p><div class="mml"><span onClick="{{ nav.ministries }}">Seek Ministries</span></div></div>
+      <div><p class="k">Who we are</p><div class="mml"><span onClick="{{ nav.mission }}">Mission &amp; Story</span><span onClick="{{ nav.leadership }}">Leadership</span></div></div>
+      <div><p class="k">Reach us</p><div class="mml"><span onClick="{{ nav.contact }}">Contact</span></div></div>
+      <div><div class="im" style="height:110px"><span>Photo: staff group from this summer</span></div><p class="s" style="margin-top:8px">Our 18th summer of camp</p></div>
     </div>
   </sc-if>
 
   <sc-if value="{{ involvedOpen }}">
     <div class="mm">
-      <div><p class="k">Join the team</p><div class="mml"><span onClick="{{ nav.work }}">Work at Camp</span><span onClick="{{ ext.apply }}">Apply</span></div></div>
+      <div><p class="k">Join the staff</p><div class="mml"><span onClick="{{ nav.work }}">Work at Camp</span><span onClick="{{ nav.apply }}">Apply</span></div></div>
       <div><p class="k">Events</p><div class="mml"><span onClick="{{ nav.race }}">Hickory FlatOut 5K</span><span onClick="{{ nav.banquet }}">Annual Banquet</span></div></div>
-      <div><p class="k">Give</p><div class="mml"><span onClick="{{ ext.donate }}">Donate</span></div></div>
-      <div><div class="im" style="height:110px"><span>Photo: summer staff team</span></div><p class="s" style="margin-top:8px">Applications open in the winter</p></div>
+      <div><p class="k">Give</p><div class="mml"><span>Donate</span></div></div>
+      <div><div class="im" style="height:110px"><span>Photo: runners at the 5K start line</span></div><p class="s" style="margin-top:8px">The 5K runs Labor Day morning</p></div>
     </div>
   </sc-if>
 </div>
 
 <sc-if value="{{ isHome }}"><div>
   <div class="wrap sec" style="display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center">
-    <div><p class="k">Canton, Georgia, 18th summer</p><h1 class="h1">A safe place for a summer of real outdoor fun</h1><p class="p">Hide and Seek Day Camp is a Christ rooted day camp for kindergarten through fifth grade, open to every family. Six weeks of summer, three campuses, and counselors who know your child by name.</p><div class="row"><span class="btn" onClick="{{ ext.register }}">Register for a session</span><span class="btno" onClick="{{ nav.dates }}">See dates and pricing</span></div></div>
+    <div><p class="k">Canton, Georgia, 18th summer</p><h1 class="h1">A safe place for a summer of real outdoor fun</h1><p class="p">Hide and Seek Day Camp is a Christ rooted day camp for kindergarten through fifth grade, open to every family. Six weeks of summer, three campuses, and counselors who know your child by name.</p><div class="row"><span class="btn">Register for a session</span><span class="btno" onClick="{{ nav.dates }}">See dates and pricing</span></div></div>
     <div class="im" style="height:340px"><span>Hero photo or short video loop: wide shot of kids running the field at Hickory Flat</span></div>
   </div>
   <div class="tint"><div class="wrap"><div class="g4">
@@ -150,7 +150,7 @@ a{color:#111}a:hover{color:#555}
   </div><div class="row" style="margin-top:14px"><span class="btno" onClick="{{ nav.gallery }}">See the gallery</span></div>
   <div class="bx" style="margin-top:24px"><p class="h2" style="margin-bottom:8px">"Parent quote goes here. One or two sentences about how their child came home tired, happy, and talking about Jesus."</p><p class="s">Parent name, camper grade, campus</p></div></div>
   <div class="dark"><div class="wrap" style="padding-top:44px;padding-bottom:44px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center">
-    <div><h2 class="h2" style="color:#fff">Ready to pick your weeks?</h2><p class="p" style="color:#ddd">Registration opens March 1. Sessions fill quickly at Hickory Flat.</p><div class="row"><span class="btn" style="background:#fff;color:#111" onClick="{{ ext.register }}">Register</span><span class="btno" style="border-color:#fff;color:#fff" onClick="{{ ext.scholarship }}">Apply for a scholarship</span></div></div>
+    <div><h2 class="h2" style="color:#fff">Ready to pick your weeks?</h2><p class="p" style="color:#ddd">Registration opens March 1. Sessions fill quickly at Hickory Flat.</p><div class="row"><span class="btn" style="background:#fff;color:#111">Register</span><span class="btno" style="border-color:#fff;color:#fff" onClick="{{ nav.scholarships }}">Apply for a scholarship</span></div></div>
     <div class="im" style="height:180px;border-color:#fff"><span>Photo: campers waving at carpool</span></div>
   </div></div>
 </div></sc-if>
@@ -176,7 +176,7 @@ a{color:#111}a:hover{color:#555}
 
 <sc-if value="{{ isSummer }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.explore }}">Explore Camp</span> / Summer Day Camp</p></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center"><div><p class="k">Kindergarten through 5th grade</p><h1 class="h1">Summer Day Camp</h1><p class="p">Six weekly sessions in June and July, Monday through Friday, 9 a.m. to 3 p.m. Campers spend the day outside in small groups with a counselor who stays with them all week.</p><div class="row"><span class="btn" onClick="{{ ext.register }}">Register</span><span class="btno" onClick="{{ nav.dates }}">See dates and pricing</span></div></div><div class="im" style="height:300px"><span>Hero photo: full group shot on the field</span></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center"><div><p class="k">Kindergarten through 5th grade</p><h1 class="h1">Summer Day Camp</h1><p class="p">Six weekly sessions in June and July, Monday through Friday, 9 a.m. to 3 p.m. Campers spend the day outside in small groups with a counselor who stays with them all week.</p><div class="row"><span class="btn">Register</span><span class="btno" onClick="{{ nav.dates }}">See dates and pricing</span></div></div><div class="im" style="height:300px"><span>Hero photo: full group shot on the field</span></div></div>
   <div class="tint"><div class="wrap"><div class="g4"><div class="bx"><p class="h3">Grades</p><p class="s">K through 5th</p></div><div class="bx"><p class="h3">Hours</p><p class="s">9 a.m. to 3 p.m.</p></div><div class="bx"><p class="h3">Cost</p><p class="s">$275 per week</p></div><div class="bx"><p class="h3">Campuses</p><p class="s">All three</p></div></div></div></div>
   <div class="wrap sec"><h2 class="h2">A day at camp</h2><div class="g2"><div class="bx"><p class="s">7:30 to 9 a.m. Early drop off<br>9:15 to 9:45 a.m. Snacks<br>9:45 to 10:15 a.m. Assembly<br>10:15 to 11:45 a.m. Three rotations<br>11:45 a.m. to 12:15 p.m. Lunch from home<br>12:15 to 2:45 p.m. Four to five rotations<br>2:45 to 3 p.m. Carpool<br>3 to 6 p.m. Late pick up</p></div><div class="im" style="height:230px"><span>Photo strip: snack time, assembly, rotations, carpool</span></div></div></div>
   <div class="wrap sec" style="padding-top:0"><h2 class="h2">Activities</h2><div class="g4">
@@ -190,13 +190,13 @@ a{color:#111}a:hover{color:#555}
     <div><div class="im" style="height:120px"><span>Photo</span></div><p class="s" style="margin-top:6px">Thursday water day</p></div>
   </div><p class="s" style="margin-top:12px">Friday is open woods, free reign of the outdoor activities.</p></div>
   <div class="tint"><div class="wrap"><div class="g2" style="align-items:center"><div><h2 class="h2">Bible teaching</h2><p class="p">Curriculum rotations sit alongside the games. Campers memorize scripture and talk about the character of God on walks around camp.</p><p class="s">Matthew 6:33 and Psalm 119:11</p></div><div class="im" style="height:200px"><span>Photo: small group with counselor and Bible</span></div></div></div></div>
-  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px"><h2 class="h2" style="color:#fff">Pick your weeks</h2><div class="row"><span class="btn" style="background:#fff;color:#111" onClick="{{ ext.register }}">Register</span><span class="btno" style="border-color:#fff;color:#fff" onClick="{{ nav.faqs }}">Parent guide and FAQs</span></div></div></div>
+  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px"><h2 class="h2" style="color:#fff">Pick your weeks</h2><div class="row"><span class="btn" style="background:#fff;color:#111">Register</span><span class="btno" style="border-color:#fff;color:#fff" onClick="{{ nav.faqs }}">Parent guide and FAQs</span></div></div></div>
 </div></sc-if>
 
 <sc-if value="{{ isSeek }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.explore }}">Explore Camp</span> / SEEK Adventure Middle School Camp</p></div>
   <div class="im" style="height:280px;border-radius:0;border-left:0;border-right:0;margin-top:16px"><span>Banner photo: middle schoolers deep in the woods</span></div>
-  <div class="wrap sec"><p class="k">Finished 6th, 7th, and 8th grade</p><h1 class="h1">SEEK Adventure Middle School Camp</h1><p class="p">One week at Hickory Flat where middle schoolers connect with their peers and their counselors as they grow in their walk with the Lord. Having only middle schoolers on campus means bigger activities and more time in the woods.</p><div class="row"><span class="btn" onClick="{{ ext.register }}">Register</span></div></div>
+  <div class="wrap sec"><p class="k">Finished 6th, 7th, and 8th grade</p><h1 class="h1">SEEK Adventure Middle School Camp</h1><p class="p">One week at Hickory Flat where middle schoolers connect with their peers and their counselors as they grow in their walk with the Lord. Having only middle schoolers on campus means bigger activities and more time in the woods.</p><div class="row"><span class="btn">Register</span></div></div>
   <div class="tint"><div class="wrap"><div class="g4"><div class="bx"><p class="h3">Grades</p><p class="s">Finished 6th to 8th</p></div><div class="bx"><p class="h3">Length</p><p class="s">One week in July</p></div><div class="bx"><p class="h3">Hours</p><p class="s">9 a.m. to 4 p.m.</p></div><div class="bx"><p class="h3">Cost</p><p class="s">$300, Hickory Flat only</p></div></div><p class="s" style="margin-top:12px">No early drop off or post camp for this program.</p></div></div>
   <div class="wrap sec"><div class="g2"><div><h2 class="h2">What the week covers</h2><p class="p">The curriculum focuses on God's plan for their lives and how to walk closer with Him through a transitional phase of life. Campers make Christian friends from their own community.</p></div><div class="g2" style="gap:12px"><div class="im" style="height:120px"><span>Photo: night activity</span></div><div class="im" style="height:120px"><span>Photo: hiking</span></div><div class="im" style="height:120px"><span>Photo: teaching circle</span></div><div class="im" style="height:120px"><span>Photo: high ropes</span></div></div></div></div>
   <div class="wrap sec" style="padding-top:0"><div class="im" style="height:180px"><span>SEEK Adventure logo</span></div></div>
@@ -204,7 +204,7 @@ a{color:#111}a:hover{color:#555}
 
 <sc-if value="{{ isWinter }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.explore }}">Explore Camp</span> / Winter Camp</p></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center"><div><p class="k">Three days in December</p><h1 class="h1">Winter Camp</h1><p class="p">A short camp during winter break for families who need care and kids who miss their counselors. Same staff, same games, colder woods.</p><div class="row"><span class="btn" onClick="{{ ext.register }}">Register</span><span class="btno" onClick="{{ nav.contact }}">Contact us</span></div></div><div class="im" style="height:290px"><span>Hero photo: winter camp indoor games</span></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center"><div><p class="k">Three days in December</p><h1 class="h1">Winter Camp</h1><p class="p">A short camp during winter break for families who need care and kids who miss their counselors. Same staff, same games, colder woods.</p><div class="row"><span class="btn">Register</span><span class="btno" onClick="{{ nav.contact }}">Contact us</span></div></div><div class="im" style="height:290px"><span>Hero photo: winter camp indoor games</span></div></div>
   <div class="tint"><div class="wrap"><div class="g3"><div class="bx"><p class="h3">Dates</p><p class="s">Three days in December, dates posted in the fall</p></div><div class="bx"><p class="h3">Hours</p><p class="s">9 a.m. to 3 p.m.</p></div><div class="bx"><p class="h3">Campus</p><p class="s">Hickory Flat</p></div></div></div></div>
   <div class="wrap sec"><h2 class="h2">What happens</h2><div class="g3"><div class="im" style="height:160px"><span>Photo: indoor assembly</span></div><div class="im" style="height:160px"><span>Photo: crafts table</span></div><div class="im" style="height:160px"><span>Photo: cold weather field games</span></div></div></div>
 </div></sc-if>
@@ -243,15 +243,15 @@ a{color:#111}a:hover{color:#555}
 <sc-if value="{{ isHickory }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.explore }}">Explore Camp</span> / <span onClick="{{ nav.locations }}">Locations</span> / Hickory Flat</p></div>
   <div class="im" style="height:290px;border-radius:0;border-left:0;border-right:0;margin-top:16px"><span>Banner photo: the Hickory Flat field</span></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px"><div><p class="k">Location</p><h1 class="h1">Hickory Flat</h1><p class="p">Our largest campus, hosted by Mt. Zion Baptist Church. A huge field with a wooded area and indoor space for rainy days. Home of SEEK Adventure and the Hickory FlatOut 5K.</p><div class="row"><span class="btn" onClick="{{ ext.register }}">Register at Hickory Flat</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">4096 East Cherokee Drive, Canton, GA 30115</p><p class="h3" style="margin-top:14px">Programs here</p><p class="s">Summer Day Camp, SEEK Adventure, Winter Camp</p><p class="h3" style="margin-top:14px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
-  <div class="tint"><div class="wrap"><h2 class="h2">Drop off and pick up</h2><div class="g2"><div class="bx"><p class="h3">Normal drop off</p><p class="s">Located behind the main church. Enter by the main entrance with the digital sign and drive behind the gym.</p></div><div class="bx"><p class="h3">Rainy day drop off</p><p class="s">Located at the chapel. Enter by the main entrance with the digital sign, drive behind the main church building, and take the small driveway up on the right.</p></div></div><div class="im" style="height:200px;margin-top:18px"><span>Carpool map for this campus</span></div></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px"><div><p class="k">Location</p><h1 class="h1">Hickory Flat</h1><p class="p">Our largest campus, hosted by Mt. Zion Baptist Church. A huge field with a wooded area and indoor space for rainy days. Home of SEEK Adventure and the Hickory FlatOut 5K.</p><div class="row"><span class="btn">Register at Hickory Flat</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">4096 East Cherokee Drive, Canton, GA 30115</p><p class="h3" style="margin-top:14px">Programs here</p><p class="s">Summer Day Camp, SEEK Adventure, Winter Camp</p><p class="h3" style="margin-top:14px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
+  <div class="tint"><div class="wrap"><h2 class="h2">Drop off and pick up</h2><div class="g2"><div class="bx"><p class="h3">Normal drop off</p><p class="s">Located behind the main church, in the back parking lot near the overhang. Enter by the main entrance with the digital sign and drive behind the gym.</p></div><div class="bx"><p class="h3">Rainy day drop off</p><p class="s">Moves inside the chapel, accessed via the side door. Enter by the main entrance with the digital sign, drive behind the main church building, and take the small driveway up on the right.</p></div><div class="bx"><p class="h3">Pick up</p><p class="s">The line begins at the side door of the chapel and wraps around the back. A staff member will approach your car and call for your camper.</p></div><div class="bx"><p class="h3">Carpool rules</p><p class="s">Please move all the way up the line. Only those on your camper's pick up list may collect your child. Cell phone use is not permitted in the carpool line.</p></div></div><div class="im" style="height:200px;margin-top:18px"><span>Carpool map for this campus</span></div></div></div>
   <div class="wrap sec"><div class="g3"><div class="im" style="height:150px"><span>Photo: the woods</span></div><div class="im" style="height:150px"><span>Photo: the ropes course</span></div><div class="im" style="height:150px"><span>Photo: indoor space</span></div></div></div>
 </div></sc-if>
 
 <sc-if value="{{ isBallGround }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.explore }}">Explore Camp</span> / <span onClick="{{ nav.locations }}">Locations</span> / Ball Ground</p></div>
   <div class="im" style="height:290px;border-radius:0;border-left:0;border-right:0;margin-top:16px"><span>Banner photo: the Ball Ground woods loop</span></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px"><div><p class="k">Location</p><h1 class="h1">Ball Ground</h1><p class="p">Hosted by Ball Ground Methodist Church. Mostly woods, with a big outdoor loop, a small field, and a large indoor assembly room.</p><div class="row"><span class="btn" onClick="{{ ext.register }}">Register at Ball Ground</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">3045 Canton Hwy, Ball Ground, GA 30107</p><p class="h3" style="margin-top:14px">Programs here</p><p class="s">Summer Day Camp</p><p class="h3" style="margin-top:14px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px"><div><p class="k">Location</p><h1 class="h1">Ball Ground</h1><p class="p">Hosted by Ball Ground Methodist Church. Mostly woods, with a big outdoor loop, a small field, and a large indoor assembly room.</p><div class="row"><span class="btn">Register at Ball Ground</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">3045 Canton Hwy, Ball Ground, GA 30107</p><p class="h3" style="margin-top:14px">Programs here</p><p class="s">Summer Day Camp</p><p class="h3" style="margin-top:14px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
   <div class="tint"><div class="wrap"><h2 class="h2">Drop off and pick up</h2><div class="g2"><div class="bx"><p class="h3">Normal drop off</p><p class="s">Directions to be supplied by camp staff.</p></div><div class="bx"><p class="h3">Rainy day drop off</p><p class="s">Directions to be supplied by camp staff.</p></div></div><div class="im" style="height:200px;margin-top:18px"><span>Carpool map for this campus</span></div></div></div>
   <div class="wrap sec"><div class="g3"><div class="im" style="height:150px"><span>Photo: the loop trail</span></div><div class="im" style="height:150px"><span>Photo: the field</span></div><div class="im" style="height:150px"><span>Photo: assembly room</span></div></div></div>
 </div></sc-if>
@@ -259,7 +259,7 @@ a{color:#111}a:hover{color:#555}
 <sc-if value="{{ isSixes }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.explore }}">Explore Camp</span> / <span onClick="{{ nav.locations }}">Locations</span> / Sixes</p></div>
   <div class="im" style="height:290px;border-radius:0;border-left:0;border-right:0;margin-top:16px"><span>Banner photo: the Sixes field</span></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px"><div><p class="k">Location</p><h1 class="h1">Sixes</h1><p class="p">A large field with some woods and some indoor space, on Bells Ferry Road. Our newest campus.</p><div class="row"><span class="btn" onClick="{{ ext.register }}">Register at Sixes</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">8385 Bells Ferry Road, Canton, GA 30114</p><p class="h3" style="margin-top:14px">Programs here</p><p class="s">Summer Day Camp</p><p class="h3" style="margin-top:14px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px"><div><p class="k">Location</p><h1 class="h1">Sixes</h1><p class="p">A large field with some woods and some indoor space, on Bells Ferry Road. Our newest campus.</p><div class="row"><span class="btn">Register at Sixes</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">8385 Bells Ferry Road, Canton, GA 30114</p><p class="h3" style="margin-top:14px">Programs here</p><p class="s">Summer Day Camp</p><p class="h3" style="margin-top:14px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
   <div class="tint"><div class="wrap"><h2 class="h2">Drop off and pick up</h2><div class="g2"><div class="bx"><p class="h3">Normal drop off</p><p class="s">Directions to be supplied by camp staff.</p></div><div class="bx"><p class="h3">Rainy day drop off</p><p class="s">Directions to be supplied by camp staff.</p></div></div><div class="im" style="height:200px;margin-top:18px"><span>Carpool map for this campus</span></div></div></div>
   <div class="wrap sec"><div class="g3"><div class="im" style="height:150px"><span>Photo: field games</span></div><div class="im" style="height:150px"><span>Photo: shaded woods</span></div><div class="im" style="height:150px"><span>Photo: indoor space</span></div></div></div>
 </div></sc-if>
@@ -293,7 +293,7 @@ a{color:#111}a:hover{color:#555}
     </div>
   </div>
   <div class="tint"><div class="wrap"><div class="g2" style="align-items:center"><div><h2 class="h2">Daily hours</h2><p class="s">Early drop off begins 7:30 a.m.<br>Camp runs 9 a.m. to 3 p.m.<br>Post camp runs until 6 p.m.<br>Lunch is packed and brought from home.</p></div><div class="im" style="height:180px"><span>Photo: kids with lunch boxes</span></div></div></div></div>
-  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center"><div><h2 class="h2" style="color:#fff;margin:0">Register on UltraCamp</h2><p class="s" style="color:#bbb;margin-top:6px">Cost should not keep a camper home. Scholarships are available.</p></div><div class="row"><span class="btn" style="background:#fff;color:#111" onClick="{{ ext.register }}">Register</span><span class="btno" style="border-color:#fff;color:#fff" onClick="{{ nav.scholarships }}">Scholarships</span></div></div></div>
+  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center"><div><h2 class="h2" style="color:#fff;margin:0">Register on UltraCamp</h2><p class="s" style="color:#bbb;margin-top:6px">Cost should not keep a camper home. Scholarships are available.</p></div><div class="row"><span class="btn" style="background:#fff;color:#111">Register</span><span class="btno" style="border-color:#fff;color:#fff" onClick="{{ nav.scholarships }}">Scholarships</span></div></div></div>
 </div></sc-if>
 
 <sc-if value="{{ isSafety }}"><div>
@@ -306,25 +306,44 @@ a{color:#111}a:hover{color:#555}
 
 <sc-if value="{{ isFaqs }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.parent }}">Parent Info</span> / Parent Guide &amp; FAQs</p></div>
-  <div class="wrap sec"><h1 class="h1">Parent Guide &amp; FAQs</h1><p class="p">The guide first, then the questions we hear most.</p><div class="row"><span class="btn">Download the parent guide</span></div></div>
-  <div class="tint"><div class="wrap"><h2 class="h2">What to send with your camper</h2><div class="g4"><div class="bx"><p class="h3">Packed lunch</p><p class="s">Camp does not provide food.</p></div><div class="bx"><p class="h3">Water bottle</p><p class="s">Labeled with a name.</p></div><div class="bx"><p class="h3">Closed toe shoes</p><p class="s">For the woods and the ropes course.</p></div><div class="bx"><p class="h3">Towel on Thursday</p><p class="s">Water day, plus a change of clothes.</p></div></div></div></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1fr 1.2fr;gap:36px"><div class="im" style="height:300px"><span>Photo: campers at lunch tables</span></div><div><h2 class="h2">Frequently asked</h2>
-    <div class="acc" style="border-top-color:#111"><p class="h3" style="margin:0">What does camp cost?</p><p class="s" style="margin-top:8px">Sessions are $275 per week at all three locations, 9 a.m. to 3 p.m. Early drop off is $15 and post camp is $30 per session.</p></div>
-    <div class="acc"><p class="h3" style="margin:0">What are the camp hours?</p></div>
-    <div class="acc"><p class="h3" style="margin:0">Where are the campuses?</p></div>
-    <div class="acc"><p class="h3" style="margin:0">Where do I drop off and pick up?</p></div>
-    <div class="acc"><p class="h3" style="margin:0">Are staff background checked?</p></div>
-    <div class="acc"><p class="h3" style="margin:0">Does camp provide lunch?</p></div>
-    <div class="acc"><p class="h3" style="margin:0">Do we have to be a church family?</p></div>
-    <div class="acc"><p class="h3" style="margin:0">Can I get help paying for camp?</p></div>
-    <div class="acc" style="border-bottom:1px solid #ddd"><p class="h3" style="margin:0">What if my camper needs medication?</p></div>
-  </div></div>
+  <div class="wrap sec"><h1 class="h1">Parent Guide &amp; FAQs</h1><p class="p">Here are the questions we hear most from parents like you. We want to make sure your family has a memorable camp experience. Have a question not answered here? Feel free to contact us.</p><div class="row"><span class="btn">Download the parent guide</span></div></div>
+  <div class="tint"><div class="wrap"><h2 class="h2">What to send with your camper</h2><div class="g3"><div class="bx"><p class="h3">Sack lunch and a snack</p><p class="s">Camp does not provide food.</p></div><div class="bx"><p class="h3">Refillable water bottle</p><p class="s">Water stations are available throughout the facility.</p></div><div class="bx"><p class="h3">Closed toe shoes</p><p class="s">Required for most activities.</p></div><div class="bx"><p class="h3">Sunscreen</p><p class="s">Most of the day is spent outside.</p></div><div class="bx"><p class="h3">Swimsuit and towel on Thursdays</p><p class="s">Thursday is water day.</p></div><div class="bx"><p class="h3">Comfortable, modest clothing</p><p class="s">No undergarments showing, including sports bras.</p></div></div><p class="s" style="margin-top:14px">Please mark your child's first and last names on all belongings.</p></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1fr 1.4fr;gap:36px;align-items:start">
+    <div style="position:sticky;top:24px"><div class="im" style="height:260px"><span>Photo: campers at lunch tables</span></div><div class="bx" style="margin-top:18px"><p class="h3">Jump to</p><div class="mml" style="margin-top:8px"><span>The basics</span><span>Getting ready for the day</span><span>At camp</span><span>Drop off and pick up</span><span>Our staff</span></div></div></div>
+    <div>
+      <h2 class="h2">The basics</h2>
+      <div class="acc" style="border-top-color:#111"><p class="h3" style="margin:0">Where is Hide and Seek Day Camp?</p><p class="s" style="margin-top:8px">Camp runs at three campuses. Hickory Flat is at Mt. Zion Baptist Church, 4096 East Cherokee Drive, Canton. Ball Ground is at Ball Ground Methodist Church, 3045 Canton Hwy, Ball Ground. Sixes is at 8385 Bells Ferry Road, Canton. Our mail is received at a different address, 1894 Lower Union Hill Rd, Canton, GA 30115.</p></div>
+      <div class="acc"><p class="h3" style="margin:0">What are the camp hours?</p><p class="s" style="margin-top:8px">Our regular camp program begins at 9 a.m. and ends at 3 p.m. Pre camp supervision is provided starting at 7:30 a.m. and post camp supervision is provided until 6 p.m. each day.</p></div>
+      <div class="acc"><p class="h3" style="margin:0">What is the price of camp?</p><p class="s" style="margin-top:8px">The price of camp is organized by the session, meaning the week the camper attends. You can register for as many sessions as you like. Sessions are $275 and run 9 a.m. to 3 p.m. Early drop off is 7:30 a.m. to 9 a.m. for $15 per session. Post camp is 3 p.m. to 6 p.m. for $30 per session. To register for pre or post camp, your camper must be registered for the regular hours of camp. They are add on options, not individual session hours.</p></div>
+      <div class="acc"><p class="h3" style="margin:0">Will camp still run during holiday weeks?</p><p class="s" style="margin-top:8px">Yes. Our most common conflicts are Memorial Day and the Fourth of July. We will not have camp on either of those days, but every other day of that week camp runs as usual. A four day session is priced lower than a full five day session.</p></div>
+      <div class="acc" style="border-bottom:1px solid #ddd"><p class="h3" style="margin:0">Can I get help paying for camp?</p><p class="s" style="margin-top:8px">Yes. Scholarships are available at every campus and the application is short.</p></div>
+
+      <h2 class="h2" style="margin-top:36px">Getting ready for the day</h2>
+      <div class="acc" style="border-top-color:#111"><p class="h3" style="margin:0">What should my child wear to camp?</p><p class="s" style="margin-top:8px">Any comfortable and modest clothing is acceptable. Closed toe shoes are required for most activities. Camp attire requirements are that no undergarments are showing, including sports bras. Please mark your child's first and last names on all belongings.</p></div>
+      <div class="acc" style="border-bottom:1px solid #ddd"><p class="h3" style="margin:0">What should my child bring each day?</p><p class="s" style="margin-top:8px">A sack lunch, a snack, closed toe shoes, a refillable water bottle, sunscreen, and a swimsuit and towel on Thursdays. Please mark your child's first and last names on all belongings.</p></div>
+
+      <h2 class="h2" style="margin-top:36px">At camp</h2>
+      <div class="acc" style="border-top-color:#111"><p class="h3" style="margin:0">Is water provided on hot days?</p><p class="s" style="margin-top:8px">Yes, water is provided every day. Water coolers are located at stations throughout the campus. Campers typically carry their water bottles with them, and our staff will make stops for water between activities to make sure your child is hydrated at all times.</p></div>
+      <div class="acc"><p class="h3" style="margin:0">How will my child be placed in a group?</p><p class="s" style="margin-top:8px">Children are grouped according to grade level, age, and gender, and can also be placed according to their group request form. If you wish to request a group or counselor, you can complete that form during registration. All groups are supervised by a counselor. If a group exceeds a certain number of campers, a junior counselor is assigned to help manage the larger group.</p></div>
+      <div class="acc"><p class="h3" style="margin:0">What if it rains?</p><p class="s" style="margin-top:8px">Camp will be in session as usual. We have lots of fun and special activities just for those rainy days.</p></div>
+      <div class="acc"><p class="h3" style="margin:0">If my child is having a birthday, will you do something special?</p><p class="s" style="margin-top:8px">Of course. Please let us know and we will recognize any camper with a birthday during one of our assemblies.</p></div>
+      <div class="acc"><p class="h3" style="margin:0">Are there any off campus field trips?</p><p class="s" style="margin-top:8px">No, everything takes place on campus. We do occasionally have guest speakers who come in and provide fun activities for our campers.</p></div>
+      <div class="acc" style="border-bottom:1px solid #ddd"><p class="h3" style="margin:0">Do we have to be a church family?</p><p class="s" style="margin-top:8px">No. Camp is Christ rooted and open to everyone.</p></div>
+
+      <h2 class="h2" style="margin-top:36px">Drop off and pick up</h2>
+      <div class="acc" style="border-top-color:#111;border-bottom:1px solid #ddd"><p class="h3" style="margin:0">How does drop off and pick up work?</p><p class="s" style="margin-top:8px">Weather permitting at Hickory Flat, drop off is in the back parking lot of Mt. Zion Baptist Church near the overhang. If drop off needs to move due to inclement weather, it moves inside the chapel and is accessed via the side door. The pick up line begins at the side door of the chapel and wraps around the back of the chapel. A staff member will approach your car and call for your camper, who will be sent to the carpool line. Please move all the way up the line so we can serve as many cars as possible. Only those on your camper's pick up list will be allowed to pick up your child. Cell phone use is not permitted in the carpool line.</p><p class="s" style="margin-top:8px">Directions for Ball Ground and Sixes are on each campus page.</p></div>
+
+      <h2 class="h2" style="margin-top:36px">Our staff</h2>
+      <div class="acc" style="border-top-color:#111"><p class="h3" style="margin:0">What is the staff selection process?</p><p class="s" style="margin-top:8px">Staff members apply through our online application in late winter. New applicants are interviewed individually by the director. Once the applicant passes that interview, they participate in a group interview with the other counselor applicants and submit a background check. Once hired, staff attend training in May covering low and high ropes training, first aid, curriculum, games, and small group activities.</p></div>
+      <div class="acc" style="border-bottom:1px solid #ddd"><p class="h3" style="margin:0">Are your staff members background checked?</p><p class="s" style="margin-top:8px">Yes. All Hide and Seek Day Camp employees receive a background check prior to the start of the summer. All employees are required to provide several references and go through counselor training. All employees also receive ropes course training from a certified third party corporation before the start of the summer. Your child's safety is our highest priority.</p></div>
+    </div>
+  </div>
   <div class="dark"><div class="wrap" style="padding-top:36px;padding-bottom:36px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><h2 class="h2" style="color:#fff;margin:0">Question not answered here?</h2><span class="btn" style="background:#fff;color:#111" onClick="{{ nav.contact }}">Contact us</span></div></div>
 </div></sc-if>
 
 <sc-if value="{{ isScholarships }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.parent }}">Parent Info</span> / Scholarships</p></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center"><div><h1 class="h1">Scholarships</h1><p class="p">Cost should never be the reason a child misses camp. Scholarships are available at every campus, and the application is short.</p><div class="row"><span class="btn" onClick="{{ ext.scholarship }}">Start the application</span></div></div><div class="im" style="height:250px"><span>Photo: camper smiling with a counselor</span></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center"><div><h1 class="h1">Scholarships</h1><p class="p">Cost should never be the reason a child misses camp. Scholarships are available at every campus, and the application is short.</p><div class="row"><span class="btn">Start the application</span></div></div><div class="im" style="height:250px"><span>Photo: camper smiling with a counselor</span></div></div>
   <div class="tint"><div class="wrap"><h2 class="h2">How it works</h2><div class="g4"><div class="bx"><p class="h3">1. Apply</p><p class="s">Fill out the short application with your family details.</p></div><div class="bx"><p class="h3">2. We review</p><p class="s">The camp office reviews every request privately.</p></div><div class="bx"><p class="h3">3. We respond</p><p class="s">You hear back with the amount awarded.</p></div><div class="bx"><p class="h3">4. Register</p><p class="s">Reserve your weeks with the award applied.</p></div></div></div></div>
   <div class="wrap sec"><div class="g2" style="align-items:center"><div><h2 class="h2">Questions about paying for camp</h2><p class="p">The camp office handles every scholarship request quietly. Call or write and ask.</p><p class="lk" onClick="{{ nav.contact }}">Contact the camp office</p></div><div class="im" style="height:180px"><span>Photo: family at pick up</span></div></div></div>
 </div></sc-if>
@@ -348,7 +367,7 @@ a{color:#111}a:hover{color:#555}
     <div class="bx"><div class="im" style="height:140px;margin-bottom:12px"><span>Photo: 5K start line</span></div><p class="h3">Hickory FlatOut 5K</p><p class="s">A Labor Day morning race and kids fun run that funds camp</p><p class="lk" style="margin-top:10px" onClick="{{ nav.race }}">Race details</p></div>
     <div class="bx"><div class="im" style="height:140px;margin-bottom:12px"><span>Photo: banquet room</span></div><p class="h3">Annual Banquet</p><p class="s">A spring gathering to thank the people who give</p><p class="lk" style="margin-top:10px" onClick="{{ nav.banquet }}">Banquet details</p></div>
   </div></div>
-  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center"><div><h2 class="h2" style="color:#fff;margin:0">Support the ministry</h2><p class="s" style="color:#bbb;margin-top:6px">Gifts send kids to camp and keep the property running.</p></div><span class="btn" style="background:#fff;color:#111" onClick="{{ ext.donate }}">Donate</span></div></div>
+  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center"><div><h2 class="h2" style="color:#fff;margin:0">Support the ministry</h2><p class="s" style="color:#bbb;margin-top:6px">Gifts send kids to camp and keep the property running.</p></div><span class="btn" style="background:#fff;color:#111">Donate</span></div></div>
 </div></sc-if>
 
 <sc-if value="{{ isMission }}"><div>
@@ -383,26 +402,66 @@ a{color:#111}a:hover{color:#555}
   <div class="wrap sec"><h1 class="h1">Get Involved</h1><p class="p">Work a summer, run a race, come to the banquet, or give. Every one of these keeps camp running.</p></div>
   <div class="wrap sec" style="padding-top:0"><div class="g2">
     <div class="bx" style="display:flex;gap:16px"><div class="im" style="height:120px;width:170px;flex:none"><span>Photo: counselors</span></div><div><p class="h3">Work at Camp</p><p class="s">Summer staff and counselor roles, plus what training looks like</p><p class="lk" style="margin-top:8px" onClick="{{ nav.work }}">Open</p></div></div>
-    <div class="bx" style="display:flex;gap:16px"><div class="im" style="height:120px;width:170px;flex:none"><span>Photo: staff</span></div><div><p class="h3">Apply</p><p class="s">The staff application, hosted outside the site</p><p class="lk" style="margin-top:8px" onClick="{{ ext.apply }}">Open</p></div></div>
+    <div class="bx" style="display:flex;gap:16px"><div class="im" style="height:120px;width:170px;flex:none"><span>Photo: staff</span></div><div><p class="h3">Apply</p><p class="s">The staff application, hosted outside the site</p><p class="lk" style="margin-top:8px" onClick="{{ nav.apply }}">Open</p></div></div>
     <div class="bx" style="display:flex;gap:16px"><div class="im" style="height:120px;width:170px;flex:none"><span>Photo: 5K runners</span></div><div><p class="h3">Hickory FlatOut 5K</p><p class="s">Labor Day morning, a Peachtree qualifier, with a kids fun run</p><p class="lk" style="margin-top:8px" onClick="{{ nav.race }}">Open</p></div></div>
     <div class="bx" style="display:flex;gap:16px"><div class="im" style="height:120px;width:170px;flex:none"><span>Photo: banquet</span></div><div><p class="h3">Annual Banquet</p><p class="s">A spring evening for the people who support camp</p><p class="lk" style="margin-top:8px" onClick="{{ nav.banquet }}">Open</p></div></div>
   </div></div>
-  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><h2 class="h2" style="color:#fff;margin:0">Give to Seek Ministries</h2><span class="btn" style="background:#fff;color:#111" onClick="{{ ext.donate }}">Donate</span></div></div>
+  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><h2 class="h2" style="color:#fff;margin:0">Give to Seek Ministries</h2><span class="btn" style="background:#fff;color:#111">Donate</span></div></div>
 </div></sc-if>
 
 <sc-if value="{{ isWork }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.involved }}">Get Involved</span> / Work at Camp</p></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center"><div><p class="k">Summer staff</p><h1 class="h1">Spend your summer outside with kids who will remember you</h1><p class="p">Counselors are the reason families come back. If you love kids, love the woods, and want to point campers to Christ, we want to talk to you.</p><div class="row"><span class="btn" onClick="{{ ext.apply }}">Apply now</span></div></div><div class="im" style="height:290px"><span>Photo: counselor carrying a camper on their shoulders</span></div></div>
-  <div class="tint"><div class="wrap"><h2 class="h2">Roles</h2><div class="g3"><div class="bx"><p class="h3">Counselor</p><p class="s">Lead a small group all week, every week of the summer</p></div><div class="bx"><p class="h3">Activity staff</p><p class="s">Run the zipline, rock wall, ninja island, and field games</p></div><div class="bx"><p class="h3">Support staff</p><p class="s">Crafts, carpool, and everything that keeps the day moving</p></div></div></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center"><div><p class="k">Summer 2026 applications now open</p><h1 class="h1">Love God? Love kids? Love being outdoors?</h1><p class="p">Come spend your summer on staff with Hide and Seek Day Camp. Below are the positions we are hiring for the Summer 2026 season. All summer availability is preferred for every role.</p><div class="row"><span class="btn" onClick="{{ nav.apply }}">Apply today</span></div></div><div class="im" style="height:290px"><span>Photo: counselor carrying a camper on their shoulders</span></div></div>
+  <div class="tint"><div class="wrap">
+    <h2 class="h2">Camp leadership</h2>
+    <div class="g2">
+      <div class="bx"><p class="h3">Director</p><p class="k" style="margin:6px 0 8px">Monday to Friday, hours vary · Education background and experience required</p><p class="s">We are looking for a leader who is a hard worker and has a big heart for interacting with children and their families. Directors lead spiritual growth in both counselors and campers, monitor all camp activities, supervise staff, handle camper check in and check out, and facilitate carpool. The director handles weekly scheduling and group assignments for campers and staff, and ensures the safety and well being of the campus throughout the summer.</p></div>
+      <div class="bx"><p class="h3">Program Director</p><p class="k" style="margin:6px 0 8px">Monday to Friday, 7:15 a.m. to 4 p.m. · Age 18+ · Camp or education experience preferred</p><p class="s">Leads daily assemblies and games at camp. Sets up and takes down ropes course equipment and supervises ropes course activities each day. Assists with drop off and carpool and sets up materials for the daily program. Works closely with the campus director to keep programming running smoothly.</p></div>
+    </div>
+
+    <h2 class="h2" style="margin-top:36px">Adventure leads</h2>
+    <p class="p">Hickory Flat only. Monday to Friday, 8 a.m. to 4 p.m. Age 18+, camp or education experience preferred. Every adventure lead serves and supervises counselors and junior counselors, reports to the program director, and sets up, takes down, and facilitates the ropes course during the day. Each also leads a small group of counselors one day a week and attends a small group of their own one day a week.</p>
+    <div class="g3">
+      <div class="bx"><p class="h3">Curriculum Emphasis</p><p class="s">Sets up and cleans up materials for Bible curriculum time, introduces the curriculum during morning assembly, and guides groups through the curriculum rotation. Leads groups as small as ten campers and as large as the full camp of roughly one hundred twenty campers and counselors.</p></div>
+      <div class="bx"><p class="h3">Camp Emphasis</p><p class="s">Leads age based camp adventure activities during the adventure rotation, such as how to set up a tent and how to tie knots. Occasionally leads camp wide activities of around one hundred twenty campers and counselors.</p></div>
+      <div class="bx"><p class="h3">Games Emphasis</p><p class="s">Creates and facilitates games and activities during each games rotation. Regularly leads groups of fifty campers and counselors, and occasionally leads camp wide activities of around one hundred twenty people.</p></div>
+    </div>
+
+    <h2 class="h2" style="margin-top:36px">Specialty leads</h2>
+    <div class="g2">
+      <div class="bx"><p class="h3">Photography Lead</p><p class="k" style="margin:6px 0 8px">All locations · Monday to Friday, 8 a.m. to 4 p.m. · Age 18+ · Photography experience required</p><p class="s">Posts regularly on the camp social media pages and creates camp promotion material, highlighting camp and campers. Also leads a small group of counselors one day a week and attends a small group of their own one day a week.</p></div>
+      <div class="bx"><p class="h3">Arts and Crafts Lead</p><p class="k" style="margin:6px 0 8px">Monday to Thursday, 9:30 a.m. to 3 p.m. · Age 18+</p><p class="s">A leadership counselor position that involves planning, preparing, and creating craft projects for campers. May lead groups of up to thirty campers at one time with their counselors.</p></div>
+    </div>
+
+    <h2 class="h2" style="margin-top:36px">Counselors</h2>
+    <div class="g2">
+      <div class="bx"><p class="h3">Counselor</p><p class="k" style="margin:6px 0 8px">Monday to Friday, 8 a.m. to 4 p.m. · Age 17+</p><p class="s">Counselors lead groups of up to eight campers through scheduled camp activities throughout the day, including facilitating the zip line, belaying campers at the rock wall, art and games, and teaching curriculum. Counselors must be comfortable teaching a daily Bible curriculum provided to them, and must pass a ropes course facilitation training program to be hired on staff.</p></div>
+      <div class="bx"><p class="h3">Junior Counselor</p><p class="k" style="margin:6px 0 8px">Monday to Friday, 8 a.m. to 4 p.m. · Age 16+</p><p class="s">Junior counselors assist with day to day activities. They help counselors with group activities, monitor children during morning drop off and afternoon pick up, and participate in assemblies.</p></div>
+    </div>
+
+    <h2 class="h2" style="margin-top:36px">Post camp</h2>
+    <div class="g2">
+      <div class="bx"><p class="h3">Post Camp Lead</p><p class="k" style="margin:6px 0 8px">Monday to Friday, 2:30 p.m. to 6 p.m. · Age 18+</p><p class="s">Transitions campers into post camp activities, supervises campers after camp hours, interacts with parents during pick up, and monitors post camp activities. Comes in early to set up all supplies for the day and cleans up with the other counselors at the end.</p></div>
+      <div class="bx"><p class="h3">Post Camp Counselor</p><p class="k" style="margin:6px 0 8px">Monday to Friday, 2:30 p.m. to 6 p.m. · Age 16+</p><p class="s">Supervises children after camp hours, leads games, and stays engaged with campers during their time after camp.</p></div>
+    </div>
+  </div></div>
   <div class="wrap sec"><div class="g2" style="align-items:center"><div><h2 class="h2">Training and screening</h2><p class="p">Every employee completes a background check, provides several references, and goes through counselor training before campers arrive. Ropes course training is delivered by a certified third party.</p></div><div class="im" style="height:200px"><span>Photo: staff training week</span></div></div></div>
   <div class="wrap sec" style="padding-top:0"><h2 class="h2">What a summer looks like</h2><div class="g4"><div class="im" style="height:140px"><span>Photo: staff huddle</span></div><div class="im" style="height:140px"><span>Photo: water day</span></div><div class="im" style="height:140px"><span>Photo: worship</span></div><div class="im" style="height:140px"><span>Photo: end of summer</span></div></div></div>
-  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><h2 class="h2" style="color:#fff;margin:0">Applications open in the winter</h2><span class="btn" style="background:#fff;color:#111" onClick="{{ ext.apply }}">Start your application</span></div></div>
+  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><h2 class="h2" style="color:#fff;margin:0">Summer 2026 applications are open</h2><span class="btn" style="background:#fff;color:#111" onClick="{{ nav.apply }}">Start your application</span></div></div>
 </div></sc-if>
 
 <sc-if value="{{ isApply }}"><div>
   <div class="wrap"><p class="bc"><span onClick="{{ nav.involved }}">Get Involved</span> / Apply</p></div>
-  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center"><div><h1 class="h1">Apply to work at camp</h1><p class="p">Before you start, have your references ready. The application is hosted outside this site and takes about fifteen minutes.</p><div class="row"><span class="btn" onClick="{{ ext.apply }}">Open the application</span><span class="btno" onClick="{{ nav.work }}">Read about the roles</span></div></div><div class="im" style="height:250px"><span>Photo: staff group laughing</span></div></div>
-  <div class="tint"><div class="wrap"><h2 class="h2">What you will need</h2><div class="g4"><div class="bx"><p class="h3">Contact details</p></div><div class="bx"><p class="h3">Several references</p></div><div class="bx"><p class="h3">Availability by session</p></div><div class="bx"><p class="h3">Consent to a background check</p></div></div></div></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center"><div><h1 class="h1">Apply to work at camp</h1><p class="p">Pick the application that matches the position you want. Applications are hosted on UltraCamp and open in a new tab. Have your references ready before you start.</p><div class="row"><span class="btno" onClick="{{ nav.work }}">Read the role descriptions</span></div></div><div class="im" style="height:250px"><span>Photo: staff group laughing</span></div></div>
+  <div class="tint"><div class="wrap"><h2 class="h2">Choose your application</h2><div class="g2">
+    <div class="bx" style="display:flex;justify-content:space-between;align-items:center;gap:14px"><div><p class="h3">New Counselor and Junior Counselor</p><p class="s">First time on staff at Hide and Seek</p></div><span class="btn">Apply</span></div>
+    <div class="bx" style="display:flex;justify-content:space-between;align-items:center;gap:14px"><div><p class="h3">Return Counselor and Junior Counselor</p><p class="s">You have worked a summer with us before</p></div><span class="btn">Apply</span></div>
+    <div class="bx" style="display:flex;justify-content:space-between;align-items:center;gap:14px"><div><p class="h3">Middle School Week Staff</p><p class="s">SEEK Adventure week at Hickory Flat</p></div><span class="btn">Apply</span></div>
+    <div class="bx" style="display:flex;justify-content:space-between;align-items:center;gap:14px"><div><p class="h3">Director</p><p class="s">Education background and experience required</p></div><span class="btn">Apply</span></div>
+    <div class="bx" style="display:flex;justify-content:space-between;align-items:center;gap:14px"><div><p class="h3">Program Director</p><p class="s">Age 18+, camp or education experience preferred</p></div><span class="btn">Apply</span></div>
+    <div class="bx" style="display:flex;justify-content:space-between;align-items:center;gap:14px"><div><p class="h3">Time Off Request</p><p class="s">For staff already hired for the summer</p></div><span class="btno">Open form</span></div>
+  </div></div></div>
+  <div class="wrap sec"><h2 class="h2">What you will need</h2><div class="g4"><div class="bx"><p class="h3">Contact details</p></div><div class="bx"><p class="h3">Several references</p></div><div class="bx"><p class="h3">Availability by session</p></div><div class="bx"><p class="h3">Consent to a background check</p></div></div><p class="s" style="margin-top:14px">Counselors must also pass a ropes course facilitation training program before being hired on staff.</p></div>
 </div></sc-if>
 
 <sc-if value="{{ isRace }}"><div>
@@ -442,7 +501,7 @@ a{color:#111}a:hover{color:#555}
   <div><p class="h3">Explore Camp</p><div class="mml"><span onClick="{{ nav.summer }}">Summer Day Camp</span><span onClick="{{ nav.seek }}">SEEK Adventure</span><span onClick="{{ nav.winter }}">Winter Camp</span><span onClick="{{ nav.experience }}">Camp Experience</span><span onClick="{{ nav.gallery }}">Gallery</span><span onClick="{{ nav.locations }}">Locations</span></div></div>
   <div><p class="h3">Parent Info</p><div class="mml"><span onClick="{{ nav.dates }}">Dates, Hours &amp; Pricing</span><span onClick="{{ nav.safety }}">Safety</span><span onClick="{{ nav.faqs }}">Parent Guide &amp; FAQs</span><span onClick="{{ nav.scholarships }}">Scholarships</span></div></div>
   <div><p class="h3">About</p><div class="mml"><span onClick="{{ nav.ministries }}">Seek Ministries</span><span onClick="{{ nav.mission }}">Mission &amp; Story</span><span onClick="{{ nav.leadership }}">Leadership</span><span onClick="{{ nav.contact }}">Contact</span></div></div>
-  <div><p class="h3">Get Involved</p><div class="mml"><span onClick="{{ nav.work }}">Work at Camp</span><span onClick="{{ nav.race }}">Hickory FlatOut 5K</span><span onClick="{{ nav.banquet }}">Annual Banquet</span><span onClick="{{ ext.donate }}">Donate</span></div><div class="row" style="margin-top:14px"><span class="btno" style="border-color:#fff;color:#fff">Newsletter</span></div></div>
+  <div><p class="h3">Get Involved</p><div class="mml"><span onClick="{{ nav.work }}">Work at Camp</span><span onClick="{{ nav.race }}">Hickory FlatOut 5K</span><span onClick="{{ nav.banquet }}">Annual Banquet</span><span>Donate</span></div><div class="row" style="margin-top:14px"><span class="btno" style="border-color:#fff;color:#fff">Newsletter</span></div></div>
 </div></div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
@@ -458,24 +517,14 @@ class Component extends DCLogic {
   renderVals() {
     const nav = {};
     PAGES.forEach(p => { nav[p] = () => this.go(p); });
-    const EXT = {
-      donate: 'https://www.ultracamp.com/donations/donationselection.aspx?idCamp=307&campCode=hns&idDonationCategory=2574',
-      register: 'https://www.ultracamp.com/clientlogin.aspx?idCamp=307&campcode=hns&lang=en-Us',
-      login: 'https://www.ultracamp.com/clientlogin.aspx?idCamp=307&campcode=hns&lang=en-Us',
-      apply: 'https://www.ultracamp.com/info/upcomingsessions.aspx?idCamp=307&campcode=hns&lang=en-Us',
-      scholarship: 'https://docs.google.com/forms/d/e/1FAIpQLSfBRBBOD3-lr92C_Meqxd14hgy6BXoeE3-bsOxP9CjAPpA04w/viewform'
-    };
-    const ext = {};
-    Object.keys(EXT).forEach(k => { ext[k] = () => { try { window.open(EXT[k], '_blank', 'noopener'); } catch (e) {} }; });
     const vals = {
       nav,
-      ext,
       exploreOpen: this.state.menu === 'explore',
       parentOpen: this.state.menu === 'parent',
-      aboutOpen: this.state.menu === 'about',
-      involvedOpen: this.state.menu === 'involved',
       openExplore: () => this.setState({ menu: 'explore' }),
       openParent: () => this.setState({ menu: 'parent' }),
+      aboutOpen: this.state.menu === 'about',
+      involvedOpen: this.state.menu === 'involved',
       openAbout: () => this.setState({ menu: 'about' }),
       openInvolved: () => this.setState({ menu: 'involved' }),
       closeMenu: () => this.setState({ menu: null })
