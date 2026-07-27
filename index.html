@@ -481,23 +481,45 @@ a{color:#111}a:hover{color:#555}
 </div></sc-if>
 
 <sc-if value="{{ isContact }}"><div>
-  <div class="wrap sec"><h1 class="h1">Contact</h1><p class="p">Reach the camp office, or find the campus you are looking for.</p></div>
-  <div class="wrap sec" style="padding-top:0;display:grid;grid-template-columns:1fr 1fr;gap:36px">
-    <div class="bx"><p class="h3">Send a message</p><div style="display:grid;gap:12px;margin-top:12px">
-      <div style="border:1px solid #111;border-radius:999px;padding:12px 16px;font:13px system-ui;color:#888">Your name</div>
-      <div style="border:1px solid #111;border-radius:999px;padding:12px 16px;font:13px system-ui;color:#888">Email</div>
-      <div style="border:1px solid #111;border-radius:999px;padding:12px 16px;font:13px system-ui;color:#888">Topic: registration, scholarship, staff, 5K, other</div>
-      <div style="border:1px solid #111;border-radius:16px;padding:12px 16px;font:13px system-ui;color:#888;height:100px">Message</div>
-      <div class="row"><span class="btn">Send</span></div>
-    </div></div>
-    <div><div class="bx"><p class="h3">Camp office</p><p class="s">1894 Lower Union Hill Rd, Canton, GA 30115<br>Phone and email to be supplied<br>Mail is received at the office address</p></div><div class="im" style="height:180px;margin-top:18px"><span>Photo: the camp office or a staff member on the phone</span></div></div>
+  <div class="wrap sec"><h1 class="h1">Contact</h1><p class="p">Email or call the camp office and a real person will answer. We are a small year round team, so the fastest way to get a useful answer is to say which campus and which session you are asking about.</p></div>
+  <div class="wrap sec" style="padding-top:0;display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:start">
+    <div>
+      <div class="bx"><p class="k">Camp office</p>
+        <p class="h2" style="margin:0 0 4px">info@hsdc.camp</p>
+        <p class="h2" style="margin:0 0 14px">(770) 720-0005</p>
+        <p class="s" style="margin-top:0">Mailing address<br>1894 Lower Union Hill Rd, Canton, GA 30115</p>
+        <p class="s" style="margin-top:10px">Mail is received at the office address, not at any of the campuses.</p>
+      </div>
+      <div class="row" style="margin-top:18px"><span class="btn" onClick="{{ ext.email }}">Email the office</span><span class="btno" onClick="{{ ext.phone }}">Call the office</span></div>
+    </div>
+    <div class="im" style="height:320px"><span>Photo: a director at the carpool line</span></div>
   </div>
-  <div class="tint"><div class="wrap"><h2 class="h2">Campuses</h2><div class="g3"><div class="bx"><p class="h3">Hickory Flat</p><p class="s">Mt. Zion Baptist Church<br>4096 East Cherokee Drive<br>Canton, GA 30115</p></div><div class="bx"><p class="h3">Ball Ground</p><p class="s">Ball Ground Methodist Church<br>3045 Canton Hwy<br>Ball Ground, GA 30107</p></div><div class="bx"><p class="h3">Sixes</p><p class="s">8385 Bells Ferry Road<br>Canton, GA 30114</p></div></div><div class="im" style="height:200px;margin-top:18px"><span>Map: office plus three campuses</span></div></div></div>
-  <div class="wrap sec" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><p class="s">Follow camp for photos through the summer</p><div class="row"><span class="btno">Facebook</span><span class="btno">Instagram</span></div></div>
+  <div class="tint"><div class="wrap"><h2 class="h2">What are you trying to do?</h2><p class="p">Most questions have a faster answer than an email. Start here.</p>
+    <div class="g3">
+      <div class="bx"><p class="h3">Register a camper</p><p class="s">Sessions, availability, and payment are all handled in UltraCamp.</p><p class="lk" style="margin-top:10px" onClick="{{ ext.register }}">Go to registration</p></div>
+      <div class="bx"><p class="h3">Ask about cost or a scholarship</p><p class="s">Pricing is on the dates page. Scholarship requests are handled privately by the office.</p><p class="lk" style="margin-top:10px" onClick="{{ nav.scholarships }}">Scholarships</p></div>
+      <div class="bx"><p class="h3">Check a policy or packing question</p><p class="s">Hours, what to wear, what to bring, rain days, and group placement are all answered in the FAQ.</p><p class="lk" style="margin-top:10px" onClick="{{ nav.faqs }}">Parent guide and FAQs</p></div>
+      <div class="bx"><p class="h3">Apply to work at camp</p><p class="s">Applications run through UltraCamp, one per position.</p><p class="lk" style="margin-top:10px" onClick="{{ nav.apply }}">Staff applications</p></div>
+      <div class="bx"><p class="h3">Ask about the 5K or the banquet</p><p class="s">Race registration, sponsor packets, and banquet details live on their own pages.</p><p class="lk" style="margin-top:10px" onClick="{{ nav.race }}">Hickory FlatOut 5K</p></div>
+      <div class="bx"><p class="h3">Give to Seek Ministries</p><p class="s">Gifts send kids to camp and keep the property running.</p><p class="lk" style="margin-top:10px" onClick="{{ ext.donate }}">Donate</p></div>
+    </div>
+  </div></div>
+  <div class="wrap sec"><h2 class="h2">Reaching a campus during camp</h2><p class="p">During the camp day, call the office rather than the host church. Church staff cannot reach campers or counselors on the field.</p>
+    <div class="g3">
+      <div class="bx"><p class="h3">Hickory Flat</p><p class="s">Mt. Zion Baptist Church<br>4096 East Cherokee Drive<br>Canton, GA 30115</p><p class="lk" style="margin-top:10px" onClick="{{ nav.hickory }}">Directions and carpool</p></div>
+      <div class="bx"><p class="h3">Ball Ground</p><p class="s">Ball Ground Methodist Church<br>3045 Canton Hwy<br>Ball Ground, GA 30107</p><p class="lk" style="margin-top:10px" onClick="{{ nav.ballground }}">Directions and carpool</p></div>
+      <div class="bx"><p class="h3">Sixes</p><p class="s">8385 Bells Ferry Road<br>Canton, GA 30114</p><p class="lk" style="margin-top:10px" onClick="{{ nav.sixes }}">Directions and carpool</p></div>
+    </div>
+    <div class="im" style="height:220px;margin-top:18px"><span>Map: the office plus all three campuses</span></div>
+  </div>
+  <div class="dark"><div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap">
+    <div><h2 class="h2" style="color:#fff;margin:0">Follow camp through the summer</h2><p class="s" style="color:#bbb;margin-top:6px">Our photography lead posts from all three campuses most days.</p></div>
+    <div class="row"><span class="btno" style="border-color:#fff;color:#fff">Facebook</span><span class="btno" style="border-color:#fff;color:#fff">Instagram</span><span class="btn" style="background:#fff;color:#111" onClick="{{ nav.gallery }}">See the gallery</span></div>
+  </div></div>
 </div></sc-if>
 
 <div class="ft"><div class="wrap">
-  <div><div class="lg" style="border-color:#fff;color:#fff" onClick="{{ nav.home }}">LOGO<br>Hide &amp; Seek</div><p class="s" style="margin-top:14px">1894 Lower Union Hill Rd<br>Canton, GA 30115</p></div>
+  <div><div class="lg" style="border-color:#fff;color:#fff" onClick="{{ nav.home }}">LOGO<br>Hide &amp; Seek</div><p class="s" style="margin-top:14px">1894 Lower Union Hill Rd<br>Canton, GA 30115<br>info@hsdc.camp<br>(770) 720-0005</p></div>
   <div><p class="h3">Explore Camp</p><div class="mml"><span onClick="{{ nav.summer }}">Summer Day Camp</span><span onClick="{{ nav.seek }}">SEEK Adventure</span><span onClick="{{ nav.winter }}">Winter Camp</span><span onClick="{{ nav.experience }}">Camp Experience</span><span onClick="{{ nav.gallery }}">Gallery</span><span onClick="{{ nav.locations }}">Locations</span></div></div>
   <div><p class="h3">Parent Info</p><div class="mml"><span onClick="{{ nav.dates }}">Dates, Hours &amp; Pricing</span><span onClick="{{ nav.safety }}">Safety</span><span onClick="{{ nav.faqs }}">Parent Guide &amp; FAQs</span><span onClick="{{ nav.scholarships }}">Scholarships</span></div></div>
   <div><p class="h3">About</p><div class="mml"><span onClick="{{ nav.ministries }}">Seek Ministries</span><span onClick="{{ nav.mission }}">Mission &amp; Story</span><span onClick="{{ nav.leadership }}">Leadership</span><span onClick="{{ nav.contact }}">Contact</span></div></div>
@@ -522,7 +544,9 @@ class Component extends DCLogic {
       register: 'https://www.ultracamp.com/clientlogin.aspx?idCamp=307&campcode=hns&lang=en-Us',
       login: 'https://www.ultracamp.com/clientlogin.aspx?idCamp=307&campcode=hns&lang=en-Us',
       apply: 'https://www.ultracamp.com/info/upcomingsessions.aspx?idCamp=307&campcode=hns&lang=en-Us',
-      scholarship: 'https://docs.google.com/forms/d/e/1FAIpQLSfBRBBOD3-lr92C_Meqxd14hgy6BXoeE3-bsOxP9CjAPpA04w/viewform'
+      scholarship: 'https://docs.google.com/forms/d/e/1FAIpQLSfBRBBOD3-lr92C_Meqxd14hgy6BXoeE3-bsOxP9CjAPpA04w/viewform',
+      email: 'mailto:info@hsdc.camp',
+      phone: 'tel:+17707200005'
     };
     const ext = {};
     Object.keys(EXT).forEach(k => { ext[k] = () => { try { window.open(EXT[k], '_blank', 'noopener'); } catch (e) {} }; });

@@ -460,9 +460,36 @@ across photo row. No ticketing. Giving happens around the event, not during it.
 
 ### Contact
 
-Intro, then a two column section: a contact form on the left (name, email, topic
-select, message, send) and the office details plus a photo on the right. Then a
-tinted campuses section with three address cards and a map, and a closing social row.
+**No contact form.** The camp office is small and year round, so this page routes
+people to the fastest answer instead of into an inbox queue.
+
+Sections in order:
+
+1. **Intro.** One paragraph telling the visitor to email or call, and to say which
+   campus and session they are asking about.
+2. **Office block.** Two columns. Left is a bordered card with the email address and
+   phone number set at heading scale, not body scale, because they are the point of
+   the page. Below them, office hours and the mailing address, plus a note that mail
+   goes to the office and not to any campus. Under the card, two buttons: Email the
+   office (primary) and Call the office (secondary). Both must be real `mailto:` and
+   `tel:` links so a parent on a phone taps once. Right column is a photograph of a
+   director so the page has a face on it.
+
+   Email: info@hsdc.camp · Phone: (770) 720-0005. The camp does not publish office
+   hours, so do not add an hours line.
+3. **"What are you trying to do?"** Tinted band, six cards in a three column grid,
+   each naming an intent and pointing at the page that answers it: register a camper ·
+   ask about cost or a scholarship · check a policy or packing question · apply to
+   work at camp · ask about the 5K or the banquet · give to Seek Ministries. This is
+   the section that replaces the form.
+4. **Reaching a campus during camp.** Three address cards, each linking to its campus
+   page for directions and carpool, with a lead paragraph telling parents to call the
+   office rather than the host church during the camp day. Then a map with the office
+   and all three campuses, each pin linking to its campus page.
+5. **Social band.** Dark. Facebook, Instagram, and a link to the gallery, with a line
+   noting the photography lead posts from all three campuses most days.
+
+Contact details are confirmed. No office hours are published by the camp.
 
 ---
 
@@ -472,7 +499,7 @@ The copy in the wireframes is real and camp approved except where marked. These
 items are still outstanding:
 
 - Ball Ground and Sixes drop off and pick up directions
-- Office phone number and email address
+- Any campus specific phone contacts, if the camp wants them listed
 - Leadership bios and director names
 - The parent testimonial quote and attribution
 - Timeline dates on the Mission & Story page
