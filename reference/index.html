@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"><style>
+body{margin:0;background:#f0eee9;font-family:system-ui,sans-serif}
+a{color:#111}a:hover{color:#555}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+.wf{width:1000px;background:#fff;color:#111;font-family:system-ui,sans-serif}
+.ann{background:#111;color:#fff;font:600 11px/1 system-ui;letter-spacing:.09em;text-transform:uppercase;padding:11px 22px;display:flex;justify-content:center;gap:14px;align-items:center}
+.nv{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;border-bottom:1px solid #111}
+.lg{width:118px;height:40px;border:1px solid #111;border-radius:8px;display:flex;align-items:center;justify-content:center;font:700 10px system-ui;letter-spacing:.06em;text-align:center;flex:none}
+.nvl{display:flex;gap:16px;font:500 12px system-ui;align-items:center;color:#111}
+.nva{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:#111;color:#fff;border-radius:999px;padding:9px 18px;font:600 11.5px system-ui;letter-spacing:.02em}
+.btno{display:inline-flex;align-items:center;justify-content:center;border:1px solid #111;border-radius:999px;padding:8px 17px;font:600 11.5px system-ui}
+.im{border:1px solid #111;background-color:#f4f4f4;background-image:linear-gradient(to top right,transparent calc(50% - .5px),#cfcfcf calc(50% - .5px),#cfcfcf calc(50% + .5px),transparent calc(50% + .5px)),linear-gradient(to bottom right,transparent calc(50% - .5px),#cfcfcf calc(50% - .5px),#cfcfcf calc(50% + .5px),transparent calc(50% + .5px));display:flex;align-items:center;justify-content:center;padding:8px;overflow:hidden}
+.im span{background:#fff;border:1px solid #bbb;border-radius:3px;padding:3px 7px;font:italic 10.5px/1.3 system-ui;color:#555;text-align:center;max-width:88%}
+.sec{padding:28px 22px;border-bottom:1px dashed #c4c4c4}
+.h1{font-family:'Architects Daughter',cursive;font-size:36px;line-height:1.08;margin:0 0 12px;text-wrap:pretty}
+.h2{font-family:'Architects Daughter',cursive;font-size:24px;line-height:1.15;margin:0 0 10px;text-wrap:pretty}
+.h3{font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.2;margin:0 0 6px}
+.p{font:13px/1.55 system-ui;color:#333;margin:0 0 10px;max-width:64ch;text-wrap:pretty}
+.s{font:11.5px/1.5 system-ui;color:#555;margin:0}
+.k{font:600 10px system-ui;letter-spacing:.14em;text-transform:uppercase;color:#666;margin:0 0 10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.bx{border:1px solid #111;border-radius:10px;padding:14px}
+.bd{border:1px dashed #999;border-radius:10px;padding:14px}
+.note{font:italic 10.5px/1.4 system-ui;color:#777;margin:8px 0 0}
+.ft{background:#111;color:#fff;padding:26px 22px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1.3fr;gap:18px}
+.ft .h3{color:#fff}
+.ft .s{color:#bbb}
+.pgh{background:#111;color:#fff;font:600 11px system-ui;letter-spacing:.1em;text-transform:uppercase;padding:8px 22px}
+</style></helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Full site wireframe, every page in the sitemap</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Home</div><div class="dv-card"><div class="wf">
+<div class="pgh">Home</div>
+<div class="ann"><span>Join us for our 5K run</span><span style="text-decoration:underline">Hickory FlatOut 5K, Labor Day morning</span></div>
+<div class="nv"><div class="lg">LOGO<br>Hide &amp; Seek</div><div class="nvl"><span style="border-bottom:2px solid #111;padding-bottom:2px">Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="bd" style="margin:10px 22px;border-radius:12px">
+<p class="k">Mega menu, open state for Explore Camp</p>
+<div class="g4">
+<div><p class="h3">Camp Programs</p><p class="s">Summer Day Camp<br>SEEK Adventure Middle School Camp<br>Winter Camp</p></div>
+<div><p class="h3">See Camp</p><p class="s">Camp Experience<br>Gallery</p></div>
+<div><p class="h3">Locations</p><p class="s">Hickory Flat<br>Ball Ground<br>Sixes</p></div>
+<div class="im" style="height:96px"><span>Feature photo: campers on the zipline</span></div>
+</div>
+<p class="note">Parent Info uses the same panel with Dates, Hours and Pricing, Safety, Parent Guide and FAQs, Scholarships.</p>
+</div>
+<div class="sec" style="display:grid;grid-template-columns:1.05fr 1fr;gap:22px;align-items:center">
+<div>
+<p class="k">Canton, Georgia, 18th summer</p>
+<h1 class="h1">A safe, loving place to spend the summer outdoors</h1>
+<p class="p">Hide and Seek Day Camp is a Christ rooted day camp for kindergarten through fifth grade, open to every family. Six weeks of summer, three campuses, and counselors who know your child by name.</p>
+<div class="row"><span class="btn">Register for a session</span><span class="btno">See dates and pricing</span></div>
+<p class="note">Register links out to UltraCamp.</p>
+</div>
+<div class="im" style="height:290px"><span>Full bleed hero photo or short video loop: wide shot of kids running the field at Hickory Flat</span></div>
+</div>
+<div class="sec" style="background:#fafafa">
+<div class="g4">
+<div class="bx"><p class="h3">Who it is for</p><p class="s">Kindergarten through 5th grade, plus one middle school week</p></div>
+<div class="bx"><p class="h3">When</p><p class="s">June and July, Monday to Friday, 9 a.m. to 3 p.m.</p></div>
+<div class="bx"><p class="h3">Where</p><p class="s">Hickory Flat, Ball Ground, and Sixes</p></div>
+<div class="bx"><p class="h3">How long we have run</p><p class="s">18 summers of camp in Cherokee County</p></div>
+</div>
+</div>
+<div class="sec">
+<h2 class="h2">What a day at camp feels like</h2>
+<p class="p">Mornings start with snacks and assembly. The rest of the day is rotations through the woods, the field, and the craft tables, with Bible teaching woven through all of it. Thursday is water day. Friday the woods are open.</p>
+<div class="g3" style="margin-top:14px">
+<div><div class="im" style="height:150px"><span>Photo: rock wall and crate stack</span></div><p class="h3" style="margin-top:8px">Outdoor adventure</p><p class="s">Zipline, rock wall, gaga ball, ninja island low ropes, 9 square</p></div>
+<div><div class="im" style="height:150px"><span>Photo: counselor with a small group</span></div><p class="h3" style="margin-top:8px">Friendship and belonging</p><p class="s">Small groups led by trained counselors who stay with your camper all week</p></div>
+<div><div class="im" style="height:150px"><span>Photo: assembly under the trees</span></div><p class="h3" style="margin-top:8px">Bible teaching</p><p class="s">Matthew 6:33 and Psalm 119:11 shape the week</p></div>
+</div>
+<div class="row" style="margin-top:14px"><span class="btno">See the camp experience</span></div>
+</div>
+<div class="sec">
+<h2 class="h2">Three ways to come to camp</h2>
+<div class="g3">
+<div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo: summer camp group</span></div><p class="h3">Summer Day Camp</p><p class="s">K through 5th grade. Six weekly sessions, 9 a.m. to 3 p.m., $275 per week.</p><p class="s" style="margin-top:8px;text-decoration:underline">Learn more</p></div>
+<div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo: middle schoolers hiking</span></div><p class="h3">SEEK Adventure Middle School Camp</p><p class="s">Finished 6th, 7th, and 8th grade. One week, 9 a.m. to 4 p.m., $300.</p><p class="s" style="margin-top:8px;text-decoration:underline">Learn more</p></div>
+<div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo: winter camp indoors</span></div><p class="h3">Winter Camp</p><p class="s">A three day camp in December for families who need a break in the school year.</p><p class="s" style="margin-top:8px;text-decoration:underline">Learn more</p></div>
+</div>
+</div>
+<div class="sec" style="display:grid;grid-template-columns:1fr 1.1fr;gap:22px;align-items:center;background:#fafafa">
+<div class="im" style="height:250px"><span>Photo collage: three or four candid shots, staff and campers</span></div>
+<div>
+<h2 class="h2">Why parents choose Hide and Seek</h2>
+<div class="g2" style="gap:12px">
+<div class="bx"><p class="h3">Safe</p><p class="s">Background checks, counselor training, certified ropes course training, CPR and first aid trained directors</p></div>
+<div class="bx"><p class="h3">Cared for</p><p class="s">Staff who know the kids and stay with them all week</p></div>
+<div class="bx"><p class="h3">Affordable</p><p class="s">$275 a week with early drop off and late pick up for working parents</p></div>
+<div class="bx"><p class="h3">Christ rooted</p><p class="s">Rooted in the gospel and open to everyone</p></div>
+</div>
+</div>
+</div>
+<div class="sec">
+<h2 class="h2">Three campuses in Cherokee County</h2>
+<div class="g3">
+<div><div class="im" style="height:130px"><span>Photo: Hickory Flat field and woods</span></div><p class="h3" style="margin-top:8px">Hickory Flat</p><p class="s">Mt. Zion Baptist Church, 4096 East Cherokee Drive, Canton</p></div>
+<div><div class="im" style="height:130px"><span>Photo: Ball Ground woods loop</span></div><p class="h3" style="margin-top:8px">Ball Ground</p><p class="s">Ball Ground Methodist Church, 3045 Canton Hwy, Ball Ground</p></div>
+<div><div class="im" style="height:130px"><span>Photo: Sixes open field</span></div><p class="h3" style="margin-top:8px">Sixes</p><p class="s">8385 Bells Ferry Road, Canton</p></div>
+</div>
+<div class="im" style="height:120px;margin-top:14px"><span>Map placeholder: three pins across Cherokee County</span></div>
+</div>
+<div class="sec">
+<div class="g4" style="gap:10px">
+<div class="im" style="height:120px"><span>Gallery photo 1</span></div>
+<div class="im" style="height:120px"><span>Gallery photo 2</span></div>
+<div class="im" style="height:120px"><span>Gallery photo 3</span></div>
+<div class="im" style="height:120px"><span>Gallery photo 4</span></div>
+</div>
+<div class="bx" style="margin-top:16px">
+<p class="h2" style="margin-bottom:6px">"Parent quote goes here. One or two sentences about how their child came home tired, happy, and talking about Jesus."</p>
+<p class="s">Parent name, camper grade, campus. Quote to be collected.</p>
+</div>
+</div>
+<div class="sec" style="background:#111;color:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:center">
+<div><h2 class="h2" style="color:#fff">Ready to pick your weeks?</h2><p class="p" style="color:#ddd">Registration opens March 1. Sessions fill quickly at Hickory Flat.</p><div class="row"><span class="btn" style="background:#fff;color:#111">Register on UltraCamp</span><span class="btno" style="border-color:#fff;color:#fff">Apply for a scholarship</span></div></div>
+<div class="im" style="height:150px;border-color:#fff"><span>Photo: campers waving at carpool</span></div>
+</div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div><p class="s" style="margin-top:10px">1894 Lower Union Hill Rd<br>Canton, GA 30115</p></div><div><p class="h3">Explore Camp</p><p class="s">Summer Day Camp<br>SEEK Adventure<br>Winter Camp<br>Camp Experience<br>Gallery<br>Locations</p></div><div><p class="h3">Parent Info</p><p class="s">Dates, Hours &amp; Pricing<br>Safety<br>Parent Guide &amp; FAQs<br>Scholarships</p></div><div><p class="h3">About</p><p class="s">Seek Ministries<br>Mission &amp; Story<br>Leadership<br>Contact</p></div><div><p class="h3">Get Involved</p><p class="s">Work at Camp<br>Hickory FlatOut 5K<br>Annual Banquet<br>Donate</p><div class="row" style="margin-top:10px"><span class="btno" style="border-color:#fff;color:#fff">Newsletter</span></div></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Explore Camp, section landing</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:220px;border-left:0;border-right:0"><span>Full bleed banner photo: campers heading into the woods</span></div>
+<div class="sec"><p class="k">Explore Camp</p><h1 class="h1">Find the right week for your camper</h1><p class="p">Three programs, three campuses, one goal. A safe and loving place to spend the summer outdoors focused around the gospel.</p></div>
+<div class="sec"><div class="g3">
+<div class="bx"><div class="im" style="height:130px;margin-bottom:10px"><span>Photo: K through 5th at field games</span></div><p class="h3">Summer Day Camp</p><p class="s">Kindergarten through 5th grade, weekly sessions in June and July</p></div>
+<div class="bx"><div class="im" style="height:130px;margin-bottom:10px"><span>Photo: middle school group</span></div><p class="h3">SEEK Adventure Middle School Camp</p><p class="s">One week for finished 6th through 8th grade at Hickory Flat</p></div>
+<div class="bx"><div class="im" style="height:130px;margin-bottom:10px"><span>Photo: winter camp</span></div><p class="h3">Winter Camp</p><p class="s">Three days in December</p></div>
+</div></div>
+<div class="sec" style="background:#fafafa"><div class="g2">
+<div class="bx" style="display:flex;gap:14px;align-items:center"><div class="im" style="height:100px;width:150px;flex:none"><span>Photo</span></div><div><p class="h3">The Camp Experience</p><p class="s">A day at camp, hour by hour, and every activity on the property</p></div></div>
+<div class="bx" style="display:flex;gap:14px;align-items:center"><div class="im" style="height:100px;width:150px;flex:none"><span>Photo</span></div><div><p class="h3">Gallery</p><p class="s">Photos from past summers at all three campuses</p></div></div>
+</div></div>
+<div class="sec"><h2 class="h2">Locations</h2><div class="g3"><div><div class="im" style="height:120px"><span>Photo: Hickory Flat</span></div><p class="h3" style="margin-top:8px">Hickory Flat</p></div><div><div class="im" style="height:120px"><span>Photo: Ball Ground</span></div><p class="h3" style="margin-top:8px">Ball Ground</p></div><div><div class="im" style="height:120px"><span>Photo: Sixes</span></div><p class="h3" style="margin-top:8px">Sixes</p></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Summer Day Camp</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Summer Day Camp</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center"><div><p class="k">Kindergarten through 5th grade</p><h1 class="h1">Summer Day Camp</h1><p class="p">Six weekly sessions in June and July, Monday through Friday, 9 a.m. to 3 p.m. Campers spend the day outside in small groups with a counselor who stays with them all week.</p><div class="row"><span class="btn">Register</span><span class="btno">See dates and pricing</span></div></div><div class="im" style="height:250px"><span>Hero photo: full group shot on the field</span></div></div>
+<div class="sec" style="background:#fafafa"><div class="g4"><div class="bx"><p class="h3">Grades</p><p class="s">K through 5th</p></div><div class="bx"><p class="h3">Hours</p><p class="s">9 a.m. to 3 p.m.</p></div><div class="bx"><p class="h3">Cost</p><p class="s">$275 per week</p></div><div class="bx"><p class="h3">Campuses</p><p class="s">All three</p></div></div></div>
+<div class="sec"><h2 class="h2">A day at camp</h2><div class="g2"><div class="bx"><p class="s">7:30 to 9 a.m. Early drop off<br>9:15 to 9:45 a.m. Snacks<br>9:45 to 10:15 a.m. Assembly<br>10:15 to 11:45 a.m. Three rotations<br>11:45 a.m. to 12:15 p.m. Lunch from home<br>12:15 to 2:45 p.m. Four to five rotations<br>2:45 to 3 p.m. Carpool<br>3 to 6 p.m. Late pick up</p></div><div class="im" style="height:200px"><span>Photo strip: snack time, assembly, rotations, carpool</span></div></div></div>
+<div class="sec"><h2 class="h2">Activities</h2><div class="g4"><div><div class="im" style="height:110px"><span>Zipline</span></div><p class="s" style="margin-top:6px">Zipline</p></div><div><div class="im" style="height:110px"><span>Gaga ball</span></div><p class="s" style="margin-top:6px">Gaga ball</p></div><div><div class="im" style="height:110px"><span>Rock wall</span></div><p class="s" style="margin-top:6px">Rock wall</p></div><div><div class="im" style="height:110px"><span>Crate stack</span></div><p class="s" style="margin-top:6px">Crate stack</p></div><div><div class="im" style="height:110px"><span>Ninja island</span></div><p class="s" style="margin-top:6px">Ninja island low ropes</p></div><div><div class="im" style="height:110px"><span>Arts and crafts</span></div><p class="s" style="margin-top:6px">Arts and crafts</p></div><div><div class="im" style="height:110px"><span>9 square</span></div><p class="s" style="margin-top:6px">9 square and field games</p></div><div><div class="im" style="height:110px"><span>Water day</span></div><p class="s" style="margin-top:6px">Thursday water day</p></div></div><p class="note">Friday is open woods, free reign of the outdoor activities.</p></div>
+<div class="sec" style="background:#fafafa"><div class="g2"><div><h2 class="h2">Bible teaching</h2><p class="p">Curriculum rotations sit alongside the games. Campers memorize scripture and talk about the character of God on walks around camp.</p><p class="s">Matthew 6:33 and Psalm 119:11</p></div><div class="im" style="height:170px"><span>Photo: small group with counselor and Bible</span></div></div></div>
+<div class="sec" style="background:#111;color:#fff"><h2 class="h2" style="color:#fff">Pick your weeks</h2><div class="row"><span class="btn" style="background:#fff;color:#111">Register on UltraCamp</span><span class="btno" style="border-color:#fff;color:#fff">Parent guide and FAQs</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1d"><div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>SEEK Adventure Middle School Camp</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / SEEK Adventure Middle School Camp</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:230px;border-left:0;border-right:0"><span>Full bleed photo: middle schoolers deep in the woods</span></div>
+<div class="sec"><p class="k">Finished 6th, 7th, and 8th grade</p><h1 class="h1">SEEK Adventure Middle School Camp</h1><p class="p">One week at Hickory Flat where middle schoolers connect with their peers and their counselors as they grow in their walk with the Lord. Having only middle schoolers on campus means bigger activities and more time in the woods.</p><div class="row"><span class="btn">Register</span></div></div>
+<div class="sec" style="background:#fafafa"><div class="g4"><div class="bx"><p class="h3">Grades</p><p class="s">Finished 6th to 8th</p></div><div class="bx"><p class="h3">Length</p><p class="s">One week in July</p></div><div class="bx"><p class="h3">Hours</p><p class="s">9 a.m. to 4 p.m.</p></div><div class="bx"><p class="h3">Cost</p><p class="s">$300, Hickory Flat only</p></div></div><p class="note">No early drop off or post camp for this program.</p></div>
+<div class="sec"><div class="g2"><div><h2 class="h2">What the week covers</h2><p class="p">The curriculum focuses on God's plan for their lives and how to walk closer with Him through a transitional phase of life. Campers make Christian friends from their own community.</p></div><div class="g2" style="gap:10px"><div class="im" style="height:110px"><span>Photo: night activity</span></div><div class="im" style="height:110px"><span>Photo: hiking</span></div><div class="im" style="height:110px"><span>Photo: teaching circle</span></div><div class="im" style="height:110px"><span>Photo: high ropes</span></div></div></div></div>
+<div class="sec"><div class="im" style="height:170px"><span>Logo placeholder: SEEK Adventure mark</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1e"><div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Winter Camp</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Winter Camp</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center"><div><p class="k">Three days in December</p><h1 class="h1">Winter Camp</h1><p class="p">A short camp during winter break for families who need care and kids who miss their counselors. Same staff, same games, colder woods.</p><div class="row"><span class="btn">Register</span><span class="btno">Contact us</span></div></div><div class="im" style="height:240px"><span>Hero photo: winter camp indoor games</span></div></div>
+<div class="sec" style="background:#fafafa"><div class="g3"><div class="bx"><p class="h3">Dates</p><p class="s">Three days in December, dates posted in the fall</p></div><div class="bx"><p class="h3">Hours</p><p class="s">9 a.m. to 3 p.m.</p></div><div class="bx"><p class="h3">Campus</p><p class="s">Hickory Flat</p></div></div></div>
+<div class="sec"><h2 class="h2">What happens</h2><div class="g3"><div class="im" style="height:140px"><span>Photo: indoor assembly</span></div><div class="im" style="height:140px"><span>Photo: crafts table</span></div><div class="im" style="height:140px"><span>Photo: cold weather field games</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1f"><div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Camp Experience</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Camp Experience</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:250px;border-left:0;border-right:0"><span>Full bleed photo: wide candid of the whole camp at assembly</span></div>
+<div class="sec"><h1 class="h1">The Camp Experience</h1><p class="p">Outdoors most of the day, in small groups, with counselors who care. Here is what a week actually looks like.</p></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">The daily rhythm</h2><div class="g2" style="align-items:start"><div class="bx"><p class="s">7:30 to 9 a.m. Drop off<br>9:15 to 9:45 a.m. Snacks<br>9:45 to 10:15 a.m. Assembly<br>10:15 to 11:45 a.m. Three rotations of curriculum, arts and crafts, field games, gaga ball, and free choice<br>11:45 a.m. to 12:15 p.m. Lunch<br>12:15 to 2:45 p.m. Four to five rotations<br>2:45 to 3 p.m. Carpool<br>3 to 6 p.m. Late pick up</p></div><div class="g2" style="gap:10px"><div class="im" style="height:110px"><span>Photo: snack time</span></div><div class="im" style="height:110px"><span>Photo: assembly</span></div><div class="im" style="height:110px"><span>Photo: rotation</span></div><div class="im" style="height:110px"><span>Photo: carpool line</span></div></div></div></div>
+<div class="sec"><h2 class="h2">Every activity on the property</h2><div class="g4"><div class="bx"><p class="h3">Zipline</p></div><div class="bx"><p class="h3">Gaga ball</p></div><div class="bx"><p class="h3">Rock wall</p></div><div class="bx"><p class="h3">Crate stack</p></div><div class="bx"><p class="h3">Ninja island low ropes</p></div><div class="bx"><p class="h3">Arts and crafts</p></div><div class="bx"><p class="h3">Bracelet making</p></div><div class="bx"><p class="h3">9 square and field games</p></div></div></div>
+<div class="sec" style="background:#fafafa"><div class="g2"><div class="im" style="height:190px"><span>Photo: slip and slide chaos</span></div><div><h2 class="h2">Thursday is water day</h2><p class="p">Slip and slide, relay races, and water games. Send a towel and a change of clothes.</p><h2 class="h2" style="margin-top:16px">Friday is open woods</h2><p class="p">Free reign of the outdoor activities to close out the week.</p></div></div></div>
+<div class="sec"><h2 class="h2">Bible teaching</h2><div class="g2"><p class="p">Curriculum is one of the rotations, but the teaching is not confined to it. Counselors talk about the attributes of God on walks around camp and campers memorize scripture that flows from the week's lesson.</p><div class="im" style="height:150px"><span>Photo: counselor teaching outside</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1g"><div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Gallery</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Gallery</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec"><h1 class="h1">Gallery</h1><p class="p">Photos from past summers. Filter by campus or by year.</p><div class="row"><span class="btn">All</span><span class="btno">Hickory Flat</span><span class="btno">Ball Ground</span><span class="btno">Sixes</span><span class="btno">Winter Camp</span><span class="btno">5K</span></div></div>
+<div class="sec"><div class="g4" style="gap:10px"><div class="im" style="height:150px;grid-column:span 2"><span>Featured photo, wide</span></div><div class="im" style="height:150px"><span>Photo</span></div><div class="im" style="height:150px"><span>Photo</span></div><div class="im" style="height:150px"><span>Photo</span></div><div class="im" style="height:150px"><span>Photo</span></div><div class="im" style="height:150px;grid-column:span 2"><span>Featured photo, wide</span></div><div class="im" style="height:150px"><span>Photo</span></div><div class="im" style="height:150px"><span>Photo</span></div><div class="im" style="height:150px"><span>Photo</span></div><div class="im" style="height:150px"><span>Photo</span></div></div><div class="row" style="margin-top:14px;justify-content:center"><span class="btno">Load more</span></div><p class="note">Clicking a photo opens a lightbox.</p></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1h"><div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Locations</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Locations</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec"><h1 class="h1">Locations</h1><p class="p">Three campuses across Cherokee County, all hosted on church property. Pick the one closest to you.</p></div>
+<div class="im" style="height:220px;border-left:0;border-right:0"><span>Map placeholder: three pins, Hickory Flat, Ball Ground, Sixes</span></div>
+<div class="sec"><div class="g3">
+<div class="bx"><div class="im" style="height:130px;margin-bottom:10px"><span>Photo: Hickory Flat property</span></div><p class="h3">Hickory Flat</p><p class="s">Mt. Zion Baptist Church<br>4096 East Cherokee Drive<br>Canton, GA 30115</p><p class="s" style="margin-top:8px">Huge field, wooded area, and indoor space. The largest campus.</p><p class="s" style="margin-top:8px;text-decoration:underline">Location details</p></div>
+<div class="bx"><div class="im" style="height:130px;margin-bottom:10px"><span>Photo: Ball Ground property</span></div><p class="h3">Ball Ground</p><p class="s">Ball Ground Methodist Church<br>3045 Canton Hwy<br>Ball Ground, GA 30107</p><p class="s" style="margin-top:8px">A big outdoor loop in the woods, a small field, and a large indoor assembly room.</p><p class="s" style="margin-top:8px;text-decoration:underline">Location details</p></div>
+<div class="bx"><div class="im" style="height:130px;margin-bottom:10px"><span>Photo: Sixes property</span></div><p class="h3">Sixes</p><p class="s">8385 Bells Ferry Road<br>Canton, GA 30114</p><p class="s" style="margin-top:8px">A large field with some woods and some indoor space.</p><p class="s" style="margin-top:8px;text-decoration:underline">Location details</p></div>
+</div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1i"><div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>Hickory Flat</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Locations / Hickory Flat</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:240px;border-left:0;border-right:0"><span>Full bleed photo: the Hickory Flat field</span></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px"><div><p class="k">Location</p><h1 class="h1">Hickory Flat</h1><p class="p">Our largest campus, hosted by Mt. Zion Baptist Church. A huge field with a wooded area and indoor space for rainy days. Home of SEEK Adventure and the Hickory FlatOut 5K.</p><div class="row"><span class="btn">Register at Hickory Flat</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">4096 East Cherokee Drive, Canton, GA 30115</p><p class="h3" style="margin-top:12px">Programs here</p><p class="s">Summer Day Camp, SEEK Adventure, Winter Camp</p><p class="h3" style="margin-top:12px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">Drop off and pick up</h2><div class="g2"><div class="bx"><p class="h3">Normal drop off</p><p class="s">Located behind the main church. Enter by the main entrance with the digital sign and drive behind the gym.</p></div><div class="bx"><p class="h3">Rainy day drop off</p><p class="s">Located at the chapel. Enter by the main entrance with the digital sign, drive behind the main church building, and take the small driveway up on the right.</p></div></div><div class="im" style="height:170px;margin-top:14px"><span>Map or carpool diagram placeholder</span></div></div>
+<div class="sec"><div class="g3"><div class="im" style="height:130px"><span>Photo: the woods</span></div><div class="im" style="height:130px"><span>Photo: the ropes course</span></div><div class="im" style="height:130px"><span>Photo: indoor space</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1j"><div class="dv-olabel"><a class="dv-oid" href="#1j">1j</a>Ball Ground</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Locations / Ball Ground</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:240px;border-left:0;border-right:0"><span>Full bleed photo: the Ball Ground woods loop</span></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px"><div><p class="k">Location</p><h1 class="h1">Ball Ground</h1><p class="p">Hosted by Ball Ground Methodist Church. Mostly woods, with a big outdoor loop, a small field, and a large indoor assembly room.</p><div class="row"><span class="btn">Register at Ball Ground</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">3045 Canton Hwy, Ball Ground, GA 30107</p><p class="h3" style="margin-top:12px">Programs here</p><p class="s">Summer Day Camp</p><p class="h3" style="margin-top:12px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">Drop off and pick up</h2><div class="g2"><div class="bx"><p class="h3">Normal drop off</p><p class="s">Directions to be supplied by camp staff.</p></div><div class="bx"><p class="h3">Rainy day drop off</p><p class="s">Directions to be supplied by camp staff.</p></div></div><div class="im" style="height:170px;margin-top:14px"><span>Map or carpool diagram placeholder</span></div></div>
+<div class="sec"><div class="g3"><div class="im" style="height:130px"><span>Photo: the loop trail</span></div><div class="im" style="height:130px"><span>Photo: the field</span></div><div class="im" style="height:130px"><span>Photo: assembly room</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1k"><div class="dv-olabel"><a class="dv-oid" href="#1k">1k</a>Sixes</div><div class="dv-card"><div class="wf">
+<div class="pgh">Explore Camp / Locations / Sixes</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:240px;border-left:0;border-right:0"><span>Full bleed photo: the Sixes field</span></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px"><div><p class="k">Location</p><h1 class="h1">Sixes</h1><p class="p">A large field with some woods and some indoor space, on Bells Ferry Road. Our newest campus.</p><div class="row"><span class="btn">Register at Sixes</span></div></div><div class="bx"><p class="h3">Address</p><p class="s">8385 Bells Ferry Road, Canton, GA 30114</p><p class="h3" style="margin-top:12px">Programs here</p><p class="s">Summer Day Camp</p><p class="h3" style="margin-top:12px">Hours</p><p class="s">9 a.m. to 3 p.m., early drop off 7:30 a.m., post camp until 6 p.m.</p></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">Drop off and pick up</h2><div class="g2"><div class="bx"><p class="h3">Normal drop off</p><p class="s">Directions to be supplied by camp staff.</p></div><div class="bx"><p class="h3">Rainy day drop off</p><p class="s">Directions to be supplied by camp staff.</p></div></div><div class="im" style="height:170px;margin-top:14px"><span>Map or carpool diagram placeholder</span></div></div>
+<div class="sec"><div class="g3"><div class="im" style="height:130px"><span>Photo: field games</span></div><div class="im" style="height:130px"><span>Photo: shaded woods</span></div><div class="im" style="height:130px"><span>Photo: indoor space</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1l"><div class="dv-olabel"><a class="dv-oid" href="#1l">1l</a>Parent Info, section landing</div><div class="dv-card"><div class="wf">
+<div class="pgh">Parent Info</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span style="border-bottom:2px solid #111;padding-bottom:2px">Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="bd" style="margin:10px 22px"><p class="k">Mega menu, open state for Parent Info</p><div class="g4"><div><p class="h3">Plan</p><p class="s">Dates, Hours &amp; Pricing</p></div><div><p class="h3">Prepare</p><p class="s">Safety<br>Parent Guide &amp; FAQs</p></div><div><p class="h3">Help paying</p><p class="s">Scholarships</p></div><div class="im" style="height:90px"><span>Photo: carpool line</span></div></div></div>
+<div class="sec"><h1 class="h1">Parent Info</h1><p class="p">Everything you need before the first morning of camp, in one place.</p></div>
+<div class="sec"><div class="g2">
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:100px;width:140px;flex:none"><span>Photo</span></div><div><p class="h3">Dates, Hours &amp; Pricing</p><p class="s">Session dates by campus, daily hours, and what each week costs</p></div></div>
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:100px;width:140px;flex:none"><span>Photo</span></div><div><p class="h3">Safety</p><p class="s">Staff screening, training, and how we run the ropes course</p></div></div>
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:100px;width:140px;flex:none"><span>Photo</span></div><div><p class="h3">Parent Guide &amp; FAQs</p><p class="s">What to pack, drop off, lunches, and the questions we hear most</p></div></div>
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:100px;width:140px;flex:none"><span>Photo</span></div><div><p class="h3">Scholarships</p><p class="s">Financial help so cost does not keep a child home</p></div></div>
+</div></div>
+<div class="sec" style="background:#111;color:#fff"><div class="row" style="justify-content:space-between"><h2 class="h2" style="color:#fff;margin:0">Still have a question?</h2><span class="btn" style="background:#fff;color:#111">Contact the camp office</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1m"><div class="dv-olabel"><a class="dv-oid" href="#1m">1m</a>Dates, Hours &amp; Pricing</div><div class="dv-card"><div class="wf">
+<div class="pgh">Parent Info / Dates, Hours &amp; Pricing</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec"><h1 class="h1">Dates, Hours &amp; Pricing</h1><p class="p">Registration opens March 1. Price is organized by the session, and you can register for as many sessions as you like.</p></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">Pricing</h2><div class="g4"><div class="bx"><p class="h3">Day Camp</p><p class="s">$275 per week<br>9 a.m. to 3 p.m.</p></div><div class="bx"><p class="h3">Early drop off</p><p class="s">$15 per week<br>Begins at 7:30 a.m.</p></div><div class="bx"><p class="h3">Post camp</p><p class="s">$30 per week<br>3 p.m. to 6 p.m.</p></div><div class="bx"><p class="h3">SEEK Adventure</p><p class="s">$300 for the week<br>9 a.m. to 4 p.m.</p></div></div><p class="note">SEEK Adventure has no early drop off or post camp.</p></div>
+<div class="sec"><h2 class="h2">Session dates</h2><div class="row" style="margin-bottom:12px"><span class="btn">Hickory Flat</span><span class="btno">Ball Ground</span><span class="btno">Sixes</span></div><div class="bx" style="padding:0;overflow:hidden"><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;background:#111;color:#fff;font:600 11px system-ui;padding:10px 14px"><span>Session</span><span>Dates</span><span>Notes</span><span>Status</span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px;border-bottom:1px solid #ddd"><span>1</span><span>May 27 to May 30</span><span>Four day week</span><span>Open</span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px;border-bottom:1px solid #ddd"><span>2</span><span>June 2 to June 6</span><span></span><span>Open</span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px;border-bottom:1px solid #ddd"><span>3</span><span>June 9 to June 13</span><span></span><span>Filling</span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px;border-bottom:1px solid #ddd"><span>4</span><span>June 16 to June 20</span><span>No post camp</span><span>Full</span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px;border-bottom:1px solid #ddd"><span>5</span><span>June 23 to June 27</span><span></span><span>Open</span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px;border-bottom:1px solid #ddd;color:#777"><span></span><span>June 30 to July 3</span><span>No camp</span><span></span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px;border-bottom:1px solid #ddd"><span>6</span><span>July 7 to July 11</span><span>SEEK Adventure, middle school only</span><span>Open</span></div><div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr;font:12px system-ui;padding:10px 14px"><span>7</span><span>July 14 to July 18</span><span></span><span>Open</span></div></div></div>
+<div class="sec" style="background:#fafafa"><div class="g2"><div><h2 class="h2">Daily hours</h2><p class="s">Early drop off begins 7:30 a.m.<br>Camp runs 9 a.m. to 3 p.m.<br>Post camp runs until 6 p.m.<br>Lunch is packed and brought from home.</p></div><div class="im" style="height:150px"><span>Photo: kids with lunch boxes</span></div></div></div>
+<div class="sec" style="background:#111;color:#fff"><div class="row" style="justify-content:space-between"><div><h2 class="h2" style="color:#fff;margin:0">Register on UltraCamp</h2><p class="s" style="color:#bbb">Cost should not keep a camper home. Scholarships are available.</p></div><div class="row"><span class="btn" style="background:#fff;color:#111">Register</span><span class="btno" style="border-color:#fff;color:#fff">Scholarships</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1n"><div class="dv-olabel"><a class="dv-oid" href="#1n">1n</a>Safety</div><div class="dv-card"><div class="wf">
+<div class="pgh">Parent Info / Safety</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:center"><div><h1 class="h1">Safety</h1><p class="p">Parents leave their children with us so they can go to work. We take that seriously. Here is exactly how we screen and train the people who spend the day with your camper.</p></div><div class="im" style="height:200px"><span>Photo: counselor helping a camper on the ropes course</span></div></div>
+<div class="sec" style="background:#fafafa"><div class="g2"><div class="bx"><p class="h3">Background checks</p><p class="s">Every Hide and Seek employee receives a background check before the summer begins.</p></div><div class="bx"><p class="h3">References</p><p class="s">All employees provide several references and complete counselor training.</p></div><div class="bx"><p class="h3">Ropes course training</p><p class="s">Staff are trained on the ropes course by a certified third party before camp starts, and several are certified operators.</p></div><div class="bx"><p class="h3">CPR and first aid</p><p class="s">Camp directors are CPR and first aid trained.</p></div></div></div>
+<div class="sec"><h2 class="h2">Day to day</h2><div class="g3"><div class="bx"><p class="h3">Small groups</p><p class="s">Campers stay with one group and one counselor all week.</p></div><div class="bx"><p class="h3">Carpool</p><p class="s">Named pick up authorization at every campus.</p></div><div class="bx"><p class="h3">Weather</p><p class="s">Indoor space at all three campuses and a rainy day drop off plan.</p></div></div></div>
+<div class="sec"><div class="g3"><div class="im" style="height:130px"><span>Photo: staff training day</span></div><div class="im" style="height:130px"><span>Photo: harness check</span></div><div class="im" style="height:130px"><span>Photo: carpool signage</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1o"><div class="dv-olabel"><a class="dv-oid" href="#1o">1o</a>Parent Guide &amp; FAQs</div><div class="dv-card"><div class="wf">
+<div class="pgh">Parent Info / Parent Guide &amp; FAQs</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec"><h1 class="h1">Parent Guide &amp; FAQs</h1><p class="p">The guide first, then the questions we hear most. Jump to a topic or download the printable guide.</p><div class="row"><span class="btn">Download the parent guide</span></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">What to send with your camper</h2><div class="g4"><div class="bx"><p class="h3">Packed lunch</p><p class="s">Camp does not provide food.</p></div><div class="bx"><p class="h3">Water bottle</p><p class="s">Labeled with a name.</p></div><div class="bx"><p class="h3">Closed toe shoes</p><p class="s">For the woods and the ropes course.</p></div><div class="bx"><p class="h3">Towel on Thursday</p><p class="s">Water day, plus a change of clothes.</p></div></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1fr 1fr;gap:22px"><div class="im" style="height:250px"><span>Photo: campers at lunch tables</span></div><div><h2 class="h2">Frequently asked</h2><div style="display:grid;gap:0"><div style="border-top:1px solid #111;padding:11px 0"><p class="h3" style="margin:0">What does camp cost?</p><p class="s" style="margin-top:6px">Sessions are $275 per week at all three locations, 9 a.m. to 3 p.m. Early drop off is $15 and post camp is $30 per session.</p></div><div style="border-top:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">What are the camp hours?</p></div><div style="border-top:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">Where are the campuses?</p></div><div style="border-top:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">Where do I drop off and pick up?</p></div><div style="border-top:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">Are staff background checked?</p></div><div style="border-top:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">Does camp provide lunch?</p></div><div style="border-top:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">Do we have to be a church family?</p></div><div style="border-top:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">Can I get help paying for camp?</p></div><div style="border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:11px 0"><p class="h3" style="margin:0">What if my camper needs medication?</p></div></div><p class="note">Accordion, first item open by default.</p></div></div>
+<div class="sec" style="background:#111;color:#fff"><div class="row" style="justify-content:space-between"><h2 class="h2" style="color:#fff;margin:0">Question not answered here?</h2><span class="btn" style="background:#fff;color:#111">Contact us</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1p"><div class="dv-olabel"><a class="dv-oid" href="#1p">1p</a>Scholarships, external application</div><div class="dv-card"><div class="wf">
+<div class="pgh">Parent Info / Scholarships</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:center"><div><h1 class="h1">Scholarships</h1><p class="p">Cost should never be the reason a child misses camp. Scholarships are available at every campus, and the application is short.</p><div class="row"><span class="btn">Start the application</span></div><p class="note">Opens the external application in a new tab.</p></div><div class="im" style="height:210px"><span>Photo: camper smiling with a counselor</span></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">How it works</h2><div class="g4"><div class="bx"><p class="h3">1. Apply</p><p class="s">Fill out the short application with your family details.</p></div><div class="bx"><p class="h3">2. We review</p><p class="s">The camp office reviews every request privately.</p></div><div class="bx"><p class="h3">3. We respond</p><p class="s">You hear back with the amount awarded.</p></div><div class="bx"><p class="h3">4. Register</p><p class="s">Reserve your weeks with the award applied.</p></div></div></div>
+<div class="sec"><div class="bd"><p class="k">Handoff notice</p><p class="s">This page ends at an outside application. Keep the camp header and footer visible so parents know where they are before they leave the site.</p></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1q"><div class="dv-olabel"><a class="dv-oid" href="#1q">1q</a>About, section landing</div><div class="dv-card"><div class="wf">
+<div class="pgh">About</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span style="border-bottom:2px solid #111;padding-bottom:2px">About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:230px;border-left:0;border-right:0"><span>Full bleed photo: staff group photo from this summer</span></div>
+<div class="sec"><h1 class="h1">About Hide and Seek</h1><p class="p">Hide and Seek Day Camp is a Christ saturated program for school aged children, run by Seek Ministries. This is our 18th summer.</p></div>
+<div class="sec"><div class="g3"><div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo</span></div><p class="h3">Seek Ministries</p><p class="s">The non profit behind the camp and the fundraisers</p></div><div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo</span></div><p class="h3">Mission &amp; Story</p><p class="s">Where the name came from and why camp exists</p></div><div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo</span></div><p class="h3">Leadership</p><p class="s">The directors and year round team</p></div></div></div>
+<div class="sec" style="background:#fafafa"><div class="g4"><div class="bx"><p class="h3">18</p><p class="s">summers of camp</p></div><div class="bx"><p class="h3">3</p><p class="s">campuses in Cherokee County</p></div><div class="bx"><p class="h3">6</p><p class="s">weeks of K to 5th grade camp</p></div><div class="bx"><p class="h3">1</p><p class="s">week of middle school camp</p></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1r"><div class="dv-olabel"><a class="dv-oid" href="#1r">1r</a>Seek Ministries</div><div class="dv-card"><div class="wf">
+<div class="pgh">About / Seek Ministries</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center"><div><div class="lg" style="width:150px;height:56px;margin-bottom:14px">SEEK MINISTRIES LOGO</div><h1 class="h1">To create environments to show the supremacy of God</h1><p class="p">Seek Ministries is the non profit behind Hide and Seek Day Camp. Camp is the largest thing we do, and it is not the only thing.</p></div><div class="im" style="height:230px"><span>Photo: wide shot of a full camp day</span></div></div>
+<div class="sec"><h2 class="h2">What Seek Ministries runs</h2><div class="g3"><div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo: camp</span></div><p class="h3">Hide and Seek Day Camp</p><p class="s">Summer, SEEK Adventure, and Winter Camp across three campuses</p></div><div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo: 5K start line</span></div><p class="h3">Hickory FlatOut 5K</p><p class="s">A Labor Day morning race and kids fun run that funds camp</p></div><div class="bx"><div class="im" style="height:120px;margin-bottom:10px"><span>Photo: banquet room</span></div><p class="h3">Annual Banquet</p><p class="s">A spring gathering to thank the people who give</p></div></div></div>
+<div class="sec" style="background:#111;color:#fff"><div class="row" style="justify-content:space-between"><div><h2 class="h2" style="color:#fff;margin:0">Support the ministry</h2><p class="s" style="color:#bbb">Gifts send kids to camp and keep the property running.</p></div><span class="btn" style="background:#fff;color:#111">Donate</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1s"><div class="dv-olabel"><a class="dv-oid" href="#1s">1s</a>Mission &amp; Story</div><div class="dv-card"><div class="wf">
+<div class="pgh">About / Mission &amp; Story</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:230px;border-left:0;border-right:0"><span>Full bleed photo: early years of camp, archival if available</span></div>
+<div class="sec"><h1 class="h1">Mission &amp; Story</h1><p class="p">Camp exists so kids have a safe and loving place to spend their summer outdoors, focused around the gospel.</p></div>
+<div class="sec" style="background:#fafafa"><div class="g2"><div class="bx"><p class="k">Matthew 6:33</p><p class="h2" style="margin:0">"But SEEK first the kingdom of God and His righteousness and all of these things will be added to you"</p></div><div class="bx"><p class="k">Psalm 119:11</p><p class="h2" style="margin:0">"I have HIDDEN your word in my heart that I might not sin against you"</p></div></div><p class="note">The two verses are where the name comes from. Consider calling that out plainly.</p></div>
+<div class="sec"><h2 class="h2">Eighteen summers</h2><div class="g4"><div><div class="im" style="height:110px"><span>Photo: first summer</span></div><p class="s" style="margin-top:6px">The first summer at Hickory Flat</p></div><div><div class="im" style="height:110px"><span>Photo: ropes course build</span></div><p class="s" style="margin-top:6px">Building the ropes course</p></div><div><div class="im" style="height:110px"><span>Photo: Ball Ground opens</span></div><p class="s" style="margin-top:6px">Ball Ground opens</p></div><div><div class="im" style="height:110px"><span>Photo: Sixes opens</span></div><p class="s" style="margin-top:6px">Sixes opens</p></div></div><p class="note">Timeline dates to be confirmed with the camp office.</p></div>
+<div class="sec" style="background:#fafafa"><div class="g2"><div class="im" style="height:190px"><span>Photo: counselor and camper talking</span></div><div><h2 class="h2">Christ rooted, open to everyone</h2><p class="p">You do not need to belong to a church to belong at camp. Every family is welcome, and every camper hears the gospel from staff who love them.</p></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1t"><div class="dv-olabel"><a class="dv-oid" href="#1t">1t</a>Leadership</div><div class="dv-card"><div class="wf">
+<div class="pgh">About / Leadership</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec"><h1 class="h1">Leadership</h1><p class="p">The year round team behind camp, and the directors your camper will see every morning.</p></div>
+<div class="sec" style="background:#fafafa"><div style="display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:center"><div class="im" style="height:230px"><span>Portrait: Cathy, founder</span></div><div><p class="k">Founder</p><h2 class="h2">Cathy, Founder of Seek Ministries</h2><p class="p">Bio to be written with the camp office. Cathy speaks at the annual banquet each spring about how camp did the past year and what is ahead.</p></div></div></div>
+<div class="sec"><h2 class="h2">Camp directors</h2><div class="g4"><div><div class="im" style="height:150px"><span>Portrait</span></div><p class="h3" style="margin-top:8px">Name</p><p class="s">Role, campus</p></div><div><div class="im" style="height:150px"><span>Portrait</span></div><p class="h3" style="margin-top:8px">Name</p><p class="s">Role, campus</p></div><div><div class="im" style="height:150px"><span>Portrait</span></div><p class="h3" style="margin-top:8px">Name</p><p class="s">Role, campus</p></div><div><div class="im" style="height:150px"><span>Portrait</span></div><p class="h3" style="margin-top:8px">Name</p><p class="s">Role, campus</p></div></div></div>
+<div class="sec"><h2 class="h2">Summer staff</h2><div class="im" style="height:200px"><span>Full width photo: the whole summer staff on the field</span></div><div class="row" style="margin-top:14px"><span class="btno">Work at camp</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1u"><div class="dv-olabel"><a class="dv-oid" href="#1u">1u</a>Get Involved, section landing</div><div class="dv-card"><div class="wf">
+<div class="pgh">Get Involved</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span style="border-bottom:2px solid #111;padding-bottom:2px">Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:220px;border-left:0;border-right:0"><span>Full bleed photo: volunteers and staff at the 5K</span></div>
+<div class="sec"><h1 class="h1">Get Involved</h1><p class="p">Work a summer, run a race, come to the banquet, or give. Every one of these keeps camp running.</p></div>
+<div class="sec"><div class="g2">
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:110px;width:150px;flex:none"><span>Photo: counselors</span></div><div><p class="h3">Work at Camp</p><p class="s">Summer staff and counselor roles, plus what training looks like</p></div></div>
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:110px;width:150px;flex:none"><span>Photo: application</span></div><div><p class="h3">Apply</p><p class="s">The staff application, hosted outside the site</p></div></div>
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:110px;width:150px;flex:none"><span>Photo: 5K runners</span></div><div><p class="h3">Hickory FlatOut 5K</p><p class="s">Labor Day morning, a Peachtree qualifier, with a kids fun run</p></div></div>
+<div class="bx" style="display:flex;gap:14px"><div class="im" style="height:110px;width:150px;flex:none"><span>Photo: banquet</span></div><div><p class="h3">Annual Banquet</p><p class="s">A spring evening for the people who support camp</p></div></div>
+</div></div>
+<div class="sec" style="background:#111;color:#fff"><div class="row" style="justify-content:space-between"><h2 class="h2" style="color:#fff;margin:0">Give to Seek Ministries</h2><span class="btn" style="background:#fff;color:#111">Donate</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1v"><div class="dv-olabel"><a class="dv-oid" href="#1v">1v</a>Work at Camp</div><div class="dv-card"><div class="wf">
+<div class="pgh">Get Involved / Work at Camp</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:center"><div><p class="k">Summer staff</p><h1 class="h1">Spend your summer outside with kids who will remember you</h1><p class="p">Counselors are the reason families come back. If you love kids, love the woods, and want to point campers to Christ, we want to talk to you.</p><div class="row"><span class="btn">Apply now</span></div></div><div class="im" style="height:240px"><span>Photo: counselor carrying a camper on their shoulders</span></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">Roles</h2><div class="g3"><div class="bx"><p class="h3">Counselor</p><p class="s">Lead a small group all week, every week of the summer</p></div><div class="bx"><p class="h3">Activity staff</p><p class="s">Run the zipline, rock wall, ninja island, and field games</p></div><div class="bx"><p class="h3">Support staff</p><p class="s">Crafts, carpool, and everything that keeps the day moving</p></div></div></div>
+<div class="sec"><div class="g2"><div><h2 class="h2">Training and screening</h2><p class="p">Every employee completes a background check, provides several references, and goes through counselor training before campers arrive. Ropes course training is delivered by a certified third party.</p></div><div class="im" style="height:170px"><span>Photo: staff training week</span></div></div></div>
+<div class="sec"><h2 class="h2">What a summer looks like</h2><div class="g4"><div class="im" style="height:120px"><span>Photo: staff huddle</span></div><div class="im" style="height:120px"><span>Photo: water day</span></div><div class="im" style="height:120px"><span>Photo: worship</span></div><div class="im" style="height:120px"><span>Photo: end of summer</span></div></div></div>
+<div class="sec" style="background:#111;color:#fff"><div class="row" style="justify-content:space-between"><h2 class="h2" style="color:#fff;margin:0">Applications open in the winter</h2><span class="btn" style="background:#fff;color:#111">Start your application</span></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1w"><div class="dv-olabel"><a class="dv-oid" href="#1w">1w</a>Apply, external application</div><div class="dv-card"><div class="wf">
+<div class="pgh">Get Involved / Apply</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:center"><div><h1 class="h1">Apply to work at camp</h1><p class="p">Before you start, have your references ready. The application is hosted outside this site and takes about fifteen minutes.</p><div class="row"><span class="btn">Open the application</span><span class="btno">Read about the roles</span></div><p class="note">Opens in a new tab.</p></div><div class="im" style="height:210px"><span>Photo: staff group laughing</span></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">What you will need</h2><div class="g4"><div class="bx"><p class="h3">Contact details</p></div><div class="bx"><p class="h3">Several references</p></div><div class="bx"><p class="h3">Availability by session</p></div><div class="bx"><p class="h3">Consent to a background check</p></div></div></div>
+<div class="sec"><div class="bd"><p class="k">Handoff notice</p><p class="s">Confirm with the camp office whether the application should be embedded here instead of linking out.</p></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1x"><div class="dv-olabel"><a class="dv-oid" href="#1x">1x</a>Hickory FlatOut 5K</div><div class="dv-card"><div class="wf">
+<div class="pgh">Get Involved / Hickory FlatOut 5K</div>
+<div class="ann"><span>Join us for our 5K run</span><span style="text-decoration:underline">Register for the race</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="im" style="height:250px;border-left:0;border-right:0"><span>Full bleed photo: the start line on East Cherokee Drive</span></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px"><div><div class="lg" style="width:150px;height:56px;margin-bottom:14px">5K LOGO</div><h1 class="h1">Hickory FlatOut 5K</h1><p class="p">Labor Day morning at Mt. Zion Baptist Church and the streets around the Hickory Flat campus. A Peachtree qualifier open to all ages, with a kids fun run right after.</p><div class="row"><span class="btn">Register for the race</span><span class="btno">Become a sponsor</span></div></div><div class="bx"><p class="h3">When</p><p class="s">Labor Day morning</p><p class="h3" style="margin-top:12px">Where</p><p class="s">Mt. Zion Baptist Church, 4096 East Cherokee Drive, Canton</p><p class="h3" style="margin-top:12px">Races</p><p class="s">Main 5K, then the kids fun run</p><p class="h3" style="margin-top:12px">Timing</p><p class="s">Certified as a Peachtree qualifier</p></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">The course</h2><div class="g2"><div class="im" style="height:190px"><span>Course map placeholder</span></div><div class="im" style="height:190px"><span>Photo: runners on the course</span></div></div></div>
+<div class="sec"><h2 class="h2">Sponsors</h2><p class="p">Sponsors set up booths at the event and are listed here and on the race shirt.</p><div class="g4"><div class="im" style="height:80px"><span>Sponsor logo</span></div><div class="im" style="height:80px"><span>Sponsor logo</span></div><div class="im" style="height:80px"><span>Sponsor logo</span></div><div class="im" style="height:80px"><span>Sponsor logo</span></div></div><div class="row" style="margin-top:14px"><span class="btno">Sponsor packet</span></div></div>
+<div class="sec"><div class="g4"><div class="im" style="height:110px"><span>Race photo</span></div><div class="im" style="height:110px"><span>Race photo</span></div><div class="im" style="height:110px"><span>Race photo</span></div><div class="im" style="height:110px"><span>Race photo</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1y"><div class="dv-olabel"><a class="dv-oid" href="#1y">1y</a>Annual Banquet</div><div class="dv-card"><div class="wf">
+<div class="pgh">Get Involved / Annual Banquet</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span>Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec" style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:center"><div><p class="k">Every spring</p><h1 class="h1">Annual Banquet</h1><p class="p">An evening to thank the people who give and to hear how camp did last year. Cathy, the founder of the ministry, shares the year in review and what camp needs next. There are no tickets.</p><div class="row"><span class="btn">Save your seat</span><span class="btno">Give now</span></div></div><div class="im" style="height:220px"><span>Photo: banquet room set for dinner</span></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">What the evening looks like</h2><div class="g3"><div class="bx"><p class="h3">Dinner together</p><p class="s">A relaxed meal with camp families, staff, and supporters</p></div><div class="bx"><p class="h3">Year in review</p><p class="s">How camp did last summer, told with photos and stories</p></div><div class="bx"><p class="h3">What is ahead</p><p class="s">Requests and plans for the coming year</p></div></div><p class="note">No tickets, no silent auction. Giving happens around the banquet, not only during it.</p></div>
+<div class="sec"><div class="g3"><div class="im" style="height:140px"><span>Photo: guests at tables</span></div><div class="im" style="height:140px"><span>Photo: Cathy presenting</span></div><div class="im" style="height:140px"><span>Photo: camp slideshow</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1z"><div class="dv-olabel"><a class="dv-oid" href="#1z">1z</a>Contact</div><div class="dv-card"><div class="wf">
+<div class="pgh">Contact</div>
+<div class="ann"><span>Join us for our 5K run</span></div>
+<div class="nv"><div class="lg">LOGO</div><div class="nvl"><span>Explore Camp ▾</span><span>Parent Info ▾</span><span>About</span><span>Get Involved</span><span style="border-bottom:2px solid #111;padding-bottom:2px">Contact</span></div><div class="nva"><span class="btno">Donate</span><span class="btn">Register</span></div></div>
+<div class="sec"><h1 class="h1">Contact</h1><p class="p">Reach the camp office, or find the campus you are looking for.</p></div>
+<div class="sec" style="display:grid;grid-template-columns:1fr 1fr;gap:22px"><div class="bx"><p class="h3">Send a message</p><div style="display:grid;gap:10px;margin-top:10px"><div style="border:1px solid #111;border-radius:999px;padding:10px 14px;font:12px system-ui;color:#888">Your name</div><div style="border:1px solid #111;border-radius:999px;padding:10px 14px;font:12px system-ui;color:#888">Email</div><div style="border:1px solid #111;border-radius:999px;padding:10px 14px;font:12px system-ui;color:#888">Topic, registration, scholarship, staff, 5K, other</div><div style="border:1px solid #111;border-radius:14px;padding:10px 14px;font:12px system-ui;color:#888;height:80px">Message</div><div class="row"><span class="btn">Send</span></div></div></div><div><div class="bx"><p class="h3">Camp office</p><p class="s">1894 Lower Union Hill Rd, Canton, GA 30115<br>Phone and email to be supplied<br>Mail is received at the office address</p></div><div class="im" style="height:150px;margin-top:14px"><span>Photo: the camp office or a staff member on the phone</span></div></div></div>
+<div class="sec" style="background:#fafafa"><h2 class="h2">Campuses</h2><div class="g3"><div class="bx"><p class="h3">Hickory Flat</p><p class="s">Mt. Zion Baptist Church<br>4096 East Cherokee Drive<br>Canton, GA 30115</p></div><div class="bx"><p class="h3">Ball Ground</p><p class="s">Ball Ground Methodist Church<br>3045 Canton Hwy<br>Ball Ground, GA 30107</p></div><div class="bx"><p class="h3">Sixes</p><p class="s">8385 Bells Ferry Road<br>Canton, GA 30114</p></div></div><div class="im" style="height:170px;margin-top:14px"><span>Map placeholder: office plus three campuses</span></div></div>
+<div class="sec"><div class="row" style="justify-content:space-between"><p class="s">Follow camp for photos through the summer</p><div class="row"><span class="btno">Facebook</span><span class="btno">Instagram</span></div></div></div>
+<div class="ft"><div><div class="lg" style="border-color:#fff;color:#fff">LOGO</div></div><div><p class="h3">Explore Camp</p><p class="s">Six links</p></div><div><p class="h3">Parent Info</p><p class="s">Four links</p></div><div><p class="h3">About</p><p class="s">Four links</p></div><div><p class="h3">Get Involved</p><p class="s">Four links</p></div></div>
+</div></div></div>
+
+<div class="dv-opt" id="1aa"><div class="dv-olabel"><a class="dv-oid" href="#1aa">1aa</a>Donate and Register, external link behavior</div><div class="dv-card"><div class="wf" style="width:560px">
+<div class="pgh">External links</div>
+<div class="sec"><h2 class="h2">Donate</h2><p class="p">Header button and footer link. Goes straight to the Seek Ministries giving page in a new tab. No landing page in this build.</p><div class="row"><span class="btno">Donate</span></div></div>
+<div class="sec"><h2 class="h2">Register</h2><p class="p">Primary header button on every page. Goes to UltraCamp in a new tab. The questionnaire asks for UltraCamp to be integrated into the site, so this could later become an embedded flow rather than a handoff.</p><div class="row"><span class="btn">Register</span></div></div>
+<div class="sec"><div class="bd"><p class="k">Open question</p><p class="s">If UltraCamp gets embedded, Register becomes a real page and the sitemap gains a node. Worth deciding before visual design starts.</p></div></div>
+</div></div></div>
+
+</div>
+<p class="dv-next">Try next: "give me two more home layouts" · "add mobile versions of <a class="dv-oid" href="#1a">1a</a> and <a class="dv-oid" href="#1m">1m</a>" · "make <a class="dv-oid" href="#1g">1g</a> a masonry gallery"</p>
+</section>
+</x-dc>
+</body>
+</html>
