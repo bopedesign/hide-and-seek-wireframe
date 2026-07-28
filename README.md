@@ -1,18 +1,29 @@
-# Hide and Seek Day Camp — Website Wireframe
+# Hide and Seek Day Camp — Website
 
-A navigable, low-fidelity wireframe for the new Hide and Seek Day Camp website (Seek Ministries, Cherokee County, GA). Black-and-white on purpose: crossed boxes stand in for photography, a handwritten face stands in for the real heading font. This is the **structure, section order, and approved copy** for client review, not the visual design.
+The Hide and Seek Day Camp site (Seek Ministries, Cherokee County, GA), synced from the Claude Design project. This is now the **full visual design** (Poppins type, warm cream / gold / teal palette, rounded cards), not the earlier black-and-white wireframe.
 
 ## View it
 
-Open `index.html` in a browser, or visit the deployed link. Every nav item, mega menu, breadcrumb, and inline link works. Start on the home page.
+Open `index.html` in a browser, or visit the deployed link. All nav items, mega menus, breadcrumbs, and inline links work.
 
-- `index.html` — the navigable wireframe site (start here)
-- `support.js` — runtime for the wireframe (keep it beside the HTML)
-- `reference/` — the same pages laid out side by side on one canvas, for reviewing all of them at once
-- `HANDOFF.md` — full design/build handoff notes: sitemap, page-by-page sections, content notes, integrations
+- `index.html` — the navigable site (start here)
+- `support.js` — runtime for the design (keep it beside the HTML)
+- `assets/` — logo and hero art
+- `HANDOFF.md` — structure, sitemap, and page-by-page notes (written at the wireframe stage; copy and section order still apply)
+- `reference/` — older wireframe page-catalog, reference only
 
-## Notes
+## Images are placeholders right now
 
-- Do not read the greys, borders, crossed image boxes, or the Architects Daughter typeface as the intended design. The real brand system (color, type, imagery) gets applied at the visual-design stage.
-- The text in the wireframe is the intended copy, not placeholder.
-- Wireframes are desktop-only; responsive behavior is described in `HANDOFF.md`.
+The design references ~60 camp photos (`img/a01–a60.jpg`) plus a hero image. Those binaries can't be pulled through the Claude Design file API (it truncates files over ~192KB), so they currently render as warm-tinted placeholder boxes. The layout holds because every photo slot has a fixed height. To drop in the real images, export the design bundle from Claude Design as a zip (it includes the `img/` and `assets/` folders intact) and add those folders here.
+
+## External links
+
+Camp actions leave the site to their real destinations, in a new tab:
+
+- Donate → UltraCamp donation page
+- Register (header + all camp/campus buttons) → UltraCamp client login
+- Staff Apply chooser buttons → UltraCamp upcoming sessions
+- Scholarship application → Google Form
+- Email / Call the office → `mailto:` / `tel:`
+
+Left inert on purpose: the 5K "Register for the race" (separate race registration) and the Apply page "Time Off Request" (its own Google Form, URL still needed from the camp). A "Log in" link is not in the current design; add it back if returning families need it.
