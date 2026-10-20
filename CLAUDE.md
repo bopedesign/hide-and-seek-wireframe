@@ -50,6 +50,22 @@ check with Jeane instead of working around the rule.
 Build new content from the parts the site already uses (its classes, cards, buttons and spacing). Don't introduce new
 fonts, colors or styles. If a request needs a new kind of section, ask Jeane first.
 
+### When more than one person works on the same site
+- Everyone uses their own GitHub account, never a shared login, so every change shows who made it.
+- `git pull` right before starting and again right before pushing. Keep each change small and push it the same session;
+  don't leave work sitting unpushed overnight.
+- One change per commit, with a plain message, so any single change can be undone on its own.
+- Before a bigger job (a new page, a redesign of a section, anything that takes more than one sitting), tell the team in
+  Slack which pages you're working on, and do it on a branch (`git checkout -b <short-name>`). Push the branch for a
+  Vercel preview link, check it, then merge to `main`.
+- If a push is rejected because someone else pushed first: `git pull`, keep both people's changes, build again, then
+  push. If the same lines were changed by both people, stop and ask the other person (or Jeane) which version is right.
+  Never pick one side without checking.
+- Never `git push --force`, `git reset --hard` on `main`, rewrite history, or delete a branch someone else made.
+- To undo a change that's already live, use `git revert <commit>` (it adds an undo commit). Never delete or rewrite commits.
+- Never commit passwords, keys or `.env` files.
+- Every push to `main` is live. After pushing, open the live page and check it.
+
 ### Ask Jeane before
 Deleting a page, changing a page address, changing the header, footer or menus, adding a form, changing tracking or
 search settings (the `<head>` in the Layout, `astro.config.mjs`, `vercel.json`), or anything you're unsure about.
