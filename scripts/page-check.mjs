@@ -101,7 +101,7 @@ async function main() {
   if (mode === 'dist') {
     const cfg = loadCfg(process.cwd()), root = path.resolve(target || 'dist'), files = [];
     if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') delete cfg.ga;   // analytics only loads on production builds
-    const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).forEach((e) => { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (e.name.endsWith('.html')) files.push(p); });
+    const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).forEach((e) => { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (e.name.endsWith('.html') && !e.name.startsWith('._')) files.push(p); });  // ._ files: macOS junk copies on external drives
     walk(root);
     const skip = ['404.html', ...(cfg.skip || [])];
     const results = files.filter((f) => !skip.some((s) => f.includes(s))).map((f) => ({ where: '/' + path.relative(root, f).replace(/(^|\/)index\.html$/, '$1').replace(/^client\//, ''), ...checkHtml(fs.readFileSync(f, 'utf8'), f, { ...cfg, selfUrl: '/' + path.relative(root, f).replace(/^client\//, '').replace(/(^|\/)index\.html$/, '$1') }) })).filter((r) => !r.redirect);
