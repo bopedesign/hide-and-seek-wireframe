@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 import '../styles/base.css';
 import '../styles/site.css';
 
-interface Banner { img: string; alt: string; eyebrow: string; title: string; intro: string; h1: 'eyebrow' | 'title'; crumb: { href: string; label: string } | null }
+interface Banner { pos?: string; img: string; alt: string; eyebrow: string; title: string; intro: string; h1: 'eyebrow' | 'title'; crumb: { href: string; label: string } | null }
 interface Props { title: string; description: string; path: string; banner?: Banner }
 const { title, description, path, banner } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
@@ -59,7 +59,7 @@ const ld = [org, crumbs].filter(Boolean);
     <slot name="hero" />
     {banner && (
       <div class="banner">
-        <img src={banner.img} alt={banner.alt} class="banner-img" width="1600" height="1067">
+        <img src={banner.img} alt={banner.alt} class="banner-img" width="1600" height="1067" style={banner.pos ? `object-position:${banner.pos}` : undefined}>
         <div class="banner-shade"></div>
         <div class="banner-txt">
           <div class="wrap">

@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout {...{"title": "Hide and Seek Day Camp | Christian Summer Day Camp in Canton, GA", "description": "A Christ rooted day camp for finished kindergarten through finished fifth grade, open to every family. Eight weeks of summer, three campuses, and counselors who know your child by name.", "path": "/"}}>
 <Fragment slot="hero">
 <div class="hero-home">
-    <img src="/img/home-header-3.webp" alt="Two campers smiling together" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <picture><source media="(max-width:600px)" srcset="/img/home-header-3.webp"><img src="/img/gallery-dsc00345.webp" alt="Campers sitting together smiling outside" style="object-position:50% 40%;position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></picture>
     <div style="position:absolute;inset:0;background:radial-gradient(115% 72% at 18% 100%,rgba(36,91,131,.62) 0%,rgba(36,91,131,0) 64%),linear-gradient(90deg,rgba(11,38,60,.56) 0%,rgba(11,38,60,.14) 58%,transparent 100%),linear-gradient(180deg,rgba(11,38,60,.72) 0%,rgba(11,38,60,.22) 26%,rgba(10,34,54,.52) 52%,rgba(8,28,45,.93) 82%,rgba(8,28,45,.97) 100%)"></div>
     <div style="position:absolute;left:0;right:0;bottom:0;padding:0 clamp(20px,3vw,40px) 64px">
       <div class="wrap" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;align-items:end">
@@ -35,8 +35,8 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="g3">
       <div><div class="ph" style="height:300px"><img src="/img/home-01.webp" alt="Camper in a harness climbing in the trees"></div><h3 class="h3" style="margin-top:22px">Outdoor adventure</h3><p class="s">Zipline, rock wall, gaga ball, ninja island, low ropes, 9 square, and field games all week long.</p></div>
-      <div><div class="ph" style="height:300px"><img src="/img/home-02.webp" alt="Three boys smiling together indoors"></div><h3 class="h3" style="margin-top:22px">Friendship and belonging</h3><p class="s">Groups of eight, led by a trained counselor who stays with your camper every day of the session.</p></div>
-      <div><div class="ph" style="height:300px"><img src="/img/home-03.webp" alt="Counselor standing with campers outside"></div><h3 class="h3" style="margin-top:22px">Bible teaching</h3><p class="s">Matthew 6:33 and Psalm 119:11 shape our summer, with a curriculum taught by staff who love your kids.</p></div>
+      <div><div class="ph" style="height:300px"><img src="/img/home-02.webp" alt="Three boys smiling together indoors" style="object-position:50% 35%"></div><h3 class="h3" style="margin-top:22px">Friendship and belonging</h3><p class="s">Groups of eight, led by a trained counselor who stays with your camper every day of the session.</p></div>
+      <div><div class="ph" style="height:300px"><img src="/img/home-03.webp" alt="Counselor standing with campers outside" style="object-position:50% 0%"></div><h3 class="h3" style="margin-top:22px">Bible teaching</h3><p class="s">Matthew 6:33 and Psalm 119:11 shape our summer, with a curriculum taught by staff who love your kids.</p></div>
     </div>
     <div class="row" style="margin-top:36px"><a href="/explore-camp/camp-experience/" class="navy">See the camp experience</a></div>
   </div></div>
@@ -59,7 +59,7 @@ import Layout from '../layouts/Layout.astro';
     <h2 class="h2" style="color:#fff;margin-bottom:44px;max-width:22ch">Three ways to come to camp</h2>
     <div class="g3">
       <div style="background:#fbf7ef;border-radius:24px;padding:14px 14px 26px;color:#20180f">
-        <div class="ph" style="height:230px;border-radius:16px;margin-bottom:22px"><img src="/img/home-04.webp" alt="Campers standing on a stick fort in the woods"></div>
+        <div class="ph" style="height:230px;border-radius:16px;margin-bottom:22px"><img src="/img/home-04.webp" alt="Campers standing on a stick fort in the woods" style="object-position:50% 45%"></div>
         <div style="padding:0 12px"><h3 class="h3">Summer Day Camp</h3><p class="s" style="margin-bottom:18px">Finished kindergarten through finished fifth grade. Six weekly sessions, 9 a.m. to 3 p.m.</p><div class="row" style="margin-bottom:20px"><span class="chip">$275 per week</span><span class="chip">All three campuses</span></div><a href="/explore-camp/summer-day-camp/" class="lk">Learn more</a></div>
       </div>
       <div style="background:#fbf7ef;border-radius:24px;padding:14px 14px 26px;color:#20180f">
@@ -67,7 +67,7 @@ import Layout from '../layouts/Layout.astro';
         <div style="padding:0 12px"><h3 class="h3">SEEK Adventure</h3><p class="s" style="margin-bottom:18px">One week for finished sixth, seventh, and eighth grade. Bigger activities, more woods.</p><div class="row" style="margin-bottom:20px"><span class="chip">$300 for the week</span><span class="chip">Hickory Flat only</span></div><a href="/explore-camp/seek-adventure/" class="lk">Learn more</a></div>
       </div>
       <div style="background:#fbf7ef;border-radius:24px;padding:14px 14px 26px;color:#20180f">
-        <div class="ph" style="height:230px;border-radius:16px;margin-bottom:22px"><img src="/img/home-06.webp" alt="Camper working on a string craft"></div>
+        <div class="ph" style="height:230px;border-radius:16px;margin-bottom:22px"><img src="/img/home-06.webp" alt="Camper working on a string craft" style="object-position:50% 90%"></div>
         <div style="padding:0 12px"><h3 class="h3">Winter Camp</h3><p class="s" style="margin-bottom:18px">A daily camp between Christmas and New Year's for families needing childcare and for campers who miss camp.</p><div class="row" style="margin-bottom:20px"><span class="chip">$55 a day</span><span class="chip">December 29, 30, 31</span></div><a href="/explore-camp/winter-camp/" class="lk">Learn more</a></div>
       </div>
     </div>
@@ -110,11 +110,11 @@ import Layout from '../layouts/Layout.astro';
       <div>
         <p class="eyebrow">From a camp parent</p>
         <p style="margin:0 0 26px;font-size:31px;line-height:1.32;font-weight:500;letter-spacing:-.02em;text-wrap:pretty">"Parent quote goes here. One or two sentences about how their child came home tired, happy, and talking about Jesus."</p>
-        <div style="display:flex;gap:14px;align-items:center"><div class="ph" style="width:52px;height:52px;flex:none;border-radius:999px"><img src="/img/home-12.webp" alt="Camper playing in the gaga ball pit"></div><div><p style="margin:0;font-size:14px;font-weight:600">Parent name</p><p style="margin:0;font-size:13px;color:#5c5348">Camper grade, campus</p></div></div>
+        <div style="display:flex;gap:14px;align-items:center"><div class="ph" style="width:52px;height:52px;flex:none;border-radius:999px"><img src="/img/home-12.webp" alt="Camper playing in the gaga ball pit" style="object-position:50% 0%"></div><div><p style="margin:0;font-size:14px;font-weight:600">Parent name</p><p style="margin:0;font-size:13px;color:#5c5348">Camper grade, campus</p></div></div>
       </div>
       <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px">
         <div class="ph" style="height:180px;border-radius:18px"><img src="/img/home-13.webp" alt="Camper grinning at the camera"></div>
-        <div class="ph" style="height:180px;border-radius:18px;margin-top:26px"><img src="/img/home-14.webp" alt="Camper smiling and pointing at the camera"></div>
+        <div class="ph" style="height:180px;border-radius:18px;margin-top:26px"><img src="/img/home-14.webp" alt="Camper smiling and pointing at the camera" style="object-position:50% 35%"></div>
         <div class="ph" style="height:180px;border-radius:18px"><img src="/img/home-15.webp" alt="Camper climbing the rock wall"></div>
         <div class="ph" style="height:180px;border-radius:18px;margin-top:26px"><img src="/img/home-hero.webp" alt="Camper riding the zipline through the trees"></div>
       </div>
