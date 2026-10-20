@@ -1,0 +1,86 @@
+---
+// Every page: head tags, the 5K bar, the photo banner (or the home hero), the header over it, the page, the footer.
+import Bar from '../components/Bar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/base.css';
+import '../styles/site.css';
+
+interface Banner { img: string; alt: string; eyebrow: string; title: string; intro: string; h1: 'eyebrow' | 'title'; crumb: { href: string; label: string } | null }
+interface Props { title: string; description: string; path: string; banner?: Banner }
+const { title, description, path, banner } = Astro.props;
+const canonical = new URL(path, Astro.site).href;
+// The site stays out of search results until launch day (set PUBLIC_ALLOW_INDEXING=true in Vercel then).
+const indexable = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true';
+const GA = import.meta.env.PUBLIC_GA_ID;
+
+const org = {
+  '@context': 'https://schema.org', '@type': 'ChildCare', '@id': new URL('/#camp', Astro.site).href,
+  name: 'Hide and Seek Day Camp', url: new URL('/', Astro.site).href, email: 'info@hsdc.camp', telephone: '+1-770-720-0005',
+  logo: new URL('/brand/hs-logo-white.png', Astro.site).href,
+  address: { '@type': 'PostalAddress', streetAddress: '1894 Lower Union Hill Rd', addressLocality: 'Canton', addressRegion: 'GA', postalCode: '30115', addressCountry: 'US' },
+  parentOrganization: { '@type': 'NGO', name: 'Seek Ministries', url: 'https://www.seekministries.org/' },
+  sameAs: ['https://www.facebook.com/Hide-and-Seek-Day-Camp-86996727863'],
+};
+const crumbs = banner ? {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { name: 'Home', href: '/' },
+    ...(banner.crumb ? [banner.crumb.href === '/locations/' ? { name: 'Explore Camp', href: '/explore-camp/' } : null, { name: banner.crumb.label, href: banner.crumb.href }].filter(Boolean) : []),
+    { name: title.split(' | ')[0], href: path },
+  ].map((c: any, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: new URL(c.href, Astro.site).href })),
+} : null;
+const ld = [org, crumbs].filter(Boolean);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  {!indexable && <meta name="robots" content="noindex">}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={new URL(banner ? banner.img : '/img/hero.webp', Astro.site).href}>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {ld.map((x) => <script type="application/ld+json" set:html={JSON.stringify(x)} />)}
+  {GA && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA}`}></script>}
+  {GA && <script is:inline define:vars={{ GA }}>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', GA);</script>}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <Bar />
+  <div class="top">
+    <slot name="hero" />
+    {banner && (
+      <div class="banner">
+        <img src={banner.img} alt={banner.alt} class="banner-img" width="1600" height="1067">
+        <div class="banner-shade"></div>
+        <div class="banner-txt">
+          <div class="wrap">
+            {banner.h1 === 'eyebrow'
+              ? <><h1 class="banner-eyebrow">{banner.eyebrow}</h1><p class="banner-title">{banner.title}</p></>
+              : <><p class="banner-eyebrow">{banner.eyebrow}</p><h1 class="banner-title">{banner.title}</h1></>}
+            <p class="banner-intro">{banner.intro}</p>
+          </div>
+        </div>
+      </div>
+    )}
+    <Header />
+  </div>
+  <main id="main"><slot /></main>
+  <Footer />
+  <script is:inline>
+    // outside actions (Register, Donate, Apply, Scholarship, email, call) are sent to Analytics as events
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[data-ev]');
+      if (a && window.gtag) gtag('event', a.dataset.ev, { link_url: a.href, page: location.pathname });
+    });
+  </script>
+</body>
+</html>

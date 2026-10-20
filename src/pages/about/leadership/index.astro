@@ -1,0 +1,25 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+// Camp directors: the section shows once real names are added here, e.g.
+// { name: 'Jane Smith', role: 'Director, Hickory Flat', img: '/img/a39.webp' }. The design had four placeholder cards.
+const directors: { name: string; role: string; img: string }[] = [];
+---
+<Layout {...{"title": "Leadership Team | Hide and Seek Day Camp", "description": "The year round team, and the directors your camper will see every morning.", "path": "/about/leadership/", "banner": {"img": "/img/a09.webp", "alt": "The camp team", "eyebrow": "Leadership", "title": "The people behind camp", "intro": "The year round team, and the directors your camper will see every morning.", "h1": "eyebrow", "crumb": {"href": "/about/", "label": "About"}}}}>
+  <div class="tint" style="padding:88px clamp(20px,3vw,40px)"><div class="wrap" style="display:grid;grid-template-columns:320px minmax(0,1fr);gap:48px;align-items:center">
+    <div class="ph" style="height:340px"><img src="/img/a43.webp" alt="Cathy, founder of Seek Ministries"></div>
+    <div><p class="eyebrow">Founder</p><h2 class="h2">Cathy, Founder of Seek Ministries</h2><p class="p">Bio to be written with the camp office. Cathy speaks at the annual banquet each spring about how camp did the past year and what is ahead.</p></div>
+  </div></div>
+  {directors.length > 0 && (
+  <div class="sec"><div class="wrap">
+    <h2 class="h2" style="margin-bottom:32px">Camp directors</h2>
+    <div class="g4">
+      {directors.map((d) => <div><div class="ph" style="height:250px"><img src={d.img} alt={d.name}></div><h3 class="h3" style="margin-top:16px">{d.name}</h3><p class="s">{d.role}</p></div>)}
+    </div>
+  </div></div>
+  )}
+  <div class="sec" style="padding-top:0"><div class="wrap">
+    <h2 class="h2" style="margin-bottom:28px">Summer staff</h2>
+    <div class="ph" style="height:420px"><img src="/img/a40.webp" alt="The summer staff"></div>
+    <div class="row" style="margin-top:28px"><a href="/get-involved/work-at-camp/" class="ghostD">Work at camp</a></div>
+  </div></div>
+</Layout>

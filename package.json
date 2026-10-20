@@ -1,0 +1,14 @@
+{
+  "name": "hide-and-seek-day-camp",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/page-check.mjs dist dist",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.6.1"
+  }
+}
