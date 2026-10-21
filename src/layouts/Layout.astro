@@ -5,13 +5,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/base.css';
 import '../styles/site.css';
+import { HIDDEN_PAGES } from '../hidden-pages';
 
 interface Banner { pos?: string; img: string; alt: string; eyebrow: string; title: string; intro: string; h1: 'eyebrow' | 'title'; crumb: { href: string; label: string } | null }
 interface Props { title: string; description: string; path: string; banner?: Banner }
 const { title, description, path, banner } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
 // The site stays out of search results until launch day (set PUBLIC_ALLOW_INDEXING=true in Vercel then).
-const indexable = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true';
+const indexable = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true' && !HIDDEN_PAGES.includes(path);
 const GA = import.meta.env.PUBLIC_GA_ID;
 
 const org = {
