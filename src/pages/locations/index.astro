@@ -9,6 +9,38 @@ import Layout from '../../layouts/Layout.astro';
   </div></div>
   <div class="tint" style="padding:88px clamp(20px,3vw,40px)"><div class="wrap">
     <h2 class="h2" style="margin-bottom:28px">Find your campus</h2>
-    <div class="ph" style="height:380px;background:#e4eef7;display:flex;align-items:center;justify-content:center"><p class="s" style="font-weight:600;color:#245b83">Interactive map, three pins across Cherokee County</p></div>
+    <div id="campus-map" style="height:380px;background:#e4eef7;border-radius:22px;overflow:hidden;position:relative;z-index:0" role="region" aria-label="Map of the three camp campuses"></div>
   </div></div>
 </Layout>
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+
+  // Pins for the three campuses. Coordinates come from each church's street address.
+  const campuses = [
+    { name: 'Hickory Flat', place: 'Mt. Zion Baptist Church', address: '4096 East Cherokee Drive, Canton, GA 30115', at: [34.19085, -84.42248] },
+    { name: 'Ball Ground', place: 'Ball Ground Methodist Church', address: '3045 Canton Hwy, Ball Ground, GA 30107', at: [34.34515, -84.38177] },
+    { name: 'Sixes', place: '', address: '8385 Bells Ferry Road, Canton, GA 30114', at: [34.17277, -84.56110] },
+  ];
+
+  const map = L.map('campus-map', { scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  const pin = L.divIcon({ className: 'campus-pin', html: '<span></span>', iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -12] });
+  for (const c of campuses) {
+    const directions = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(c.address);
+    L.marker(c.at, { icon: pin, title: c.name, alt: c.name + ' campus' }).addTo(map).bindPopup(
+      `<strong>${c.name}</strong><br>${c.place ? c.place + '<br>' : ''}${c.address}<br>` +
+      `<a href="${directions}" data-ev="directions_click" target="_blank" rel="noopener">Get directions</a>`
+    );
+  }
+  map.fitBounds(L.latLngBounds(campuses.map((c) => c.at)), { padding: [40, 40] });
+</script>
+<style is:global>
+  .campus-pin span { display:block; width:22px; height:22px; border-radius:999px; background:#245b83; border:3px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,.35) }
+  #campus-map .leaflet-popup-content { font-size:14px; line-height:1.5 }
+  #campus-map img { max-width:none !important; max-height:none !important; border-radius:0 }
+</style>
