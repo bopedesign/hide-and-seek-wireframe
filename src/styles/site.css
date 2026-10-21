@@ -84,3 +84,5 @@ a.ghostD{color:#20180f}a.ghostD:hover{color:#fbf7ef}
   main .g4 .card{padding:20px}
   main .g4 .card p[style*="font-size:26px"]{font-size:20px !important}
 }
+/* Home banner: the phone photo (picture source) keeps its own focus */
+@media (max-width:600px){.hero-home img{object-position:50% 40% !important}}
