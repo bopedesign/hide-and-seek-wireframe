@@ -3,24 +3,123 @@ import Layout from '../../../layouts/Layout.astro';
 ---
 <Layout {...{"title": "Camp Photo Gallery | Hide and Seek Day Camp", "description": "Filter by campus or by event.", "path": "/explore-camp/gallery/", "banner": {"pos": "60% 40%", "img": "/img/gallery-dsc00345.webp", "alt": "Campers sitting together smiling", "eyebrow": "Gallery", "title": "Photos from past summers", "intro": "Filter by campus or by event.", "h1": "eyebrow", "crumb": {"href": "/explore-camp/", "label": "Explore Camp"}}}}>
   <div class="sec"><div class="wrap">
-    <div class="row" style="margin-bottom:36px"><span class="navy" style="padding:11px 22px;font-size:13px">All</span><span class="ghostD" style="padding:10px 21px;font-size:13px">Hickory Flat</span><span class="ghostD" style="padding:10px 21px;font-size:13px">Ball Ground</span><span class="ghostD" style="padding:10px 21px;font-size:13px">Sixes</span><span class="ghostD" style="padding:10px 21px;font-size:13px">Winter Camp</span><span class="ghostD" style="padding:10px 21px;font-size:13px">5K</span></div>
-    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
-      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/gallery-dsc00345.webp" alt="Campers sitting together smiling" style="object-position:35% 50%"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00338.webp" alt="Camper in a harness climbing in the trees"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-mg2424.webp" alt="Camper on a rope swing in the woods"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00066.webp" alt="Camper running across the field"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-mg2404.webp" alt="Camper making a bead craft"></div>
-      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/gallery-mg1528.webp" alt="Counselor with four campers" style="object-position:65% 40%"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00087.webp" alt="Camper smiling close to the camera"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-mg5060.webp" alt="Camper smiling at the craft table" style="object-position:50% 35%"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00067.webp" alt="Campers running and playing on the field"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-mg5116.webp" alt="Camper in a paper crown with a friend" style="object-position:50% 30%"></div>
-      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/summer-11.webp" alt="Camper on the slip and slide"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-dsc09994.webp" alt="Two campers smiling together" style="object-position:50% 45%"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-mg1542.webp" alt="Camper sitting at a picnic table" style="object-position:50% 45%"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-mg5075.webp" alt="Camper smiling during a game" style="object-position:50% 35%"></div>
-      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00051.webp" alt="Two campers looking over a wooden rail"></div>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;grid-auto-flow:dense">
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/gallery-dsc00345.webp" alt="Campers sitting together smiling" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00338.webp" alt="Camper in a harness climbing in the trees" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-mg2424.webp" alt="Camper on a rope swing in the woods" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00066.webp" alt="Camper running across the field" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-mg2404.webp" alt="Camper making a bead craft" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/gallery-mg1528.webp" alt="Counselor with four campers" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00087.webp" alt="Camper smiling close to the camera" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-mg5060.webp" alt="Camper smiling at the craft table" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00067.webp" alt="Campers running and playing on the field" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-mg5116.webp" alt="Camper in a paper crown with a friend" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/summer-11.webp" alt="Camper on the slip and slide" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-dsc09994.webp" alt="Two campers smiling together" loading="lazy" style="object-position:50% 45%"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-mg1542.webp" alt="Camper sitting at a picnic table" loading="lazy" style="object-position:50% 45%"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-mg5075.webp" alt="Camper smiling during a game" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00051.webp" alt="Two campers looking over a wooden rail" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/about-01.webp" alt="The whole camp together for a group photo" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/about-header.webp" alt="Camper with a big smile" loading="lazy" style="object-position:50% 10%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/about-02.webp" alt="Counselors and a camper sitting together in the woods" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/gallery-mg2432.webp" alt="Counselor and camper smiling at a picnic table" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a09.webp" alt="The camp team" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a43.webp" alt="Cathy, founder of Seek Ministries" loading="lazy" style="object-position:50% 0%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a40.webp" alt="The summer staff" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a45.webp" alt="Campers in the woods" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/a02.webp" alt="The first summer" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a48.webp" alt="Building the ropes course" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a20.webp" alt="Ball Ground opens" loading="lazy" style="object-position:50% 0%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a04.webp" alt="Sixes opens" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a30.webp" alt="Counselor and camper" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a44.webp" alt="The whole camp together" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a56.webp" alt="Campers" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a08.webp" alt="The 5K" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/contact-header.webp" alt="Counselor and campers sitting on the pavement" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/contact-02.webp" alt="Counselors with a group of campers" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/week-header.webp" alt="Two campers smiling in the woods" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/week-01.webp" alt="Counselors with a group of campers" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/week-02.webp" alt="Camper playing on a stick fort" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/week-03.webp" alt="Camper drawing at a table" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/week-04.webp" alt="Camper smiling with friends in the woods" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/week-05.webp" alt="Camper soaked and smiling on water day" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-dsc00117.webp" alt="Campers and counselors posing on the pavement" loading="lazy" style="object-position:50% 22%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/explore-header.webp" alt="Campers and a counselor sitting together indoors" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px"><img src="/img/explore-01.webp" alt="Camper riding the zipline" loading="lazy" style="object-position:50% 45%"></div>
+      <div class="ph" style="height:230px"><img src="/img/explore-02.webp" alt="Campers raising their hands indoors" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/explore-03.webp" alt="Camper in a paper crown holding up a drawing" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="ph" style="height:230px"><img src="/img/explore-04.webp" alt="Campers lined up outside" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/explore-05.webp" alt="Two counselors with a group of boys" loading="lazy" style="object-position:50% 10%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/explore-06.webp" alt="Counselors with a group of girls" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/explore-07.webp" alt="Two counselors with four campers" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="ph" style="height:230px"><img src="/img/gallery-mg1531.webp" alt="Campers and counselors gathered on the grass" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/seek-header.webp" alt="Large group of campers in matching purple shirts" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/seek-01.webp" alt="Campers holding a painted banner" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/seek-02.webp" alt="Camper smiling and pointing at the camera" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/seek-03.webp" alt="Camper sitting on the grass smiling" loading="lazy" style="object-position:50% 45%"></div>
+      <div class="ph" style="height:230px"><img src="/img/seek-04.webp" alt="Campers lined up indoors" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/summer-header.webp" alt="Campers cheering for the camera" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px"><img src="/img/summer-01.webp" alt="Camper walking across the field" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/summer-12.webp" alt="Campers sitting together at assembly" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/summer-03.webp" alt="Camper climbing a rope net" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/summer-04.webp" alt="Campers and counselors walking across the field" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/summer-05.webp" alt="Camper in a helmet climbing up to the zipline" loading="lazy" style="object-position:50% 45%"></div>
+      <div class="ph" style="height:230px"><img src="/img/summer-06.webp" alt="Camper in a helmet at the rock wall" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/summer-02.webp" alt="Campers playing gaga ball" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/summer-07.webp" alt="Camper on the low ropes" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/summer-08.webp" alt="Camper climbing the crate stack" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/summer-09.webp" alt="Camper at the craft table" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/summer-10.webp" alt="Campers playing field games" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/gallery-mg4854.webp" alt="Counselor with a group of boys" loading="lazy" style="object-position:50% 15%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/gallery-dsc09982.webp" alt="Campers gathered together outside" loading="lazy" style="object-position:50% 15%"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-06.webp" alt="Camper working on a string craft" loading="lazy" style="object-position:50% 90%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a42.webp" alt="The evening" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a39.webp" alt="Race photo" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px"><img src="/img/a10.webp" alt="Race photo" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/involved-header.webp" alt="The whole camp together for a group photo" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/involved-01.webp" alt="Counselors with the camp utility vehicle" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/involved-03.webp" alt="Group of staff together outside" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/involved-04.webp" alt="Volunteer in a Best Camp shirt by the van" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/involved-extra.webp" alt="Large group of campers in matching purple shirts" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a18.webp" alt="Counselors and campers in the woods" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a22.webp" alt="Water day" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a24.webp" alt="Teaching" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-01.webp" alt="Camper in a harness climbing in the trees" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-02.webp" alt="Three boys smiling together indoors" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-03.webp" alt="Camper praying with hands folded" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-04.webp" alt="Campers standing on a stick fort in the woods" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/home-05.webp" alt="Large group of campers in matching purple shirts in the woods" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-07.webp" alt="Camper at the top of the crate stack in the woods" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/home-09.webp" alt="Campers and counselors posing for a group photo" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-10.webp" alt="Campers and counselors together on the grass" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-11.webp" alt="Camper cheering with both arms in the air" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-12.webp" alt="Camper playing in the gaga ball pit" loading="lazy" style="object-position:50% 0%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/home-13.webp" alt="Camper grinning at the camera" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-14.webp" alt="Camper smiling and pointing at the camera" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-15.webp" alt="Camper climbing the rock wall" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/home-hero.webp" alt="Camper riding the zipline through the trees" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/home-header-2.webp" alt="The whole camp together for a group photo" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/campus-extra.webp" alt="Camper smiling for the camera" loading="lazy" style="object-position:50% 0%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a26.webp" alt="The loop trail" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/campus-mg1487.webp" alt="Camper in a helmet smiling" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/campus-mg1652.webp" alt="Two campers jumping" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px"><img src="/img/campus-mg1466.webp" alt="Camper holding a ball" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/campus-mg1848.webp" alt="Camper standing on the crate stack" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px"><img src="/img/campus-mg5088.webp" alt="Two campers at a wooden wall" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px"><img src="/img/campus-mg4947.webp" alt="Camper sitting on the grass" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a06.webp" alt="Field games" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a41.webp" alt="Indoor space" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a13.webp" alt="A camper at camp" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/a23.webp" alt="Campers at pick up" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/parent-header.webp" alt="Counselor with a group of boys in the woods" loading="lazy" style="object-position:50% 20%"></div>
+      <div class="ph" style="height:230px"><img src="/img/parent-01.webp" alt="Camper on a wooden walkway" loading="lazy"></div>
+      <div class="ph" style="height:230px"><img src="/img/parent-02.webp" alt="Camper in a helmet on the climbing wall" loading="lazy" style="object-position:50% 25%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/parent-03.webp" alt="Campers goofing around in silly glasses" loading="lazy" style="object-position:50% 35%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/parent-04.webp" alt="Counselor with four campers" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a36.webp" alt="A camper in a climbing helmet" loading="lazy"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a60.webp" alt="Harness check" loading="lazy" style="object-position:50% 20%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a50.webp" alt="Two campers" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="ph" style="height:230px;grid-column:span 2"><img src="/img/a55.webp" alt="Camper and counselor" loading="lazy" style="object-position:50% 20%"></div>
     </div>
-    <div style="display:flex;justify-content:center;margin-top:40px"><span class="ghostD">Load more</span></div>
   </div></div>
 </Layout>
