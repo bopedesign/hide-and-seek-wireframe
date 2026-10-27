@@ -1,8 +1,26 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 
-// 2026 sponsors: the thank you graphic from the 2026 race, with every sponsor's logo on it.
-const sponsorBoard2026 = '/img/sponsors-2026.webp';
+// 2026 sponsors, in the order of the race's thank you banner. Logos live in public/img/sponsors/.
+const sponsors2026 = [
+  { name: 'Chick-fil-A Canton', logo: '/img/sponsors/chick-fil-a.webp' },
+  { name: 'M Jones Heating and Cooling', logo: '/img/sponsors/m-jones.webp' },
+  { name: 'Connelly Residential Services', logo: '/img/sponsors/connelly.webp' },
+  { name: 'Pinnacle Pools and Spas', logo: '/img/sponsors/pinnacle-pools.webp' },
+  { name: 'Valor Environmental', logo: '/img/sponsors/valor.webp' },
+  { name: 'Crose Law', logo: '/img/sponsors/crose-law.webp' },
+  { name: 'State Farm, Jason Davidson', logo: '/img/sponsors/state-farm-jason-davidson.webp' },
+  { name: 'Fly and Form Concrete Structures', logo: '/img/sponsors/fly-and-form.webp' },
+  { name: 'Southeast Restoration', logo: '/img/sponsors/southeast-restoration.webp' },
+  { name: 'Flat Out Fitness Boot Camp', logo: '/img/sponsors/flat-out-fitness.webp' },
+  { name: 'Lakota Springs', logo: '/img/sponsors/lakota-springs.webp' },
+  { name: 'Mt. Zion Baptist Church', logo: '/img/sponsors/mt-zion.webp' },
+  { name: 'Sixes Church', logo: '/img/sponsors/sixes-church.webp' },
+  { name: 'Ball Ground Methodist Church', logo: '/img/sponsors/ball-ground-methodist.webp' },
+  { name: 'Hide and Seek Day Camp', logo: '/img/sponsors/hide-and-seek.webp' },
+  { name: 'Jetset Modern Pilates', logo: '/img/sponsors/jetset-pilates.webp' },
+  { name: 'Bope', logo: '/img/sponsors/bope.webp' },
+];
 // 2027 sponsor packet flyer: save the PDF in public/files/ and put its address here, for example
 // '/files/sponsor-packet-2027.pdf'. The button links to it once this is set.
 const sponsorPacket2027 = '';
@@ -21,8 +39,10 @@ const sponsorPacket2027 = '';
   </div></div>
   <div class="sec"><div class="wrap">
     <h2 class="h2">Sponsors</h2><p class="p" style="margin-bottom:28px">Sponsors set up booths at the event and are listed here and on the race shirt.</p>
-    <h3 class="h3" style="margin-bottom:16px">2026 sponsors</h3>
-    <img src={sponsorBoard2026} alt="Thank you to our 2026 sponsors: Chick-fil-A Canton, M Jones Heating and Cooling, Connelly Residential Services, Pinnacle Pools and Spas, Valor Environmental, Crose Law, State Farm agent Jason Davidson, Fly and Form Concrete Structures, Southeast Restoration, Flat Out Fitness Boot Camp, Lakota Springs, Mt. Zion Baptist Church, Sixes Church, Ball Ground Methodist Church, Hide and Seek Day Camp, Jetset Modern Pilates, and Bope" width="1600" height="870" loading="lazy" style="display:block;width:100%;height:auto;border-radius:22px">
+    <h3 class="h3" style="margin-bottom:16px">Thank you to our 2026 sponsors</h3>
+    <div class="sponsor-logos">
+      {sponsors2026.map((sp) => <div class="card"><img src={sp.logo} alt={sp.name} loading="lazy"></div>)}
+    </div>
     <h3 class="h3" style="margin:44px 0 16px">2027 sponsors</h3>
     <div class="row">
       {sponsorPacket2027
