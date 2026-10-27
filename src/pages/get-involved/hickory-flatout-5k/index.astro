@@ -1,10 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 
-// 2026 sponsors: save each logo in public/img/sponsors/ and add it here, for example
-// { name: 'Acme Hardware', logo: '/img/sponsors/acme.webp', url: 'https://acme.com' }. Until the list has
-// logos, the 2026 row shows empty logo spots.
-const sponsors2026: { name: string; logo: string; url?: string }[] = [];
+// 2026 sponsors: the thank you graphic from the 2026 race, with every sponsor's logo on it.
+const sponsorBoard2026 = '/img/sponsors-2026.webp';
 // 2027 sponsor packet flyer: save the PDF in public/files/ and put its address here, for example
 // '/files/sponsor-packet-2027.pdf'. The button links to it once this is set.
 const sponsorPacket2027 = '';
@@ -24,14 +22,7 @@ const sponsorPacket2027 = '';
   <div class="sec"><div class="wrap">
     <h2 class="h2">Sponsors</h2><p class="p" style="margin-bottom:28px">Sponsors set up booths at the event and are listed here and on the race shirt.</p>
     <h3 class="h3" style="margin-bottom:16px">2026 sponsors</h3>
-    <div class="g4">
-      {sponsors2026.length
-        ? sponsors2026.map((sp) => {
-            const logo = <img src={sp.logo} alt={sp.name} style="max-width:100%;max-height:70px;object-fit:contain" />;
-            return <div class="card" style="height:110px;display:flex;align-items:center;justify-content:center">{sp.url ? <a href={sp.url} data-ev="sponsor_click" target="_blank" rel="noopener">{logo}</a> : logo}</div>;
-          })
-        : [1, 2, 3, 4].map(() => <div class="card" style="height:90px;display:flex;align-items:center;justify-content:center"><p class="s">Sponsor logo</p></div>)}
-    </div>
+    <img src={sponsorBoard2026} alt="Thank you to our 2026 sponsors: Chick-fil-A Canton, M Jones Heating and Cooling, Connelly Residential Services, Pinnacle Pools and Spas, Valor Environmental, Crose Law, State Farm agent Jason Davidson, Fly and Form Concrete Structures, Southeast Restoration, Flat Out Fitness Boot Camp, Lakota Springs, Mt. Zion Baptist Church, Sixes Church, Ball Ground Methodist Church, Hide and Seek Day Camp, Jetset Modern Pilates, and Bope" width="1600" height="870" loading="lazy" style="display:block;width:100%;height:auto;border-radius:22px">
     <h3 class="h3" style="margin:44px 0 16px">2027 sponsors</h3>
     <div class="row">
       {sponsorPacket2027
