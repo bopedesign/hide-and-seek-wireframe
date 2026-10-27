@@ -7,7 +7,7 @@ import '../styles/base.css';
 import '../styles/site.css';
 import { HIDDEN_PAGES } from '../hidden-pages';
 
-interface Banner { pos?: string; img: string; alt: string; eyebrow: string; title: string; intro: string; h1: 'eyebrow' | 'title'; crumb: { href: string; label: string } | null }
+interface Banner { pos?: string; cta?: { label: string; href: string }; img: string; alt: string; eyebrow: string; title: string; intro: string; h1: 'eyebrow' | 'title'; crumb: { href: string; label: string } | null }
 interface Props { title: string; description: string; path: string; banner?: Banner }
 const { title, description, path, banner } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
@@ -68,6 +68,7 @@ const ld = [org, crumbs].filter(Boolean);
               ? <><h1 class="banner-eyebrow">{banner.eyebrow}</h1><p class="banner-title">{banner.title}</p></>
               : <><p class="banner-eyebrow">{banner.eyebrow}</p><h1 class="banner-title">{banner.title}</h1></>}
             {banner.intro && <p class="banner-intro">{banner.intro}</p>}
+            {banner.cta && <div class="row" style="margin-top:24px"><a href={banner.cta.href} class="gold" style="padding:15px 30px">{banner.cta.label}</a></div>}
           </div>
         </div>
       </div>
