@@ -92,6 +92,10 @@ Vercel (project `hide-and-seek-wireframe`, https://hide-and-seek-wireframe.verce
 - Outside links (UltraCamp registration, donations, staff applications, the scholarship form) are listed in each link's
   `href`. If UltraCamp changes an address, search the repo for the old one and replace every copy.
 
+### Photos not to use
+- The girl in the orange helmet riding the zipline (camp folders: `HOME PAGE/1.jpg` and `EXPORE CAMP/GALLERY/DSC00338.jpg`,
+  once `home-01.webp` and `gallery-dsc00338.webp`). Taken off the site on 2026-10-27 at the team's request. Never add it back.
+
 ### Still needed from the camp
 - Camp directors' names, roles and photos: add them to the `directors` list at the top of
   `src/pages/about/leadership/index.astro` and the section appears.
