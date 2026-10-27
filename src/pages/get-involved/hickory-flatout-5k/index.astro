@@ -2,24 +2,25 @@
 import Layout from '../../../layouts/Layout.astro';
 
 // 2026 sponsors, in the order the team chose. Logos live in public/img/sponsors/.
+// A sponsor with a url gets its logo linked to that site; leave url off to show the logo only.
 const sponsors2026 = [
-  { name: 'Southeast Restoration', logo: '/img/sponsors/southeast-restoration.webp' },
-  { name: 'Connelly Residential Services', logo: '/img/sponsors/connelly.webp' },
-  { name: 'Pinnacle Pools and Spas', logo: '/img/sponsors/pinnacle-pools.webp' },
-  { name: 'Chick-fil-A Canton', logo: '/img/sponsors/chick-fil-a.webp' },
-  { name: 'M Jones Heating and Cooling', logo: '/img/sponsors/m-jones.webp' },
-  { name: 'Valor Environmental', logo: '/img/sponsors/valor.webp' },
-  { name: 'Crose Law', logo: '/img/sponsors/crose-law.webp' },
-  { name: 'State Farm, Jason Davidson', logo: '/img/sponsors/state-farm-jason-davidson.webp' },
-  { name: 'Fly and Form Concrete Structures', logo: '/img/sponsors/fly-and-form.webp' },
-  { name: 'Flat Out Fitness Boot Camp', logo: '/img/sponsors/flat-out-fitness.webp' },
-  { name: 'Lakota Springs', logo: '/img/sponsors/lakota-springs.webp' },
-  { name: 'Jetset Modern Pilates', logo: '/img/sponsors/jetset-pilates.webp' },
-  { name: 'Bope', logo: '/img/sponsors/bope.webp' },
+  { name: 'Southeast Restoration', logo: '/img/sponsors/southeast-restoration.webp', url: 'https://www.southeastrestoration.com/' },
+  { name: 'Connelly Residential Services', logo: '/img/sponsors/connelly.webp', url: 'https://www.connellyresidentialservices.com/' },
+  { name: 'Pinnacle Pools and Spas', logo: '/img/sponsors/pinnacle-pools.webp', url: 'https://pinnaclepoolsandspas.com/pool-builders/georgia/north-atlanta/' },
+  { name: 'Chick-fil-A Canton', logo: '/img/sponsors/chick-fil-a.webp', url: 'https://www.cfacanton.com/' },
+  { name: 'M Jones Heating and Cooling', logo: '/img/sponsors/m-jones.webp', url: 'https://mjoneshvac.com/' },
+  { name: 'Valor Environmental', logo: '/img/sponsors/valor.webp', url: 'https://www.valorenv.com/' },
+  { name: 'Crose Law', logo: '/img/sponsors/crose-law.webp', url: 'https://www.croselaw.com/' },
+  { name: 'State Farm, Jason Davidson', logo: '/img/sponsors/state-farm-jason-davidson.webp', url: 'https://www.statefarm.com/agent/us/ga/canton/jason-davidson-2jkw71ys000' },
+  { name: 'Fly and Form Concrete Structures', logo: '/img/sponsors/fly-and-form.webp', url: 'https://www.flyandform.com/' },
+  { name: 'Flat Out Fitness Boot Camp', logo: '/img/sponsors/flat-out-fitness.webp', url: 'https://flatoutfitnesshf.com/' },
+  { name: 'Lakota Springs', logo: '/img/sponsors/lakota-springs.webp', url: 'https://lakotaspringwater.com/' },
+  { name: 'Jetset Modern Pilates', logo: '/img/sponsors/jetset-pilates.webp', url: 'https://jetsetpilates.com/ga/alpharetta/' },
+  { name: 'Bope', logo: '/img/sponsors/bope.webp', url: 'https://bopedesign.com/' },
   { name: 'Mottion Media', logo: '/img/sponsors/mottion-media.webp' },
-  { name: 'Mt. Zion Baptist Church', logo: '/img/sponsors/mt-zion.webp' },
-  { name: 'Sixes Church', logo: '/img/sponsors/sixes-church.webp' },
-  { name: 'Ball Ground Methodist Church', logo: '/img/sponsors/ball-ground-methodist.webp' },
+  { name: 'Mt. Zion Baptist Church', logo: '/img/sponsors/mt-zion.webp', url: 'https://www.mtzb.org/' },
+  { name: 'Sixes Church', logo: '/img/sponsors/sixes-church.webp', url: 'https://www.sixes.church/' },
+  { name: 'Ball Ground Methodist Church', logo: '/img/sponsors/ball-ground-methodist.webp', url: 'https://ngagmc.org/directory/ball-ground-methodist/' },
 ];
 // 2027 sponsor packet flyer: save the PDF in public/files/ and put its address here, for example
 // '/files/sponsor-packet-2027.pdf'. The button links to it once this is set.
@@ -41,9 +42,13 @@ const sponsorPacket2027 = '/files/sponsor-packet-2027.pdf';
     <h2 class="h2">Sponsors</h2><p class="p" style="margin-bottom:28px">Sponsors set up booths at the event and are listed here and on the race shirt.</p>
     <h3 class="h3" style="margin-bottom:16px">Thank you to our 2026 sponsors</h3>
     <div class="sponsor-logos">
-      {sponsors2026.map((sp) => <div class="card"><img src={sp.logo} alt={sp.name} loading="lazy"></div>)}
+      {sponsors2026.map((sp) => sp.url
+        ? <a class="card" href={sp.url} data-ev="sponsor_logo_click" target="_blank" rel="sponsored noopener"><img src={sp.logo} alt={sp.name} loading="lazy"></a>
+        : <div class="card"><img src={sp.logo} alt={sp.name} loading="lazy"></div>)}
     </div>
-    <h3 class="h3" style="margin:44px 0 16px">2027 sponsors</h3>
+    <p class="eyebrow" style="margin:44px 0 6px">Labor Day 2027</p>
+    <h3 class="h3" style="margin-bottom:12px">Want to sponsor our next race?</h3>
+    <p class="p" style="margin-bottom:20px">All sponsorship proceeds benefit Hide and Seek Day Camp. The sponsor packet lists every level, from a $150 vendor table in the staging area to title sponsor.</p>
     <div class="row">
       {sponsorPacket2027
         ? <a href={sponsorPacket2027} data-ev="sponsor_packet_click" target="_blank" rel="noopener" class="gold">Sponsor packet</a>
