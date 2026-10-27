@@ -1,5 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+
+// 2026 sponsors: save each logo in public/img/sponsors/ and add it here, for example
+// { name: 'Acme Hardware', logo: '/img/sponsors/acme.webp', url: 'https://acme.com' }. Until the list has
+// logos, the 2026 row shows empty logo spots.
+const sponsors2026: { name: string; logo: string; url?: string }[] = [];
+// 2027 sponsor packet flyer: save the PDF in public/files/ and put its address here, for example
+// '/files/sponsor-packet-2027.pdf'. The button links to it once this is set.
+const sponsorPacket2027 = '';
 ---
 <Layout {...{"title": "Hickory FlatOut 5K | Hide and Seek Day Camp", "description": "A Peachtree qualifier open to all ages, with a kids Fun Run right after.", "path": "/get-involved/hickory-flatout-5k/", "banner": {"img": "/img/summer-10.webp", "alt": "Campers playing field games", "eyebrow": "Hickory FlatOut 5K", "title": "Run with us on Labor Day morning", "intro": "A Peachtree qualifier open to all ages, with a kids Fun Run right after.", "h1": "eyebrow", "crumb": {"href": "/get-involved/", "label": "Get Involved"}}}}>
   <div class="sec"><div class="wrap g2" style="gap:56px;align-items:start">
@@ -15,13 +23,21 @@ import Layout from '../../../layouts/Layout.astro';
   </div></div>
   <div class="sec"><div class="wrap">
     <h2 class="h2">Sponsors</h2><p class="p" style="margin-bottom:28px">Sponsors set up booths at the event and are listed here and on the race shirt.</p>
+    <h3 class="h3" style="margin-bottom:16px">2026 sponsors</h3>
     <div class="g4">
-      <div class="card" style="height:90px;display:flex;align-items:center;justify-content:center"><p class="s">Sponsor logo</p></div>
-      <div class="card" style="height:90px;display:flex;align-items:center;justify-content:center"><p class="s">Sponsor logo</p></div>
-      <div class="card" style="height:90px;display:flex;align-items:center;justify-content:center"><p class="s">Sponsor logo</p></div>
-      <div class="card" style="height:90px;display:flex;align-items:center;justify-content:center"><p class="s">Sponsor logo</p></div>
+      {sponsors2026.length
+        ? sponsors2026.map((sp) => {
+            const logo = <img src={sp.logo} alt={sp.name} style="max-width:100%;max-height:70px;object-fit:contain" />;
+            return <div class="card" style="height:110px;display:flex;align-items:center;justify-content:center">{sp.url ? <a href={sp.url} data-ev="sponsor_click" target="_blank" rel="noopener">{logo}</a> : logo}</div>;
+          })
+        : [1, 2, 3, 4].map(() => <div class="card" style="height:90px;display:flex;align-items:center;justify-content:center"><p class="s">Sponsor logo</p></div>)}
     </div>
-    <div class="row" style="margin-top:28px"><span class="ghostD">Sponsor packet</span></div>
+    <h3 class="h3" style="margin:44px 0 16px">2027 sponsors</h3>
+    <div class="row">
+      {sponsorPacket2027
+        ? <a href={sponsorPacket2027} data-ev="sponsor_packet_click" target="_blank" rel="noopener" class="gold">Sponsor packet</a>
+        : <span class="gold">Sponsor packet</span>}
+    </div>
   </div></div>
   <div class="sec" style="padding-top:0"><div class="wrap g4">
     <div class="ph" style="height:200px"><img src="/img/gallery-dsc00066.webp" alt="Camper running across the field"></div>
