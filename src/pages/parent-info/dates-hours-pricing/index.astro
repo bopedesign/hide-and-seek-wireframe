@@ -14,17 +14,45 @@ import Layout from '../../../layouts/Layout.astro';
   </div></div>
   <div class="tint" style="padding:88px clamp(20px,3vw,40px)"><div class="wrap">
     <h2 class="h2" style="margin-bottom:24px">Session dates</h2>
-    <div class="row" style="margin-bottom:24px"><span class="navy" style="padding:11px 22px;font-size:13px">Hickory Flat</span><span class="ghostD" style="padding:10px 21px;font-size:13px">Ball Ground</span><span class="ghostD" style="padding:10px 21px;font-size:13px">Sixes</span></div>
-    <div style="background:#fff;border-radius:24px;overflow:hidden">
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;background:#245b83;color:#fff;font-size:12.5px;font-weight:600;padding:16px 24px"><span>Session</span><span>Dates</span><span>Notes</span><span>Status</span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>1</span><span>May 27 to May 30</span><span style="color:#5c5348">Four day week</span><span style="color:#7a8a5e;font-weight:600">Open</span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>2</span><span>June 2 to June 6</span><span></span><span style="color:#7a8a5e;font-weight:600">Open</span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>3</span><span>June 9 to June 13</span><span></span><span style="color:#c8901b;font-weight:600">Filling</span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>4</span><span>June 16 to June 20</span><span style="color:#5c5348">No post camp</span><span style="color:#a3968a;font-weight:600">Full</span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>5</span><span>June 23 to June 27</span><span></span><span style="color:#7a8a5e;font-weight:600">Open</span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db;color:#a3968a"><span></span><span>June 30 to July 3</span><span>No camp</span><span></span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>6</span><span>July 7 to July 11</span><span style="color:#5c5348">SEEK Adventure, middle school only</span><span style="color:#7a8a5e;font-weight:600">Open</span></div>
-      <div style="display:grid;grid-template-columns:1fr 2fr 2fr 1fr;font-size:14px;padding:16px 24px"><span>7</span><span>July 14 to July 18</span><span></span><span style="color:#7a8a5e;font-weight:600">Open</span></div>
+    <div class="row" role="tablist" aria-label="Campus" style="margin-bottom:24px"><button type="button" role="tab" id="tab-hickory-flat" aria-controls="dates-hickory-flat" aria-selected="true" class="navy" style="font:inherit;font-size:13px;padding:10px 21px;border:1.5px solid #245b83">Hickory Flat</button><button type="button" role="tab" id="tab-ball-ground" aria-controls="dates-ball-ground" aria-selected="false" class="ghostD" style="font:inherit;font-size:13px;padding:10px 21px;border:1.5px solid #20180f">Ball Ground</button><button type="button" role="tab" id="tab-sixes" aria-controls="dates-sixes" aria-selected="false" class="ghostD" style="font:inherit;font-size:13px;padding:10px 21px;border:1.5px solid #20180f">Sixes</button></div>
+    <div role="tabpanel" id="dates-hickory-flat" aria-labelledby="tab-hickory-flat">
+      <div style="background:#fff;border-radius:24px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;background:#245b83;color:#fff;font-size:12.5px;font-weight:600;padding:16px 24px"><span>Session</span><span>Dates</span><span>Notes</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>1</span><span>May 27 to May 30</span><span style="color:#5c5348">Four day week</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>2</span><span>June 2 to June 6</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>3</span><span>June 9 to June 13</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>4</span><span>June 16 to June 20</span><span style="color:#5c5348">No post camp</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>5</span><span>June 23 to June 27</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db;color:#a3968a"><span></span><span>June 30 to July 3</span><span>No camp</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>6</span><span>July 7 to July 11</span><span style="color:#5c5348">SEEK Adventure, middle school only</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px"><span>7</span><span>July 14 to July 18</span><span></span></div>
+      </div>
+    </div>
+    <div role="tabpanel" id="dates-ball-ground" aria-labelledby="tab-ball-ground" hidden>
+      <div style="background:#fff;border-radius:24px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;background:#245b83;color:#fff;font-size:12.5px;font-weight:600;padding:16px 24px"><span>Session</span><span>Dates</span><span>Notes</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>1</span><span>May 27 to May 30</span><span style="color:#5c5348">Four day week</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>2</span><span>June 2 to June 6</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>3</span><span>June 9 to June 13</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>4</span><span>June 16 to June 20</span><span style="color:#5c5348">No post camp</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>5</span><span>June 23 to June 27</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db;color:#a3968a"><span></span><span>June 30 to July 3</span><span>No camp</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>6</span><span>July 7 to July 11</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px"><span>7</span><span>July 14 to July 18</span><span></span></div>
+      </div>
+    </div>
+    <div role="tabpanel" id="dates-sixes" aria-labelledby="tab-sixes" hidden>
+      <div style="background:#fff;border-radius:24px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;background:#245b83;color:#fff;font-size:12.5px;font-weight:600;padding:16px 24px"><span>Session</span><span>Dates</span><span>Notes</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>1</span><span>May 27 to May 30</span><span style="color:#5c5348">Four day week</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>2</span><span>June 2 to June 6</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>3</span><span>June 9 to June 13</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>4</span><span>June 16 to June 20</span><span style="color:#5c5348">No post camp</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>5</span><span>June 23 to June 27</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db;color:#a3968a"><span></span><span>June 30 to July 3</span><span>No camp</span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px;border-bottom:1px solid #f0e9db"><span>6</span><span>July 7 to July 11</span><span></span></div>
+        <div style="display:grid;grid-template-columns:1fr 2fr 2fr;font-size:14px;padding:16px 24px"><span>7</span><span>July 14 to July 18</span><span></span></div>
+      </div>
     </div>
   </div></div>
   <div class="sec"><div class="wrap g2" style="gap:56px;align-items:center">
@@ -39,3 +67,16 @@ import Layout from '../../../layouts/Layout.astro';
     </div>
   </div></div>
 </Layout>
+<script>
+  // Campus buttons above the session dates: show the chosen campus's list.
+  const tabs = document.querySelectorAll('[role="tab"][aria-controls^="dates-"]');
+  tabs.forEach((tab) => tab.addEventListener('click', () => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.className = on ? 'navy' : 'ghostD';
+      t.style.borderColor = on ? '#245b83' : '#20180f';
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }));
+</script>
