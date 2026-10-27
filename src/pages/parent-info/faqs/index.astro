@@ -2,9 +2,6 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 <Layout {...{"title": "Parent Guide and FAQs | Hide and Seek Day Camp", "description": "Here are the questions we hear most from parents like you. Have a question not answered here? Feel free to contact us.", "path": "/parent-info/faqs/", "banner": {"pos": "40% 40%", "img": "/img/gallery-mg1528.webp", "alt": "Counselor with four campers", "eyebrow": "Parent Info", "title": "Parent Guide & FAQs", "intro": "Here are the questions we hear most from parents like you. Have a question not answered here? Feel free to contact us.", "h1": "title", "crumb": {"href": "/parent-info/", "label": "Parent Info"}}}}>
-  <div class="sec" style="padding-bottom:0"><div class="wrap">
-    <div class="row"><span class="gold">Download the parent guide</span></div>
-  </div></div>
   <div class="tint" style="padding:72px clamp(20px,3vw,40px);margin-top:56px"><div class="wrap">
     <h2 class="h2" style="margin-bottom:32px">What to send with your camper</h2>
     <div class="g3">
@@ -20,21 +17,21 @@ import Layout from '../../../layouts/Layout.astro';
   <div class="sec"><div class="wrap" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:56px;align-items:start">
     <div style="position:sticky;top:24px">
       <div class="ph" style="height:300px;margin-bottom:22px"><img src="/img/home-10.webp" alt="Campers and counselors together on the grass"></div>
-      <div class="card"><p class="eyebrow" style="margin-bottom:10px">Jump to</p><div class="mml"><span>The basics</span><span>Getting ready for the day</span><span>At camp</span><span>Drop off and pick up</span><span>Our staff</span></div></div>
+      <div class="card"><p class="eyebrow" style="margin-bottom:10px">Jump to</p><div class="mml"><a href="#basics">The basics</a><a href="#getting-ready">Getting ready for the day</a><a href="#at-camp">At camp</a><a href="#drop-off-and-pick-up">Drop off and pick up</a><a href="#our-staff">Our staff</a></div></div>
     </div>
     <div>
-      <h2 class="h2">The basics</h2>
+      <h2 class="h2" id="basics" style="scroll-margin-top:24px">The basics</h2>
       <div class="acc" style="border-top-color:#20180f"><h3 class="h3" style="font-size:17px">Where is Hide and Seek Day Camp?</h3><p class="s">Camp runs at three campuses. Hickory Flat is at Mt. Zion Baptist Church, 4096 East Cherokee Drive, Canton. Ball Ground is at Ball Ground Methodist Church, 3045 Canton Hwy, Ball Ground. Sixes is at 8385 Bells Ferry Road, Canton. Our mail is received at a different address, 1894 Lower Union Hill Rd, Canton, GA 30115.</p></div>
       <div class="acc"><h3 class="h3" style="font-size:17px">What are the camp hours?</h3><p class="s">Our regular camp program begins at 9 a.m. and ends at 3 p.m. Pre camp supervision is provided starting at 7:30 a.m. and post camp supervision is provided until 6 p.m. each day.</p></div>
       <div class="acc"><h3 class="h3" style="font-size:17px">What is the price of camp?</h3><p class="s">The price of camp is organized by the session, meaning the week the camper attends. You can register for as many sessions as you like. Sessions are $275 and run 9 a.m. to 3 p.m. Early drop off is 7:30 a.m. to 9 a.m. for $15 per session. Post camp is 3 p.m. to 6 p.m. for $30 per session. To register for pre or post camp, your camper must be registered for the regular hours of camp. They are add on options, not individual session hours.</p></div>
       <div class="acc"><h3 class="h3" style="font-size:17px">Will camp still run during holiday weeks?</h3><p class="s">Yes. Our most common conflicts are Memorial Day and the Fourth of July. We will not have camp on either of those days, but every other day of that week camp runs as usual. A four day session is priced lower than a full five day session.</p></div>
       <div class="acc" style="border-bottom:1px solid #e2d9c6"><h3 class="h3" style="font-size:17px">Can I get help paying for camp?</h3><p class="s">Yes. Scholarships are available at every campus and the application is short.</p></div>
 
-      <h2 class="h2" style="margin-top:44px">Getting ready for the day</h2>
+      <h2 class="h2" id="getting-ready" style="scroll-margin-top:24px;margin-top:44px">Getting ready for the day</h2>
       <div class="acc" style="border-top-color:#20180f"><h3 class="h3" style="font-size:17px">What should my child wear to camp?</h3><p class="s">Any comfortable and modest clothing is acceptable. Closed toe shoes are required for most activities. Camp attire requirements are that no undergarments are showing, including sports bras. Please mark your child's first and last names on all belongings.</p></div>
       <div class="acc" style="border-bottom:1px solid #e2d9c6"><h3 class="h3" style="font-size:17px">What should my child bring each day?</h3><p class="s">A sack lunch, a snack, closed toe shoes, a refillable water bottle, sunscreen, and a swimsuit and towel on water day.</p></div>
 
-      <h2 class="h2" style="margin-top:44px">At camp</h2>
+      <h2 class="h2" id="at-camp" style="scroll-margin-top:24px;margin-top:44px">At camp</h2>
       <div class="acc" style="border-top-color:#20180f"><h3 class="h3" style="font-size:17px">Is water provided on hot days?</h3><p class="s">Yes, water is provided every day. Water coolers are located at stations throughout the campus. Campers typically carry their water bottles with them, and our staff will make stops for water between activities to make sure your child is hydrated at all times.</p></div>
       <div class="acc"><h3 class="h3" style="font-size:17px">How will my child be placed in a group?</h3><p class="s">Children are grouped according to grade level, age, and gender, and can also be placed according to their group request form. If you wish to request a group or counselor, you can complete that form during registration. All groups are supervised by a counselor. If a group exceeds a certain number of campers, a junior counselor is assigned to help manage the larger group.</p></div>
       <div class="acc"><h3 class="h3" style="font-size:17px">What if it rains?</h3><p class="s">Camp will be in session as usual. We have lots of fun and special activities just for those rainy days.</p></div>
@@ -42,10 +39,10 @@ import Layout from '../../../layouts/Layout.astro';
       <div class="acc"><h3 class="h3" style="font-size:17px">Are there any off campus field trips?</h3><p class="s">No, everything takes place on campus. We do occasionally have guest speakers who come in and provide fun activities for our campers.</p></div>
       <div class="acc" style="border-bottom:1px solid #e2d9c6"><h3 class="h3" style="font-size:17px">Do we have to be a church family?</h3><p class="s">No. Camp is Christ rooted and open to everyone.</p></div>
 
-      <h2 class="h2" style="margin-top:44px">Drop off and pick up</h2>
+      <h2 class="h2" id="drop-off-and-pick-up" style="scroll-margin-top:24px;margin-top:44px">Drop off and pick up</h2>
       <div class="acc" style="border-top-color:#20180f;border-bottom:1px solid #e2d9c6"><h3 class="h3" style="font-size:17px">How does drop off and pick up work?</h3><p class="s">Weather permitting at Hickory Flat, drop off is in the back parking lot of Mt. Zion Baptist Church near the overhang. If drop off needs to move due to inclement weather, it moves inside the chapel and is accessed via the side door. The pick up line begins at the side door of the chapel and wraps around the back of the chapel. A staff member will approach your car and call for your camper, who will be sent to the carpool line. Please move all the way up the line so we can serve as many cars as possible. Only those on your camper's pick up list will be allowed to pick up your child. Cell phone use is not permitted in the carpool line.</p><p class="s" style="margin-top:10px">Directions for Ball Ground and Sixes are on each campus page.</p></div>
 
-      <h2 class="h2" style="margin-top:44px">Our staff</h2>
+      <h2 class="h2" id="our-staff" style="scroll-margin-top:24px;margin-top:44px">Our staff</h2>
       <div class="acc" style="border-top-color:#20180f"><h3 class="h3" style="font-size:17px">What is the staff selection process?</h3><p class="s">Staff members apply through our online application in late winter. New applicants are interviewed individually by the director. Once the applicant passes that interview, they participate in a group interview with the other counselor applicants and submit a background check. Once hired, staff attend training in May covering low and high ropes training, first aid, curriculum, games, and small group activities.</p></div>
       <div class="acc" style="border-bottom:1px solid #e2d9c6"><h3 class="h3" style="font-size:17px">Are your staff members background checked?</h3><p class="s">Yes. All Hide and Seek Day Camp employees receive a background check prior to the start of the summer. All employees are required to provide several references and go through counselor training. All employees also receive ropes course training from a certified third party corporation before the start of the summer. Your child's safety is our highest priority.</p></div>
     </div>
