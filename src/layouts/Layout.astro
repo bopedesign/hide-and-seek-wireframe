@@ -67,7 +67,7 @@ const ld = [org, crumbs].filter(Boolean);
             {banner.h1 === 'eyebrow'
               ? <><h1 class="banner-eyebrow">{banner.eyebrow}</h1><p class="banner-title">{banner.title}</p></>
               : <><p class="banner-eyebrow">{banner.eyebrow}</p><h1 class="banner-title">{banner.title}</h1></>}
-            <p class="banner-intro">{banner.intro}</p>
+            {banner.intro && <p class="banner-intro">{banner.intro}</p>}
           </div>
         </div>
       </div>
