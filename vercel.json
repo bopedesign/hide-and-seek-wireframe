@@ -4,14 +4,14 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "hideandseekdaycamp.net"
         }
       ],
-      "destination": "https://www.hideandseekdaycamp.net/:path*",
+      "destination": "https://www.hideandseekdaycamp.net/$1",
       "permanent": true
     },
     {
