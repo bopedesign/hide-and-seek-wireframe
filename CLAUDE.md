@@ -69,6 +69,12 @@ fonts, colors or styles. If a request needs a new kind of section, ask Jeane fir
 ### Ask Jeane before
 Deleting a page, changing a page address, changing the header, footer or menus, adding a form, changing tracking or
 search settings (the `<head>` in the Layout, `astro.config.mjs`, `vercel.json`), or anything you're unsure about.
+
+**Zack doesn't need to ask (Jeane 2026-10-28)** before changing the header, footer or menus, or before deleting a page
+or changing a page address. Everyone else still asks. When Zack deletes a page or changes its address, the old address
+must still work: add a permanent forward in `vercel.json` from the old address to the new page (or the closest page),
+build, and check the old address forwards on the live site. Forwards are the one `vercel.json` change he may make
+without asking.
 <!-- END BOPE SITE RULES -->
 
 
