@@ -60,7 +60,7 @@ a.ghostD{color:#20180f}a.ghostD:hover{color:#fbf7ef}
   .hero-home{height:auto;min-height:720px}
   .hero-home h1{font-size:46px !important}
   main [style*="margin-top:28px"]{margin-top:0 !important}
-  main [style*="position:absolute;left:-22px"],main [style*="position:absolute;right:-18px"]{position:static !important;display:inline-block;margin:10px 8px 0 0}
+  main [style*="position:absolute;left:-22px"],main [style*="position:absolute;right:-18px"],main [style*="position:absolute;left:26px;bottom:-20px"]{position:static !important;display:inline-block;margin:10px 8px 0 0}
 }
 /* Words in the top bar link shown only on phones, where .bar-lead is hidden */
 .bar-phone{display:none}
