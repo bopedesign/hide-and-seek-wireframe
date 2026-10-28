@@ -109,6 +109,5 @@ Vercel (project `hide-and-seek-wireframe`, https://hide-and-seek-wireframe.verce
 - Links for buttons that don't go anywhere yet: the parent guide download (FAQs), the 5K race registration, sponsor
   packet and become a sponsor (5K), Save your seat (Banquet), the staff Time Off Request form (Apply), the gallery filter
   buttons and Load more (Gallery).
-- The camp's Instagram address (the footer shows Facebook only until then).
 - Before launch: a Google Analytics 4 property for the camp (set `PUBLIC_GA_ID` in Vercel), the domain, and setting
   `PUBLIC_ALLOW_INDEXING=true`. Until then every page is hidden from search engines. Jeane handles launch.
