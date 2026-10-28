@@ -1,5 +1,114 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "hideandseekdaycamp.net"
+        }
+      ],
+      "destination": "https://www.hideandseekdaycamp.net/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "2"
+        }
+      ],
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "19"
+        }
+      ],
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "416"
+        }
+      ],
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "447"
+        }
+      ],
+      "destination": "/parent-info/dates-hours-pricing/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "575"
+        }
+      ],
+      "destination": "/parent-info/faqs/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "1001"
+        }
+      ],
+      "destination": "/parent-info/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "1111"
+        }
+      ],
+      "destination": "/about/leadership/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "1145"
+        }
+      ],
+      "destination": "/get-involved/",
+      "permanent": true
+    }
+  ]
 }
