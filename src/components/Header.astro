@@ -49,6 +49,12 @@
   (function () {
     var b = document.querySelector('.mob-btn'), p = document.getElementById('mob-menu');
     b.addEventListener('click', function () { var open = p.hidden; p.hidden = !open; b.setAttribute('aria-expanded', open ? 'true' : 'false'); b.textContent = open ? 'Close' : 'Menu'; });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.activeElement && document.activeElement.closest('.nv-li')) document.activeElement.blur(); });
+    // Keep a dropdown open for a moment after the mouse leaves, so a slightly off path doesn't close it.
+    var items = document.querySelectorAll('.nv-li'), t;
+    items.forEach(function (li) {
+      li.addEventListener('mouseenter', function () { clearTimeout(t); items.forEach(function (o) { if (o !== li) o.classList.remove('mm-hold'); }); });
+      li.addEventListener('mouseleave', function () { li.classList.add('mm-hold'); clearTimeout(t); t = setTimeout(function () { li.classList.remove('mm-hold'); }, 350); });
+    });
+    document.addEventListener('keydown', function (e) { if (e.key !== 'Escape') return; items.forEach(function (o) { o.classList.remove('mm-hold'); }); if (document.activeElement && document.activeElement.closest('.nv-li')) document.activeElement.blur(); });
   })();
 </script>
